@@ -6,21 +6,30 @@ import { theme } from "../../src/theme";
 export default function Header() {
     const { toggleColorMode, mode } = useContext(ColorModeContext);
     return (
-        <Box height={64} position="relative">
-            <Backdrop sx={{ height: 64, zIndex: theme.zIndex.drawer + 1, color: "#fff", backdropFilter: "blur(8px)" }} open={true}>
-                <Box width={"100%"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} px={2}>
-                    <Box display={"flex"}>
-                        <Typography>SABUZAK STUDIO</Typography>
-                    </Box>
-                    {/* Menu Bar */}
-                    <Typography>Menu Bar</Typography>
-
-                    <Box display={"flex"} alignItems={"center"}>
-                        <Switch onClick={toggleColorMode} />
-                        <Typography>{mode} Mode</Typography>
-                    </Box>
+        <Box
+            display={"flex"}
+            justifyContent={"space-between"}
+            width={"100%"}
+            height={64}
+            px={3}
+            position="fixed"
+            bgcolor="rgba(255, 255, 255, 0.1)"
+            boxShadow="0px 2px 5px rgba(0, 0, 0, 0.1)"
+        >
+            <Box width={"100%"} display="flex" justifyContent="space-between" alignItems="center">
+                <Box display="flex">
+                    <Typography variant="h6" color="inherit">
+                        SABUZAK STUDIO
+                    </Typography>
                 </Box>
-            </Backdrop>
+                {/* Menu Bar */}
+                <Typography>Menu Bar</Typography>
+
+                <Box display="flex" alignItems="center">
+                    <Switch onClick={toggleColorMode} />
+                    <Typography>{mode} Mode</Typography>
+                </Box>
+            </Box>
         </Box>
     );
 }

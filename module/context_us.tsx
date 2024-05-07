@@ -15,7 +15,7 @@ export default function ContextUs() {
             ) : (
                 <Map center={{ lat: 37.5138, lng: 127.023012 }} style={{ width: "100%", height: "360px" }}>
                     <MapMarker position={{ lat: 37.5138, lng: 127.023012 }}>
-                        <div style={{ color: "#000" }}>사부작 스튜디오</div>
+                        <Typography fontWeight={700}>SABUZAK STUDIO</Typography>
                     </MapMarker>
                 </Map>
             )}
