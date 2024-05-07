@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Header from "../composition/header/header";
 import Footer from "../composition/footer/footer";
 import ContextUs from "../module/context_us";
@@ -10,6 +10,7 @@ export default function Home() {
             <Header />
             {/* Content */}
             <Box overflow={"auto"} paddingTop={8}>
+                <Typography>git Flow</Typography>
                 <Testing />
                 <Testing />
                 <Testing />
