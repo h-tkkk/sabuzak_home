@@ -24,7 +24,7 @@ export default function HomeSection() {
     };
 
     return (
-        <Box position={"relative"} overflow={"hidden"} width={"100%"} height={"100%"}>
+        <Box position={"relative"} overflow={"hidden"} width={"100%"} height={"100%"} id="home">
             <video
                 autoPlay
                 muted
