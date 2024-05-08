@@ -3,7 +3,7 @@ import Header from "../composition/header/header";
 import Footer from "../composition/footer/footer";
 import ContextUs from "../module/context_us";
 import Testing from "../module/testing";
-import HomeSection from "../module/section/home_section";
+import HomeSection from "../module/home_section/home_section";
 import ArrowNavigation from "../component/arrow_navigation";
 
 export default function Home() {

@@ -19,6 +19,7 @@ export default function Header() {
             boxShadow="0px 2px -1px rgba(0, 0, 0, 0.1)"
             sx={{
                 backdropFilter: "blur(24px)",
+                zIndex: 1000,
             }}
         >
             <Box width={"100%"} display="flex" justifyContent="space-between" alignItems="center">
