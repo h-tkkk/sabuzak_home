@@ -1,16 +1,29 @@
 import { Box, IconButton } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
+const sections = ["home", "about"];
+
 export default function ArrowNavigation() {
     const handleNextSection = () => {
-        const sections = ["home", "about"];
-        const currentSection = sections.findIndex((section) => {
-            console.log(`현재 섹션 ${section}`);
-            const element = document.getElementById(section);
+        let targetSectionIndex = 0;
+        for (let i = 0; i < sections.length; i++) {
+            const element = document.getElementById(sections[i]);
             const rect = element.getBoundingClientRect();
-            return rect.top >= 0 && rect.bottom <= window.innerHeight;
-        });
-        const nextSection = sections[currentSection + 1] || sections[0]; // 다음 섹션, 마지막 섹션이면 첫 섹션으로 이동
+
+            // 현재 화면에서 부분적으로 보이는 섹션을 찾는 로직
+            if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                if (rect.bottom > window.innerHeight) {
+                    // 섹션의 하단이 화면 밖에 있으면 그 섹션으로 스크롤
+                    targetSectionIndex = i;
+                } else {
+                    // 섹션이 완전히 화면에 보이면 다음 섹션으로 이동
+                    targetSectionIndex = (i + 1) % sections.length;
+                }
+                break;
+            }
+        }
+
+        const nextSection = sections[targetSectionIndex];
         document.getElementById(nextSection).scrollIntoView({ behavior: "smooth" });
     };
 
