@@ -37,6 +37,8 @@ export default function HomeSection() {
                     height: "100%",
                     objectFit: "cover",
                     zIndex: -1,
+                    outline: "none",
+                    border: "none",
                 }}
             >
                 <source src="/video/main_video.mp4" type="video/mp4" />
