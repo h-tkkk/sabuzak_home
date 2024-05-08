@@ -20,5 +20,12 @@ export const dark_theme = createTheme({
                 html: {},
             },
         },
+        MuiTypography: {
+            styleOverrides: {
+                root: {
+                    fontFamily: "Pretendard",
+                },
+            },
+        },
     },
 });

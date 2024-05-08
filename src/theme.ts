@@ -14,5 +14,12 @@ export const theme = createTheme({
                 html: {},
             },
         },
+        MuiTypography: {
+            styleOverrides: {
+                root: {
+                    fontFamily: "Pretendard",
+                },
+            },
+        },
     },
 });
