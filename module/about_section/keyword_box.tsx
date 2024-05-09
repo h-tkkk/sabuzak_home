@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import VectorIcon from "@assets/mdi_vector-line.svg";
 import { useEffect, useRef, useState } from "react";
 
@@ -10,6 +10,9 @@ interface KeywordBoxProps {
 export default function KeywordBox(props: KeywordBoxProps) {
     const boxRef = useRef(null);
     const [boxWidth, setBoxWidth] = useState(0);
+
+    const theme = useTheme();
+    const isLg = useMediaQuery(theme.breakpoints.down("lg"));
 
     useEffect(() => {
         function handleResize() {
@@ -52,7 +55,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     "& .text_typo": {
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
                         fontWeight: 900,
-                        fontSize: "1.5em",
+                        fontSize: "2em",
                     },
                     "& .opacity_box": {
                         opacity: 1,
@@ -89,8 +92,8 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     className="text_typo"
                     sx={{
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
-                        fontSize: "1em",
-                        fontWeight: 400,
+                        fontSize: "1.5em",
+                        fontWeight: 700,
                         textAlign: "left",
                         color: "#fff",
                     }}
@@ -108,10 +111,10 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     opacity: 0,
                 }}
             >
-                <Typography fontSize={48} color={"#fff"}>
+                <Typography fontSize={30} color={"#fff"}>
                     {"키워드에 관한 내용"}
                 </Typography>
-                <Typography fontSize={48} color={"#fff"}>
+                <Typography fontSize={30} color={"#fff"}>
                     {"한줄 두줄~"}
                 </Typography>
             </Box>

@@ -30,7 +30,8 @@ export default function NumberButtons(props: NumberButtonsProps) {
                 >
                     <Typography
                         color={props.selectNum === number ? "#fff" : COLORS.grayScale[50]}
-                        fontSize={props.selectNum === number ? 24 : 12}
+                        fontWeight={props.selectNum === number ? 900 : 500}
+                        fontSize={props.selectNum === number ? 28 : 20}
                         sx={{
                             transition: "color 0.3s ease, font-size 0.3s ease", // 색상과 폰트 크기 변경에 애니메이션 적용
                         }}

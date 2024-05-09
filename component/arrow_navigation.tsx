@@ -33,7 +33,7 @@ export default function ArrowNavigation() {
             bottom={0}
             left={"50%"}
             sx={{
-                transform: "translateX(-50%)",
+                transform: "translate(-50%, -50%)",
                 animation: "bounce 2s infinite",
             }}
         >

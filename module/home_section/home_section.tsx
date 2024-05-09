@@ -42,7 +42,7 @@ export default function HomeSection() {
             >
                 <source src="/video/main_video.mp4" type="video/mp4" />
             </video>
-            <Box display={"flex"} flexDirection={"column"} position="absolute" bottom={160} left={160} p={2} zIndex={2} gap={1}>
+            <Box display={"flex"} flexDirection={"column"} position="absolute" bottom={160} left={"10%"} p={2} zIndex={2} gap={1}>
                 <Box
                     sx={{
                         opacity: entering ? 1 : 0,

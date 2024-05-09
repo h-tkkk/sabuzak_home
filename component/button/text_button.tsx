@@ -8,7 +8,9 @@ export default function TextButton(props: TextButtonProps) {
     return (
         <Box>
             <Button style={{ textTransform: "none" }}>
-                <Typography color={"#000"}>{props.text}</Typography>
+                <Typography color={"#000"} fontSize={18} fontWeight={500}>
+                    {props.text}
+                </Typography>
             </Button>
         </Box>
     );

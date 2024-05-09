@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import KeywordBox from "./keyword_box";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 
@@ -18,6 +18,13 @@ const aboutList = [
 ];
 
 export default function AboutSection() {
+    const theme = useTheme();
+    const isLg = useMediaQuery(theme.breakpoints.up("lg"));
+    const isMd = useMediaQuery(theme.breakpoints.down("md"));
+
+    let bgFont = isLg ? 180 : isMd ? 100 : 140;
+    let bgTopOpset = isLg ? "6%" : isMd ? "9%" : "7.5%";
+
     return (
         <Box
             width={"100%"}
@@ -32,14 +39,14 @@ export default function AboutSection() {
                 "&::before": {
                     content: '"About"',
                     position: "absolute",
-                    top: "5.5%",
+                    top: bgTopOpset,
                     left: "2%",
-                    width: "100%",
+                    width: "auto",
                     height: "25%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "flex-start",
-                    fontSize: "13em",
+                    fontSize: bgFont,
                     fontWeight: "bold",
                     color: "#E3ECF9",
                     zIndex: 0,
@@ -51,10 +58,11 @@ export default function AboutSection() {
                     return <KeywordBox key={`keyword_${idx}`} imgUrl={about.imgUrl} keyword={about.keyword} />;
                 })}
             </Box>
-            <Box position={"relative"} bottom={"10%"} right={"10%"}>
+            <Box position={"absolute"} bottom={"10%"} right={"10%"}>
                 <Button
                     endIcon={<TrendingFlatIcon sx={{ color: "#fff" }} />}
                     sx={{
+                        px: 2,
                         background: "#000",
                         borderRadius: 4,
                         "&:hover": {
