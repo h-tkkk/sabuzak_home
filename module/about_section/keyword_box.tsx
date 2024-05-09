@@ -12,7 +12,12 @@ export default function KeywordBox(props: KeywordBoxProps) {
     const [boxWidth, setBoxWidth] = useState(0);
 
     const theme = useTheme();
-    const isLg = useMediaQuery(theme.breakpoints.down("lg"));
+    const isLg = useMediaQuery(theme.breakpoints.up("lg"));
+    const isMd = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+    let iconSize = isLg ? 120 : isMd ? (isMobile ? 60 : 80) : 100;
+    let keywordFont = isLg ? 24 : isMd ? (isMobile ? 16 : 18) : 20;
 
     useEffect(() => {
         function handleResize() {
@@ -55,7 +60,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     "& .text_typo": {
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
                         fontWeight: 900,
-                        fontSize: "2em",
+                        fontSize: 32,
                     },
                     "& .opacity_box": {
                         opacity: 1,
@@ -71,8 +76,8 @@ export default function KeywordBox(props: KeywordBoxProps) {
                 left={"50%"}
                 sx={{
                     transform: "translate(-50%, -50%)",
-                    width: 120,
-                    height: 120,
+                    width: iconSize,
+                    height: iconSize,
                     transition: "transform 0.5s ease-out",
                 }}
             >
@@ -92,7 +97,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     className="text_typo"
                     sx={{
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
-                        fontSize: "1.5em",
+                        fontSize: keywordFont,
                         fontWeight: 700,
                         textAlign: "left",
                         color: "#fff",

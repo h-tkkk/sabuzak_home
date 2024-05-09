@@ -21,6 +21,7 @@ export default function AboutSection() {
     const theme = useTheme();
     const isLg = useMediaQuery(theme.breakpoints.up("lg"));
     const isMd = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     let bgFont = isLg ? 180 : isMd ? 100 : 140;
     let bgTopOpset = isLg ? "6%" : isMd ? "9%" : "7.5%";
@@ -53,7 +54,7 @@ export default function AboutSection() {
                 },
             }}
         >
-            <Box width={"100%"} height={"100%"} display={"flex"} alignItems={"center"} gap={3} px={20}>
+            <Box width={"100%"} height={"100%"} display={"flex"} flexDirection={isMobile ? "column" : "row"} alignItems={"center"} gap={3} px={"10%"}>
                 {aboutList.map((about, idx) => {
                     return <KeywordBox key={`keyword_${idx}`} imgUrl={about.imgUrl} keyword={about.keyword} />;
                 })}

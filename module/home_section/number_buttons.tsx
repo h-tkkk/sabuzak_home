@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import COLORS from "../../src/theme_custom_color/custom_color";
 
@@ -8,6 +8,14 @@ interface NumberButtonsProps {
 }
 
 export default function NumberButtons(props: NumberButtonsProps) {
+    const theme = useTheme();
+    const isLg = useMediaQuery(theme.breakpoints.up("lg"));
+    const isMd = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+    let selectFont = isLg ? 28 : isMd ? (isMobile ? 16 : 20) : 24;
+    let disableFont = isLg ? 20 : isMd ? (isMobile ? 14 : 16) : 18;
+
     return (
         <Box display={"flex"} gap={2}>
             {[1, 2].map((number) => (
@@ -31,7 +39,7 @@ export default function NumberButtons(props: NumberButtonsProps) {
                     <Typography
                         color={props.selectNum === number ? "#fff" : COLORS.grayScale[50]}
                         fontWeight={props.selectNum === number ? 900 : 500}
-                        fontSize={props.selectNum === number ? 28 : 20}
+                        fontSize={props.selectNum === number ? selectFont : disableFont}
                         sx={{
                             transition: "color 0.3s ease, font-size 0.3s ease", // 색상과 폰트 크기 변경에 애니메이션 적용
                         }}
