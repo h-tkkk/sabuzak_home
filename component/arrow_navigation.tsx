@@ -31,13 +31,13 @@ export default function ArrowNavigation() {
         <Box
             position={"fixed"}
             bottom={0}
-            left={"50%"}
+            left={"49%"}
             sx={{
-                transform: "translateX(-50%)",
+                transform: "translate(-50%, -50%)",
                 animation: "bounce 2s infinite",
             }}
         >
-            <IconButton onClick={handleNextSection}>
+            <IconButton onClick={handleNextSection} sx={{ padding: 0 }}>
                 <KeyboardArrowDownIcon sx={{ width: 36, height: 36, color: "#fff" }} />
             </IconButton>
         </Box>
