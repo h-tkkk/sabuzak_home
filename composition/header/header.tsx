@@ -1,5 +1,5 @@
-import { Backdrop, Box, Button, Switch, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { Fragment, useContext } from "react";
+import { Backdrop, Box, Button, Drawer, IconButton, Switch, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Fragment, useContext, useState } from "react";
 import { ColorModeContext } from "../../pages/_app";
 import MyIcon from "@assets/sabuzak_icon.svg";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -7,9 +7,14 @@ import TextButton from "../../component/button/text_button";
 
 export default function Header() {
     const { toggleColorMode, mode } = useContext(ColorModeContext);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const theme = useTheme();
     const isMd = useMediaQuery(theme.breakpoints.up("md"));
+
+    const handleDrawerToggle = () => {
+        setSidebarOpen(!sidebarOpen);
+    };
 
     return (
         <Box
@@ -41,10 +46,39 @@ export default function Header() {
                             <Switch onClick={toggleColorMode} />
                         </Fragment>
                     ) : (
-                        <MenuIcon />
+                        <IconButton onClick={handleDrawerToggle}>
+                            <MenuIcon />
+                        </IconButton>
                     )}
                 </Box>
             </Box>
+            <Drawer
+                anchor="right"
+                open={sidebarOpen}
+                onClose={handleDrawerToggle}
+                sx={{
+                    "& .MuiDrawer-paper": { width: "80%", maxWidth: 300 },
+                }}
+            >
+                <Box
+                    height={"100%"}
+                    display={"flex"}
+                    flexDirection={"column"}
+                    justifyContent={"space-between"}
+                    role="presentation"
+                    onClick={handleDrawerToggle}
+                    onKeyDown={handleDrawerToggle}
+                >
+                    <Box>
+                        <TextButton text="About" />
+                        <TextButton text="Portfolio" />
+                        <TextButton text="Contact" />
+                    </Box>
+                    <Box>
+                        <Switch onClick={toggleColorMode} />
+                    </Box>
+                </Box>
+            </Drawer>
         </Box>
     );
 }
