@@ -6,6 +6,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "../src/theme";
 import MainLayout from "../composition/layout/main_layout";
 import { dark_theme } from "../src/dark_theme";
+import { GlobalStyles } from "@mui/material";
 
 export const ColorModeContext = createContext({
     toggleColorMode: () => {},
@@ -64,6 +65,20 @@ export default function MyApp(props: MyAppProps) {
         <ColorModeContext.Provider value={{ toggleColorMode, mode }}>
             <ThemeProvider theme={colorCache}>
                 <CssBaseline />
+                <GlobalStyles
+                    styles={{
+                        "@keyframes bounce": {
+                            "0%, 100%": {
+                                transform: "translateY(0)", // 초기 위치
+                                animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)", // 가속도
+                            },
+                            "50%": {
+                                transform: "translateY(-20px)", // 최대 20px 위로 이동
+                                animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)", // 감속도
+                            },
+                        },
+                    }}
+                />
                 <MainLayout>
                     <Component {...pageProps} />
                 </MainLayout>
