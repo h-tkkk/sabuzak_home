@@ -16,14 +16,25 @@ export default function NumberButtons(props: NumberButtonsProps) {
                     onClick={() => props.onClick(number)}
                     sx={{
                         fontWeight: props.selectNum === number ? "bold" : "normal",
-                        minWidth: 36, // 버튼 최소 너비
-                        minHeight: 36, // 버튼 최소 높이
-                        textTransform: "none", // 버튼 텍스트 대문자 방지
-                        borderRadius: "4px", // 버튼 둥글기 설정
+                        minWidth: 36,
+                        minHeight: 36,
+                        textTransform: "none",
+                        borderRadius: "4px",
                         border: "none",
+                        transition: "all 0.5s ease", // 모든 변경에 대해 0.3초 동안 애니메이션 적용
+                        backgroundColor: "transparent",
+                        // "&:hover": {
+                        //     backgroundColor: props.selectNum === number ? "primary.light" : "grey.200", // 호버 시 배경 색 변경
+                        // },
                     }}
                 >
-                    <Typography color={props.selectNum === number ? "#fff" : COLORS.grayScale[50]} fontSize={props.selectNum === number ? 24 : 12}>
+                    <Typography
+                        color={props.selectNum === number ? "#fff" : COLORS.grayScale[50]}
+                        fontSize={props.selectNum === number ? 24 : 12}
+                        sx={{
+                            transition: "color 0.3s ease, font-size 0.3s ease", // 색상과 폰트 크기 변경에 애니메이션 적용
+                        }}
+                    >
                         {number < 10 ? `0${number}` : number}
                     </Typography>
                 </Button>
