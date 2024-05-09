@@ -20,6 +20,12 @@ a {
     box-sizing: border-box;
 }
 
+video {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
 @media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;
