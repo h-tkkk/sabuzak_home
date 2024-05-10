@@ -14,7 +14,7 @@ const typographyStyles = (theme) => ({
     MuiTypography: {
         styleOverrides: {
             root: {
-                fontFamily: "Pretendard",
+                fontFamily: "yg-jalnan",
                 // fontSize: "0.8rem",
                 // [theme.breakpoints.up("sm")]: {
                 //     fontSize: "1rem",

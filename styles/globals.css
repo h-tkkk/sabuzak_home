@@ -1,14 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR&family=Nanum+Gothic&family=Noto+Sans+KR&display=swap");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
+@font-face {
+    font-family: "yg-jalnan";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,
 body {
     height: 100%;
     padding: 0;
     margin: 0;
     letter-spacing: -1px;
-    font-family: Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-        sans-serif;
+    font-family: yg-jalnan, Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
 }
 
 a {
@@ -34,4 +41,27 @@ video {
         color: white;
         background: black;
     }
+}
+
+.carousel .slide {
+    margin-right: 24px;
+    margin-left: 24px;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider {
+    align-items: center;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    background-color: #a8abaf;
+    height: 363px;
+    border-radius: 62px;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+.slide.selected {
+    height: 520px;
+    background-color: #818181;
 }
