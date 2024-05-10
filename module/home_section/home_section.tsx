@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 import OneTitle from "./one_title";
 import TwoTitle from "./two_title";
@@ -7,6 +7,9 @@ import NumberButtons from "./number_buttons";
 export default function HomeSection() {
     const [titleSelect, setTitleSelect] = useState<number>(1);
     const [entering, setEntering] = useState(false);
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -42,7 +45,16 @@ export default function HomeSection() {
             >
                 <source src="/video/main_video.mp4" type="video/mp4" />
             </video>
-            <Box display={"flex"} flexDirection={"column"} position="absolute" bottom={160} left={"10%"} p={2} zIndex={2} gap={1}>
+            <Box
+                display={"flex"}
+                flexDirection={"column"}
+                position="absolute"
+                bottom={isMobile ? "5%" : 160}
+                left={isMobile ? 0 : "10%"}
+                p={2}
+                zIndex={2}
+                gap={1}
+            >
                 <Box
                     sx={{
                         opacity: entering ? 1 : 0,
