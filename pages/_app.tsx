@@ -77,6 +77,50 @@ export default function MyApp(props: MyAppProps) {
                                 animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)", // 감속도
                             },
                         },
+                        "@keyframes fadeMoveUp": {
+                            from: {
+                                opacity: 1,
+                                transform: "translateY(0%)",
+                            },
+                            to: {
+                                opacity: 0,
+                                transform: "translateY(-100%)",
+                            },
+                            // "0%": {
+                            //     opacity: 1,
+                            //     transform: "translateY(0)",
+                            // },
+                            // "50%": {
+                            //     opacity: 0,
+                            //     transform: "translateY(-50px)",
+                            // },
+                            // "100%": {
+                            //     opacity: 0,
+                            //     transform: "translateY(-50px)",
+                            // },
+                        },
+                        "@keyframes fadeMoveDown": {
+                            from: {
+                                opacity: 0,
+                                transform: "translateY(100%)",
+                            },
+                            to: {
+                                opacity: 1,
+                                transform: "translateY(0%)",
+                            },
+                            // "0%": {
+                            //     opacity: 0,
+                            //     transform: "translateY(50px)",
+                            // },
+                            // "50%": {
+                            //     opacity: 0,
+                            //     transform: "translateY(50px)",
+                            // },
+                            // "100%": {
+                            //     opacity: 1,
+                            //     transform: "translateY(0)",
+                            // },
+                        },
                     }}
                 />
                 <MainLayout>

@@ -33,6 +33,20 @@ const data: PortfolioData[] = [
         subContent: "리액션 맛집 동물들이 보여주는\n일상 속 새로운 시선과 재미있는 리액셕의 짧툰",
         imgList: ["/img/margazine_1.png", "/img/margazine_2.png", "/img/margazine_3.png"],
     },
+    {
+        title: "콤플렉스 아카데미",
+        englishTitle: "Complex Academy",
+        mainContent: "콤플렉스를 극복하지 않아도\n있는 그대로의 내가 행복이다.",
+        subContent: "라미와 친구들의 마법 학교 일상을 통해 보여주는\n여러가지 콤플렉스와 그를 통해 성장하는 이야기",
+        imgList: ["/img/margazine_1.png", "/img/margazine_2.png", "/img/margazine_3.png"],
+    },
+    {
+        title: "햄밍웨이",
+        englishTitle: "Hamingway",
+        mainContent: "나, 햄밍웨이 1.3세, 70구람!🐹\n눈물 한 방울 💧 흘려 본 적 없는 싸나이!",
+        subContent: "멋진 선장이 되고픈 햄밍웨이와\n햄스터 마을 친구들의 아기자기한 일상",
+        imgList: ["/img/hamingway_1.png", "/img/hamingway_2.png", "/img/hamingway_3.png"],
+    },
 ];
 
 export default function portfolioPage() {
@@ -53,7 +67,7 @@ export default function portfolioPage() {
                                                     <img src={img} alt={`image ${idx}`} style={{ width: "100%" }} />
                                                 </Grid>
                                             ))}
-                                            <Grid display={"flex"} flexDirection={"column"} justifyContent={"space-between"} item xs={3}>
+                                            <Grid display={"flex"} flexDirection={"column"} justifyContent={"space-between"} item xs={3} my={4}>
                                                 <Box>
                                                     <Typography fontWeight={900} sx={{ fontSize: { xs: "18px", md: "24px", lg: "42px" } }}>
                                                         {item.title}
@@ -80,7 +94,7 @@ export default function portfolioPage() {
                                         </>
                                     ) : (
                                         <>
-                                            <Grid display={"flex"} flexDirection={"column"} justifyContent={"space-between"} item xs={3}>
+                                            <Grid display={"flex"} flexDirection={"column"} justifyContent={"space-between"} item xs={3} my={4}>
                                                 <Box>
                                                     <Typography fontWeight={900} sx={{ fontSize: { xs: "18px", md: "24px", lg: "42px" } }}>
                                                         {item.title}
