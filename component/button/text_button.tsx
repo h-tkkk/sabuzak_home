@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+import Link from "next/link";
 
 interface TextButtonProps {
     text: string;
@@ -6,12 +7,10 @@ interface TextButtonProps {
 
 export default function TextButton(props: TextButtonProps) {
     return (
-        <Box>
-            <Button style={{ textTransform: "none" }}>
-                <Typography color={"#000"} fontSize={18} fontWeight={500}>
-                    {props.text}
-                </Typography>
-            </Button>
-        </Box>
+        <Link href={props.text.toLowerCase()}>
+            <Typography color={"#000"} fontSize={18} fontWeight={500}>
+                {props.text}
+            </Typography>
+        </Link>
     );
 }
