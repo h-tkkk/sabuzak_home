@@ -46,10 +46,6 @@ export default function Home() {
             <Box width={"100%"} height={"100%"}>
                 <HomeSection />
                 <AboutSection />
-                <Testing />
-                <Testing />
-                <Testing />
-                <Testing />
                 <ContextUs />
                 <Footer />
             </Box>

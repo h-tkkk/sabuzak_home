@@ -48,9 +48,7 @@ export default function OneTitle() {
                         color={"#fff"}
                         fontSize={wordFont}
                         sx={{
-                            transition: "opacity 1s, transform 1s",
-                            opacity: entering ? 1 : 0,
-                            transform: `translateY(${entering ? 0 : -100}%)`,
+                            animation: entering ? "fadeMoveDown 1s forwards" : "fadeMoveUp 1s forwards",
                         }}
                     >
                         {word}
