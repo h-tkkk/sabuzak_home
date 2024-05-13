@@ -34,16 +34,17 @@ export default function ContactPage() {
                         </Map>
 
                         <Box display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
-                            <Typography>Contact</Typography>
-
+                            <Typography fontFamily={"Pretendard"} fontWeight={900} fontSize={60}>
+                                Contact
+                            </Typography>
                             <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={3}>
-                                <Typography fontWeight={500} sx={{ fontSize: { xs: "10px", md: "14px", lg: "18px" } }}>
+                                <Typography fontFamily={"Pretendard"} fontWeight={600} sx={{ fontSize: { xs: "10px", md: "14px", lg: "28px" } }}>
                                     {"서울특별시 강남구 학동로7길 29"}
                                 </Typography>
-                                <Typography fontWeight={500} sx={{ fontSize: { xs: "10px", md: "14px", lg: "18px" } }}>
+                                <Typography fontFamily={"Pretendard"} fontWeight={600} sx={{ fontSize: { xs: "10px", md: "14px", lg: "28px" } }}>
                                     {"(02)-6213-3100 (평일 09:00 ~ 18:00)"}
                                 </Typography>
-                                <Typography fontWeight={500} sx={{ fontSize: { xs: "10px", md: "14px", lg: "18px" } }}>
+                                <Typography fontFamily={"Pretendard"} fontWeight={600} sx={{ fontSize: { xs: "10px", md: "14px", lg: "28px" } }}>
                                     {"sabuzakx2studio@gmail.com"}
                                 </Typography>
                             </Box>

@@ -3,9 +3,10 @@ import { Box, Typography } from "@mui/material";
 export default function ComplexAcademy() {
     return (
         <Box
+            className="boxWithDiagonalShadow_2"
             sx={{
                 height: 529,
-                background: "linear-gradient(-110deg, #FFF8D6 50%, #FFE676 50%)",
+                background: "linear-gradient(-76deg, #FFF8D6 46%, #FFE676 46%)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",

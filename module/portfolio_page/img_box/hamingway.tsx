@@ -3,9 +3,11 @@ import { Box, Typography } from "@mui/material";
 export default function Hamingway() {
     return (
         <Box
+            className="boxWithDiagonalShadow"
             sx={{
                 height: 529,
-                background: "linear-gradient(-75deg, #FFE7B3 50%, #BFA177 50%)",
+                background: `linear-gradient(-104deg, #BFA177 44%, rgba(255, 255, 255, 0) 44%), url('/img/port_img/port_way_bg.png')`,
+                //background: "linear-gradient(-110deg, #FFE7B3 50%, #BFA177 50%)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",

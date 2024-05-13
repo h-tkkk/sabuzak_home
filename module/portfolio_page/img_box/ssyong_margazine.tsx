@@ -3,9 +3,11 @@ import { Box, Typography } from "@mui/material";
 export default function SsyongMargazine() {
     return (
         <Box
+            className="boxWithDiagonalShadow_2"
             sx={{
                 height: 529,
-                background: "linear-gradient(-100deg, #D2EFFF 50%, #DAD7F9 50%)",
+                background: `linear-gradient(-76deg, #D2EFFF 46%, rgba(255, 255, 255, 0) 46%), url('/img/port_img/port_ssong_bg.png')`,
+                // background: "linear-gradient(-76deg, #D2EFFF 46%, #DAD7F9 46%)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
