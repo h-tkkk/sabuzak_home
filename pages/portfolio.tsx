@@ -2,6 +2,8 @@ import { Box, Grid, Paper, Typography } from "@mui/material";
 import MainLayout from "../composition/layout/main_layout";
 import Header from "../composition/header/header";
 import Footer from "../composition/footer/footer";
+import PfEx1 from "../module/portfolio_page/ex1";
+import ImgEx from "../module/portfolio_page/img_ex";
 
 interface PortfolioData {
     title: string;
@@ -53,86 +55,7 @@ export default function portfolioPage() {
     return (
         <Box height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"}>
             <Header />
-
-            <Box width={"100%"} height={"100%"}>
-                <Box py={12} px={"10%"}>
-                    <Box sx={{ flexGrow: 1, p: 2 }}>
-                        <Grid container spacing={2}>
-                            {data.map((item, index) => (
-                                <>
-                                    {index % 2 === 0 ? (
-                                        <>
-                                            {item.imgList.map((img, idx) => (
-                                                <Grid item xs={3} key={`${item.englishTitle} ${idx}`}>
-                                                    <img src={img} alt={`image ${idx}`} style={{ width: "100%" }} />
-                                                </Grid>
-                                            ))}
-                                            <Grid display={"flex"} flexDirection={"column"} justifyContent={"space-between"} item xs={3} my={4}>
-                                                <Box>
-                                                    <Typography fontWeight={900} sx={{ fontSize: { xs: "18px", md: "24px", lg: "42px" } }}>
-                                                        {item.title}
-                                                    </Typography>
-                                                    <Typography fontWeight={600} sx={{ fontSize: { xs: "16px", md: "18px", lg: "24px" } }}>
-                                                        {item.englishTitle}
-                                                    </Typography>
-                                                </Box>
-                                                <Box>
-                                                    <Typography
-                                                        fontWeight={600}
-                                                        sx={{ fontSize: { xs: "14px", md: "16px", lg: "18px" }, whiteSpace: "pre-wrap" }}
-                                                    >
-                                                        {item.mainContent}
-                                                    </Typography>
-                                                    <Typography
-                                                        fontWeight={500}
-                                                        sx={{ fontSize: { xs: "12px", md: "14px", lg: "16px" }, whiteSpace: "pre-wrap" }}
-                                                    >
-                                                        {item.subContent}
-                                                    </Typography>
-                                                </Box>
-                                            </Grid>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <Grid display={"flex"} flexDirection={"column"} justifyContent={"space-between"} item xs={3} my={4}>
-                                                <Box>
-                                                    <Typography fontWeight={900} sx={{ fontSize: { xs: "18px", md: "24px", lg: "42px" } }}>
-                                                        {item.title}
-                                                    </Typography>
-                                                    <Typography fontWeight={600} sx={{ fontSize: { xs: "16px", md: "18px", lg: "24px" } }}>
-                                                        {item.englishTitle}
-                                                    </Typography>
-                                                </Box>
-                                                <Box>
-                                                    <Typography
-                                                        fontWeight={600}
-                                                        sx={{ fontSize: { xs: "14px", md: "16px", lg: "18px" }, whiteSpace: "pre-wrap" }}
-                                                    >
-                                                        {item.mainContent}
-                                                    </Typography>
-                                                    <Typography
-                                                        fontWeight={500}
-                                                        sx={{ fontSize: { xs: "12px", md: "14px", lg: "16px" }, whiteSpace: "pre-wrap" }}
-                                                    >
-                                                        {item.subContent}
-                                                    </Typography>
-                                                </Box>
-                                            </Grid>
-                                            {item.imgList.map((img, idx) => (
-                                                <Grid item xs={3} key={`${item.englishTitle} ${idx}`}>
-                                                    <img src={img} alt={`image ${idx}`} style={{ width: "100%" }} />
-                                                </Grid>
-                                            ))}
-                                        </>
-                                    )}
-                                </>
-                            ))}
-                        </Grid>
-                    </Box>
-                </Box>
-
-                <Footer />
-            </Box>
+            <ImgEx />
         </Box>
     );
 }

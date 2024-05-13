@@ -86,18 +86,6 @@ export default function MyApp(props: MyAppProps) {
                                 opacity: 0,
                                 transform: "translateY(-100%)",
                             },
-                            // "0%": {
-                            //     opacity: 1,
-                            //     transform: "translateY(0)",
-                            // },
-                            // "50%": {
-                            //     opacity: 0,
-                            //     transform: "translateY(-50px)",
-                            // },
-                            // "100%": {
-                            //     opacity: 0,
-                            //     transform: "translateY(-50px)",
-                            // },
                         },
                         "@keyframes fadeMoveDown": {
                             from: {
@@ -108,18 +96,13 @@ export default function MyApp(props: MyAppProps) {
                                 opacity: 1,
                                 transform: "translateY(0%)",
                             },
-                            // "0%": {
-                            //     opacity: 0,
-                            //     transform: "translateY(50px)",
-                            // },
-                            // "50%": {
-                            //     opacity: 0,
-                            //     transform: "translateY(50px)",
-                            // },
-                            // "100%": {
-                            //     opacity: 1,
-                            //     transform: "translateY(0)",
-                            // },
+                        },
+                        "@keyframes fadeInOut": {
+                            "0% 100%": { opacity: 1 },
+                            "50%": { opacity: 0.5 },
+                        },
+                        ".image-animation": {
+                            animation: "fadeInOut 3s ease-in-out",
                         },
                     }}
                 />

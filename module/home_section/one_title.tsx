@@ -14,9 +14,9 @@ export default function OneTitle() {
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     // let mainTitleFont = isLg ? 48 : isMd ? 24 : 36;
-    let mainTitleFont = isLg ? 48 : isMd ? (isMobile ? 18 : 24) : 36;
-    let subTitleFont = isLg ? 24 : isMd ? (isMobile ? 12 : 14) : 18;
-    let wordFont = isLg ? 60 : isMd ? 36 : 48;
+    let mainTitleFont = isLg ? 44 : isMd ? (isMobile ? 18 : 24) : 36;
+    let subTitleFont = isLg ? 16 : isMd ? (isMobile ? 12 : 14) : 18;
+    let wordFont = isLg ? 58 : isMd ? 36 : 48;
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -64,7 +64,7 @@ export default function OneTitle() {
                 {subTitle.map((sub, idx) => {
                     return (
                         <Box key={`sub_${idx}`}>
-                            <Typography color={"#fff"} fontWeight={300} fontSize={subTitleFont}>
+                            <Typography fontFamily={"Pretendard"} color={"#fff"} fontWeight={300} fontSize={subTitleFont}>
                                 {sub}
                             </Typography>
                         </Box>

@@ -43,6 +43,10 @@ video {
     }
 }
 
+.carousel.carousel-slider {
+    overflow: visible !important;
+}
+
 .carousel .slide {
     margin-right: 24px;
     margin-left: 24px;
@@ -50,18 +54,28 @@ video {
 
 .carousel .slider-wrapper.axis-horizontal .slider {
     align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    min-height: 550px;
+}
+
+.slider {
+    gap: 24px;
 }
 
 .slide {
     display: flex;
     justify-content: center;
     background-color: #a8abaf;
-    height: 363px;
+    height: 36.3vh;
     border-radius: 62px;
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.25);
+    left: -24px;
+    transition: height 0.5s ease-in-out;
 }
 
 .slide.selected {
-    height: 520px;
+    height: 52vh;
     background-color: #818181;
+    transition: height 0.5s ease-in-out;
 }
