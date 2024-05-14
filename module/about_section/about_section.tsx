@@ -1,6 +1,7 @@
 import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import KeywordBox from "./keyword_box";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
+import { useRouter } from "next/router";
 
 const aboutList = [
     {
@@ -18,6 +19,8 @@ const aboutList = [
 ];
 
 export default function AboutSection() {
+    const router = useRouter();
+
     const theme = useTheme();
     const isLg = useMediaQuery(theme.breakpoints.up("lg"));
     const isMd = useMediaQuery(theme.breakpoints.down("md"));
@@ -61,6 +64,7 @@ export default function AboutSection() {
             </Box>
             <Box position={"absolute"} bottom={"10%"} right={"10%"}>
                 <Button
+                    onClick={() => router.push("/about")}
                     endIcon={<TrendingFlatIcon sx={{ color: "#fff" }} />}
                     sx={{
                         px: 2,
@@ -71,7 +75,7 @@ export default function AboutSection() {
                         },
                     }}
                 >
-                    <Typography fontSize={16} fontWeight={500} color={"#fff"}>
+                    <Typography fontFamily={"Pretendard"} fontSize={13.44} fontWeight={500} color={"#fff"}>
                         {"View More"}
                     </Typography>
                 </Button>

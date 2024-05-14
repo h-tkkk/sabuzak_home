@@ -1,24 +1,28 @@
 import { Box, Typography } from "@mui/material";
-import { Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk";
 
 export default function ContextUs() {
-    const [loading, error] = useKakaoLoader({
-        appkey: "431a6afd7c870f435c3fca23a03699c5",
-    });
-
     return (
-        <Box>
-            {loading ? (
+        <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"} pt={8} id="introduction" gap={8}>
+            <Box>
+                <Typography>사진 자리~</Typography>
+            </Box>
+            <Box display={"flex"} flexDirection={"column"} gap={3}>
                 <Box>
-                    <Typography>Kakao Map을 불러오는 중</Typography>
+                    <Typography fontSize={36} whiteSpace={"pre-wrap"}>
+                        {"Cooperation makes it\npossible to produce even\nmore wonderful results."}
+                    </Typography>
                 </Box>
-            ) : (
-                <Map center={{ lat: 37.5138, lng: 127.023012 }} style={{ width: "100%", height: "360px" }}>
-                    <MapMarker position={{ lat: 37.5138, lng: 127.023012 }}>
-                        <Typography fontWeight={700}>SABUZAK STUDIO</Typography>
-                    </MapMarker>
-                </Map>
-            )}
+                <Box>
+                    <Typography fontFamily={"Pretendard"} fontSize={18} whiteSpace={"pre-wrap"}>
+                        {
+                            "사부작 스튜디오는\n더 멋진 아이디어를 가지고 계신\n제작자와 협업을 기다립니다.\n더 재미있고 더 감동적인 이야기를\n함께 만들어보아요."
+                        }
+                    </Typography>
+                </Box>
+                <Box>
+                    <Typography>{"사부작과 함께하기"}</Typography>
+                </Box>
+            </Box>
         </Box>
     );
 }
