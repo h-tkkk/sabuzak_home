@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "yg-jalnan";
-    src: url("../src/font/Jalnan2TTF.ttf");
+    src: url("/fonts/Jalnan2TTF.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
