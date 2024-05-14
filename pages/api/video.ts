@@ -2,14 +2,11 @@ import { list } from "@vercel/blob";
 
 export default async function handler(req, res) {
     try {
-        console.log("g2?");
         const { blobs } = await list({
             token: process.env.BLOB_READ_WRITE_TOKEN,
             prefix: "main_video-KpYfRoo96XkqI71fuX0CspciWqzc9C.mp4",
             limit: 1,
         });
-
-        console.log(blobs);
 
         if (blobs.length > 0) {
             const videoUrl = blobs[0].url;
