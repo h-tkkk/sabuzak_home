@@ -6,7 +6,8 @@ export default function ComplexAcademy() {
             className="boxWithDiagonalShadow_2"
             sx={{
                 height: 529,
-                background: "linear-gradient(-76deg, #FFF8D6 46%, #FFE676 46%)",
+                background: `linear-gradient(-76deg, #FFE676 46%, rgba(255, 255, 255, 0) 46%), url('/img/port_img/port_coplex_bg.png')`,
+                // background: "linear-gradient(-76deg, #FFF8D6 46%, #FFE676 46%)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",

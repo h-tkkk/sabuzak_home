@@ -3,6 +3,7 @@ import { Fragment, useContext, useState } from "react";
 import { ColorModeContext } from "../../pages/_app";
 import MyIcon from "@assets/sabuzak_icon.svg";
 import MenuIcon from "@mui/icons-material/Menu";
+import SabuzakIcon from "@assets/logo_sm.svg";
 import TextButton from "../../component/button/text_button";
 import Link from "next/link";
 
@@ -35,7 +36,7 @@ export default function Header() {
             <Box width={"100%"} display="flex" justifyContent="space-between" alignItems="center">
                 <Box display="flex" alignItems={"center"}>
                     <Link href={"/"} style={{ display: "flex" }}>
-                        <MyIcon />
+                        <SabuzakIcon />
                     </Link>
                 </Box>
                 <Box display="flex" alignItems="center">
