@@ -1,14 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR&family=Nanum+Gothic&family=Noto+Sans+KR&display=swap");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
+/* @font-face {
+    font-family: "yg-jalnan";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+} */
+
+@font-face {
+    font-family: "yg-jalnan";
+    src: url("../src/font/Jalnan2TTF.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,
 body {
     height: 100%;
     padding: 0;
     margin: 0;
     letter-spacing: -1px;
-    font-family: Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-        sans-serif;
+    font-family: yg-jalnan, Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
 }
 
 a {
@@ -34,4 +48,73 @@ video {
         color: white;
         background: black;
     }
+}
+
+.carousel.carousel-slider {
+    overflow: visible !important;
+}
+
+.carousel .slide {
+    margin-right: 24px;
+    margin-left: 24px;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider {
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    min-height: 550px;
+}
+
+.slider {
+    gap: 24px;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    background-color: #a8abaf;
+    height: 36.3vh;
+    border-radius: 62px;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.25);
+    left: -24px;
+    transition: height 0.5s ease-in-out;
+}
+
+.slide.selected {
+    height: 52vh;
+    background-color: #818181;
+    transition: height 0.5s ease-in-out;
+}
+
+.boxWithDiagonalShadow {
+    position: relative;
+    overflow: hidden; /* 추가되는 :after 요소가 박스 바깥으로 나가지 않도록 함 */
+}
+
+.boxWithDiagonalShadow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-104deg, transparent 43%, rgba(0, 0, 0, 0.125) 44%, transparent 43%);
+    pointer-events: none; /* 마우스 이벤트가 이 요소에 영향을 받지 않도록 설정 */
+}
+
+.boxWithDiagonalShadow_2 {
+    position: relative;
+    overflow: hidden; /* 추가되는 :after 요소가 박스 바깥으로 나가지 않도록 함 */
+}
+
+.boxWithDiagonalShadow_2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-76deg, transparent 45%, rgba(0, 0, 0, 0.125) 46%, transparent 45%);
+    pointer-events: none; /* 마우스 이벤트가 이 요소에 영향을 받지 않도록 설정 */
 }

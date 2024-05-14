@@ -15,7 +15,7 @@ const typographyStyles = (theme) => ({
     MuiTypography: {
         styleOverrides: {
             root: {
-                fontFamily: "Pretendard",
+                fontFamily: "yg-jalnan",
                 fontSize: "1rem",
                 [theme.breakpoints.up("sm")]: {
                     fontSize: "1.2rem", // 태블릿과 데스크탑에서 폰트 크기 증가

@@ -9,6 +9,7 @@ import AboutSection from "../module/about_section/about_section";
 import { useEffect, useState } from "react";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { theme } from "../src/theme";
+import PortfolioSection from "../module/portfolio_section/portfolio_section";
 
 export default function Home() {
     const [showFloatingButton, setShowFloatingButton] = useState(false);
@@ -46,10 +47,7 @@ export default function Home() {
             <Box width={"100%"} height={"100%"}>
                 <HomeSection />
                 <AboutSection />
-                <Testing />
-                <Testing />
-                <Testing />
-                <Testing />
+                <PortfolioSection />
                 <ContextUs />
                 <Footer />
             </Box>

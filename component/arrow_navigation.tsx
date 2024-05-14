@@ -1,7 +1,7 @@
 import { Box, IconButton } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-const sections = ["home", "about"];
+const sections = ["home", "about", "portfolio", "introduction"];
 
 export default function ArrowNavigation() {
     const handleNextSection = () => {

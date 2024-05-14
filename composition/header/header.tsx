@@ -4,6 +4,7 @@ import { ColorModeContext } from "../../pages/_app";
 import MyIcon from "@assets/sabuzak_icon.svg";
 import MenuIcon from "@mui/icons-material/Menu";
 import TextButton from "../../component/button/text_button";
+import Link from "next/link";
 
 export default function Header() {
     const { toggleColorMode, mode } = useContext(ColorModeContext);
@@ -32,13 +33,15 @@ export default function Header() {
             }}
         >
             <Box width={"100%"} display="flex" justifyContent="space-between" alignItems="center">
-                <Box display="flex">
-                    <MyIcon />
+                <Box display="flex" alignItems={"center"}>
+                    <Link href={"/"} style={{ display: "flex" }}>
+                        <MyIcon />
+                    </Link>
                 </Box>
                 <Box display="flex" alignItems="center">
                     {isMd ? (
                         <Fragment>
-                            <Box display={"flex"}>
+                            <Box display={"flex"} gap={3}>
                                 <TextButton text="About" />
                                 <TextButton text="Portfolio" />
                                 <TextButton text="Contact" />

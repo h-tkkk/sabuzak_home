@@ -16,7 +16,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
     const isMd = useMediaQuery(theme.breakpoints.down("md"));
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    let iconSize = isLg ? 120 : isMd ? (isMobile ? 60 : 80) : 100;
+    let iconSize = isLg ? 60 : isMd ? (isMobile ? 60 : 80) : 100;
     let keywordFont = isLg ? 24 : isMd ? (isMobile ? 16 : 18) : 20;
 
     useEffect(() => {
@@ -48,19 +48,19 @@ export default function KeywordBox(props: KeywordBoxProps) {
                 transition: "background-color 1s ease",
                 boxShadow: "5px 5px 10px 5px rgba(0, 0, 0, 0.25)",
                 "&:hover": {
-                    backgroundColor: "blue",
+                    backgroundColor: "#133F7F",
                     "& .icon": {
-                        transform: `translate(calc(10% - ${boxWidth * 0.5}px), -130%) scale(0.8)`,
+                        transform: `translate(calc(10% - ${boxWidth * 0.45}px), -220%) scale(0.8)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text": {
-                        transform: `translate(calc(10% - ${boxWidth * 0.42}px), -130%) scale(1.2)`,
+                        transform: `translate(calc(5% - ${boxWidth * 0.42}px), -30%) scale(1.2)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text_typo": {
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
                         fontWeight: 900,
-                        fontSize: 32,
+                        fontSize: 28,
                     },
                     "& .opacity_box": {
                         opacity: 1,
@@ -95,6 +95,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
             >
                 <Typography
                     className="text_typo"
+                    fontFamily={"Pretendard"}
                     sx={{
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
                         fontSize: keywordFont,
@@ -109,17 +110,17 @@ export default function KeywordBox(props: KeywordBoxProps) {
             <Box
                 className="opacity_box"
                 position={"absolute"}
-                bottom={30}
+                bottom={60}
                 left={30}
                 sx={{
                     transition: "opacity 0.5s ease-out",
                     opacity: 0,
                 }}
             >
-                <Typography fontSize={30} color={"#fff"}>
+                <Typography fontFamily={"Pretendard"} fontSize={18} color={"#fff"}>
                     {"키워드에 관한 내용"}
                 </Typography>
-                <Typography fontSize={30} color={"#fff"}>
+                <Typography fontFamily={"Pretendard"} fontSize={18} color={"#fff"}>
                     {"한줄 두줄~"}
                 </Typography>
             </Box>
