@@ -30,9 +30,24 @@ export default function HomeSection() {
 
     return (
         <Box position={"relative"} overflow={"hidden"} width={"100%"} height={"100%"} id="home">
-            <Suspense fallback={<Typography>{"Loading video..."}</Typography>}>
-                <VideoComponent fileName="main_video.mp4" />
-            </Suspense>
+            <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="none"
+                style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    zIndex: -1,
+                    outline: "none",
+                    border: "none",
+                }}
+            >
+                <source src="/video/main_video.mp4" type="video/mp4" />
+            </video>
             <Box
                 display={"flex"}
                 flexDirection={"column"}
