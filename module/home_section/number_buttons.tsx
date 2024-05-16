@@ -1,13 +1,10 @@
 import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { useState } from "react";
-import COLORS from "../../src/theme_custom_color/custom_color";
+import { useRootStores } from "../../rootStore/rootStore";
+import { observer } from "mobx-react";
 
-interface NumberButtonsProps {
-    onClick: (num: number) => void;
-    selectNum: number;
-}
+const NumberButtons = observer(() => {
+    const rootStore = useRootStores();
 
-export default function NumberButtons(props: NumberButtonsProps) {
     const theme = useTheme();
     const isLg = useMediaQuery(theme.breakpoints.up("lg"));
     const isMd = useMediaQuery(theme.breakpoints.down("md"));
@@ -16,15 +13,29 @@ export default function NumberButtons(props: NumberButtonsProps) {
     let selectFont = isLg ? 28 : isMd ? (isMobile ? 16 : 20) : 24;
     let disableFont = isLg ? 20 : isMd ? (isMobile ? 14 : 16) : 18;
 
+    const handleTitleChange = (num: number) => {
+        console.log(num);
+        rootStore.setEntering(false);
+        setTimeout(() => {
+            if (num === 2) {
+                rootStore.setHeaderColor("#123456");
+            } else {
+                rootStore.setHeaderColor("transparent");
+            }
+            rootStore.setHomeMainNum(num);
+            rootStore.setEntering(true);
+        }, 500);
+    };
+
     return (
         <Box display={"flex"} gap={"26px"} pt={17.75} px={3}>
             {[1, 2].map((number) => (
                 <Button
                     key={number}
-                    onClick={() => props.onClick(number)}
+                    onClick={() => handleTitleChange(number)}
                     sx={{
                         p: 0,
-                        fontWeight: props.selectNum === number ? "bold" : "normal",
+                        fontWeight: rootStore.homeMainNum === number ? "bold" : "normal",
                         minWidth: 36,
                         minHeight: 36,
                         textTransform: "none",
@@ -39,9 +50,9 @@ export default function NumberButtons(props: NumberButtonsProps) {
                 >
                     <Typography
                         fontFamily={"Pretendard"}
-                        color={props.selectNum === number ? "#fff" : "#A1A1A1"}
-                        fontWeight={props.selectNum === number ? 900 : 500}
-                        fontSize={props.selectNum === number ? selectFont : disableFont}
+                        color={rootStore.homeMainNum === number ? "#fff" : "#A1A1A1"}
+                        fontWeight={rootStore.homeMainNum === number ? 900 : 500}
+                        fontSize={rootStore.homeMainNum === number ? selectFont : disableFont}
                         sx={{
                             transition: "color 0.3s ease, font-size 0.3s ease", // 색상과 폰트 크기 변경에 애니메이션 적용
                         }}
@@ -52,4 +63,6 @@ export default function NumberButtons(props: NumberButtonsProps) {
             ))}
         </Box>
     );
-}
+});
+
+export default NumberButtons;

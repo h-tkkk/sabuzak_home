@@ -2,12 +2,13 @@ import { Box, Button, IconButton, Typography, useMediaQuery, useTheme } from "@m
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const portfolioItem = ["Complex Academy", "SsyongSsyong", "hamingway"];
 import ArrowIcon from "@assets/arrow.svg";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+
+const portfolioItem = ["/img/main_prot/complex.png", "/img/main_prot/ssong.png", "/img/hamingway.png"];
 
 export default function PortfolioSection() {
     const router = useRouter();
@@ -79,11 +80,13 @@ export default function PortfolioSection() {
                 }}
             >
                 {portfolioItem.map((item, idx) => (
-                    <Box key={`${portfolioItem}_${idx}`} sx={{ mx: "12px" }}>
-                        <Typography fontWeight={900} fontSize={keywordFont} color={"#fff"}>
-                            {item}
-                        </Typography>
-                    </Box>
+                    <Box
+                        width={"100%"}
+                        height={"100%"}
+                        key={`${portfolioItem}_${idx}`}
+                        borderRadius={9}
+                        sx={{ backgroundImage: `url(${item})`, backgroundSize: "cover" }}
+                    />
                 ))}
             </Carousel>
             <Box position={"absolute"} bottom={"-190%"} right={"17%"}>

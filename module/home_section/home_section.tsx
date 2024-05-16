@@ -1,35 +1,27 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React, { Suspense, useEffect, useState } from "react";
 import NumberButtons from "./number_buttons";
-import { list } from "@vercel/blob";
+import { useRootStores } from "../../rootStore/rootStore";
+import { observer, useObserver } from "mobx-react";
+import OneTitle from "./one_title";
+import TwoTitle from "./two_title";
 
-const OneTitle = React.lazy(() => import("./one_title"));
-const TwoTitle = React.lazy(() => import("./two_title"));
-
-export default function HomeSection() {
-    const [titleSelect, setTitleSelect] = useState<number>(1);
-    const [entering, setEntering] = useState(false);
+const HomeSection = observer(() => {
+    const rootStore = useRootStores();
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setEntering(true);
-        }, 500);
+            rootStore.setEntering(true);
+        });
 
         return () => clearTimeout(timeout);
-    }, [titleSelect]);
-
-    const handleTitleChange = (num: number) => {
-        setEntering(false);
-        setTimeout(() => {
-            setTitleSelect(num);
-        }, 500);
-    };
+    }, [rootStore.homeMainNum]);
 
     return (
-        <Box position={"relative"} overflow={"hidden"} width={"100%"} height={"100%"} id="home">
+        <Box position={"relative"} overflow={"hidden"} width={"100%"} height={"100%"} id="home" sx={{ backgroundColor: "rgba(0, 0, 0, 0.25)" }}>
             <video
                 autoPlay
                 muted
@@ -46,7 +38,7 @@ export default function HomeSection() {
                     border: "none",
                 }}
             >
-                <source src="/video/main_video.mp4" type="video/mp4" />
+                <source src="/video/sabuzak_main.mp4" type="video/mp4" />
             </video>
             <Box
                 display={"flex"}
@@ -58,17 +50,19 @@ export default function HomeSection() {
             >
                 <Box
                     sx={{
-                        opacity: entering ? 1 : 0,
+                        opacity: rootStore.entering ? 1 : 0,
                         transition: "opacity 0.5s ease-in-out",
                     }}
                 >
-                    {titleSelect == 1 ? <OneTitle /> : <TwoTitle />}
+                    {rootStore.homeMainNum == 1 ? <OneTitle /> : <TwoTitle />}
                 </Box>
-                <NumberButtons onClick={handleTitleChange} selectNum={titleSelect} />
+                <NumberButtons />
             </Box>
         </Box>
     );
-}
+});
+
+export default HomeSection;
 
 function VideoComponent({ fileName }) {
     const [videoUrl, setVideoUrl] = useState("");

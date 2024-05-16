@@ -7,6 +7,8 @@ import { theme } from "../src/theme";
 import MainLayout from "../composition/layout/main_layout";
 import { dark_theme } from "../src/dark_theme";
 import { GlobalStyles } from "@mui/material";
+import { Provider } from "mobx-react";
+import { RootStore } from "../rootStore/rootStore";
 
 export const ColorModeContext = createContext({
     toggleColorMode: () => {},
@@ -22,6 +24,7 @@ type MyAppProps = AppProps & {
     };
 };
 
+const rootStore = new RootStore();
 export default function MyApp(props: MyAppProps) {
     const { Component, pageProps } = props;
 
@@ -63,53 +66,55 @@ export default function MyApp(props: MyAppProps) {
 
     return (
         <ColorModeContext.Provider value={{ toggleColorMode, mode }}>
-            <ThemeProvider theme={colorCache}>
-                <CssBaseline />
-                <GlobalStyles
-                    styles={{
-                        "@keyframes bounce": {
-                            "0%, 100%": {
-                                transform: "translateY(0)", // 초기 위치
-                                animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)", // 가속도
+            <Provider rootStore={rootStore}>
+                <ThemeProvider theme={colorCache}>
+                    <CssBaseline />
+                    <GlobalStyles
+                        styles={{
+                            "@keyframes bounce": {
+                                "0%, 100%": {
+                                    transform: "translateY(0)", // 초기 위치
+                                    animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)", // 가속도
+                                },
+                                "50%": {
+                                    transform: "translateY(-20px)", // 최대 20px 위로 이동
+                                    animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)", // 감속도
+                                },
                             },
-                            "50%": {
-                                transform: "translateY(-20px)", // 최대 20px 위로 이동
-                                animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)", // 감속도
+                            "@keyframes fadeMoveUp": {
+                                from: {
+                                    opacity: 1,
+                                    transform: "translateY(0%)",
+                                },
+                                to: {
+                                    opacity: 0,
+                                    transform: "translateY(-100%)",
+                                },
                             },
-                        },
-                        "@keyframes fadeMoveUp": {
-                            from: {
-                                opacity: 1,
-                                transform: "translateY(0%)",
+                            "@keyframes fadeMoveDown": {
+                                from: {
+                                    opacity: 0,
+                                    transform: "translateY(100%)",
+                                },
+                                to: {
+                                    opacity: 1,
+                                    transform: "translateY(0%)",
+                                },
                             },
-                            to: {
-                                opacity: 0,
-                                transform: "translateY(-100%)",
+                            "@keyframes fadeInOut": {
+                                "0% 100%": { opacity: 1 },
+                                "50%": { opacity: 0.5 },
                             },
-                        },
-                        "@keyframes fadeMoveDown": {
-                            from: {
-                                opacity: 0,
-                                transform: "translateY(100%)",
+                            ".image-animation": {
+                                animation: "fadeInOut 3s ease-in-out",
                             },
-                            to: {
-                                opacity: 1,
-                                transform: "translateY(0%)",
-                            },
-                        },
-                        "@keyframes fadeInOut": {
-                            "0% 100%": { opacity: 1 },
-                            "50%": { opacity: 0.5 },
-                        },
-                        ".image-animation": {
-                            animation: "fadeInOut 3s ease-in-out",
-                        },
-                    }}
-                />
-                <MainLayout>
-                    <Component {...pageProps} />
-                </MainLayout>
-            </ThemeProvider>
+                        }}
+                    />
+                    <MainLayout>
+                        <Component {...pageProps} />
+                    </MainLayout>
+                </ThemeProvider>
+            </Provider>
         </ColorModeContext.Provider>
     );
 }

@@ -38,13 +38,12 @@ export default function OneTitle() {
         <Fragment>
             <Box display={"flex"} alignItems={"center"} gap={5}>
                 <Box>
-                    <Typography fontWeight={700} color={"#fff"} fontSize={mainTitleFont}>
+                    <Typography color={"#fff"} fontSize={mainTitleFont}>
                         {"사부작은 "}
                     </Typography>
                 </Box>
                 <Box>
                     <Typography
-                        fontWeight={900}
                         color={"#fff"}
                         fontSize={wordFont}
                         sx={{
@@ -55,7 +54,7 @@ export default function OneTitle() {
                     </Typography>
                 </Box>
                 <Box>
-                    <Typography fontWeight={700} color={"#fff"} fontSize={mainTitleFont}>
+                    <Typography color={"#fff"} fontSize={mainTitleFont}>
                         {" 만듭니다."}
                     </Typography>
                 </Box>

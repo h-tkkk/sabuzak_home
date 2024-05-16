@@ -51,7 +51,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                 "&:hover": {
                     backgroundColor: "#133F7F",
                     "& .icon": {
-                        transform: `translate(calc(-${boxWidth / 2}px + 50px), -220%) scale(0.8)`,
+                        transform: `translate(calc(-${boxWidth / 1.8}px + 50px), -220%) scale(0.8)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text": {

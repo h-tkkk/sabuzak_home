@@ -14,6 +14,14 @@ export default function ContactPage() {
         const body = encodeURIComponent("제휴에 관심이 있어 연락드립니다.\n자세한 내용을 논의하고 싶습니다.");
 
         window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
+        //         회사명 :
+        // 직책 / 직급 :
+        // 이름 :
+        // 연락처 :
+        // E-mail :
+
+        // 문의내용 :
     };
 
     return (

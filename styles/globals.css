@@ -57,6 +57,10 @@ video {
     overflow: visible !important;
 }
 
+.carousel .slider-wrapper {
+    padding-bottom: 16px;
+}
+
 .carousel .slider-wrapper.axis-horizontal .slider {
     align-items: center;
     min-height: 550px;
@@ -81,7 +85,7 @@ video {
 .slide.selected {
     margin-left: 24px !important;
     margin-right: 24px !important;
-    height: 52vh;
+    height: 58vh;
     background-color: #818181;
     transition: height 0.5s ease-in-out;
 }
