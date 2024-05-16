@@ -24,7 +24,8 @@ export default function Header() {
             justifyContent={"space-between"}
             width={"100%"}
             height={60}
-            px={42.5}
+            // px={42.5}
+            px={"18%"}
             position="fixed"
             bgcolor="rgba(255, 255, 255, 0.1)"
             boxShadow="0px 2px -1px rgba(0, 0, 0, 0.1)"

@@ -49,24 +49,22 @@ video {
     }
 }
 
+.carousel-root {
+    width: 100%;
+}
+
 .carousel.carousel-slider {
     overflow: visible !important;
 }
 
-.carousel .slide {
-    margin-right: 24px;
-    margin-left: 24px;
-}
-
 .carousel .slider-wrapper.axis-horizontal .slider {
     align-items: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
     min-height: 550px;
 }
 
 .slider {
-    gap: 24px;
+    margin-left: 24px;
+    padding-left: 24px;
 }
 
 .slide {
@@ -81,6 +79,8 @@ video {
 }
 
 .slide.selected {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
     height: 52vh;
     background-color: #818181;
     transition: height 0.5s ease-in-out;

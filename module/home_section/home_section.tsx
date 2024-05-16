@@ -48,7 +48,14 @@ export default function HomeSection() {
             >
                 <source src="/video/main_video.mp4" type="video/mp4" />
             </video>
-            <Box display={"flex"} flexDirection={"column"} position="absolute" bottom={isMobile ? "5%" : "8%"} left={isMobile ? 0 : "18%"} zIndex={2}>
+            <Box
+                display={"flex"}
+                flexDirection={"column"}
+                position="absolute"
+                bottom={isMobile ? "5%" : "8%"}
+                left={isMobile ? "5%" : "18%"}
+                zIndex={2}
+            >
                 <Box
                     sx={{
                         opacity: entering ? 1 : 0,

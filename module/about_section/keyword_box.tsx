@@ -16,8 +16,9 @@ export default function KeywordBox(props: KeywordBoxProps) {
     const isMd = useMediaQuery(theme.breakpoints.down("md"));
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    let iconSize = isLg ? 60 : isMd ? (isMobile ? 60 : 80) : 100;
-    let keywordFont = isLg ? 22 : isMd ? (isMobile ? 16 : 18) : 20;
+    let iconSize = isLg ? 60 : isMd ? (isMobile ? 24 : 34) : 40;
+    let keywordFont = isLg ? 22 : isMd ? (isMobile ? 14 : 12) : 16;
+    let boxSize = isLg ? 400 : isMd ? (isMobile ? 300 : 350) : 300;
 
     useEffect(() => {
         function handleResize() {
@@ -37,8 +38,8 @@ export default function KeywordBox(props: KeywordBoxProps) {
     return (
         <Box
             ref={boxRef}
-            width={400}
-            height={400}
+            width={boxSize}
+            height={boxSize}
             borderRadius={5}
             sx={{
                 // backgroundImage: `url(${props.imgUrl})`,
@@ -50,11 +51,11 @@ export default function KeywordBox(props: KeywordBoxProps) {
                 "&:hover": {
                     backgroundColor: "#133F7F",
                     "& .icon": {
-                        transform: `translate(calc(10% - ${boxWidth * 0.4}px), -220%) scale(0.8)`,
+                        transform: `translate(calc(-${boxWidth / 2}px + 50px), -220%) scale(0.8)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text": {
-                        transform: `translate(calc(5% - ${boxWidth * 0.39}px), 100%)`,
+                        transform: `translate(calc(-${boxWidth / 2}px + 50px), -50%)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text_typo": {
