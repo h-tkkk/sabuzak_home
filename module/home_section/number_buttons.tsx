@@ -17,12 +17,13 @@ export default function NumberButtons(props: NumberButtonsProps) {
     let disableFont = isLg ? 20 : isMd ? (isMobile ? 14 : 16) : 18;
 
     return (
-        <Box display={"flex"} gap={2}>
+        <Box display={"flex"} gap={"26px"} pt={17.75} px={3}>
             {[1, 2].map((number) => (
                 <Button
                     key={number}
                     onClick={() => props.onClick(number)}
                     sx={{
+                        p: 0,
                         fontWeight: props.selectNum === number ? "bold" : "normal",
                         minWidth: 36,
                         minHeight: 36,
@@ -37,7 +38,8 @@ export default function NumberButtons(props: NumberButtonsProps) {
                     }}
                 >
                     <Typography
-                        color={props.selectNum === number ? "#fff" : COLORS.grayScale[50]}
+                        fontFamily={"Pretendard"}
+                        color={props.selectNum === number ? "#fff" : "#A1A1A1"}
                         fontWeight={props.selectNum === number ? 900 : 500}
                         fontSize={props.selectNum === number ? selectFont : disableFont}
                         sx={{

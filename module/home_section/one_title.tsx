@@ -60,7 +60,7 @@ export default function OneTitle() {
                     </Typography>
                 </Box>
             </Box>
-            <Box pt={3}>
+            <Box pt={4.5}>
                 {subTitle.map((sub, idx) => {
                     return (
                         <Box key={`sub_${idx}`}>

@@ -10,16 +10,16 @@ export default function TwoTitle() {
     let subTitleFont = isLg ? 16 : isMd ? (isMobile ? 12 : 14) : 18;
 
     return (
-        <Box display={"flex"} flexDirection={"column"} gap={3}>
+        <Box display={"flex"} flexDirection={"column"}>
             <Box>
-                <Typography fontWeight={900} color={"#fff"} fontSize={mainTitleFont}>
+                <Typography color={"#fff"} fontSize={mainTitleFont}>
                     {"다양한 캐릭터가 만들어내는"}
                 </Typography>
-                <Typography fontWeight={900} color={"#fff"} fontSize={mainTitleFont}>
+                <Typography color={"#fff"} fontSize={mainTitleFont}>
                     {"색다른 이야기들이 기다립니다."}
                 </Typography>
             </Box>
-            <Box>
+            <Box pt={4.5}>
                 <Typography fontFamily={"Pretendard"} fontWeight={400} color={"#fff"} fontSize={subTitleFont}>
                     {"때로는 마법을 배우기도 하고"}
                 </Typography>

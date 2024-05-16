@@ -1,4 +1,4 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Divider, Typography, useMediaQuery, useTheme } from "@mui/material";
 import VectorIcon from "@assets/mdi_vector-line.svg";
 import { useEffect, useRef, useState } from "react";
 
@@ -17,7 +17,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     let iconSize = isLg ? 60 : isMd ? (isMobile ? 60 : 80) : 100;
-    let keywordFont = isLg ? 23 : isMd ? (isMobile ? 16 : 18) : 20;
+    let keywordFont = isLg ? 22 : isMd ? (isMobile ? 16 : 18) : 20;
 
     useEffect(() => {
         function handleResize() {
@@ -39,7 +39,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
             ref={boxRef}
             width={400}
             height={400}
-            borderRadius={4}
+            borderRadius={5}
             sx={{
                 // backgroundImage: `url(${props.imgUrl})`,
                 backgroundSize: "cover",
@@ -50,17 +50,17 @@ export default function KeywordBox(props: KeywordBoxProps) {
                 "&:hover": {
                     backgroundColor: "#133F7F",
                     "& .icon": {
-                        transform: `translate(calc(10% - ${boxWidth * 0.45}px), -220%) scale(0.8)`,
+                        transform: `translate(calc(10% - ${boxWidth * 0.4}px), -220%) scale(0.8)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text": {
-                        transform: `translate(calc(5% - ${boxWidth * 0.42}px), -30%)`,
+                        transform: `translate(calc(5% - ${boxWidth * 0.39}px), 100%)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text_typo": {
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
                         fontWeight: 900,
-                        fontSize: 28,
+                        fontSize: 22,
                     },
                     "& .opacity_box": {
                         opacity: 1,
@@ -109,16 +109,16 @@ export default function KeywordBox(props: KeywordBoxProps) {
                 className="opacity_box"
                 position={"absolute"}
                 bottom={60}
-                left={30}
+                left={50}
                 sx={{
                     transition: "opacity 0.5s ease-out",
                     opacity: 0,
                 }}
             >
-                <Typography fontFamily={"Pretendard"} fontSize={18} color={"#fff"}>
+                <Typography fontFamily={"Pretendard"} fontSize={16} color={"#fff"}>
                     {"키워드에 관한 내용"}
                 </Typography>
-                <Typography fontFamily={"Pretendard"} fontSize={18} color={"#fff"}>
+                <Typography fontFamily={"Pretendard"} fontSize={16} color={"#fff"}>
                     {"한줄 두줄~"}
                 </Typography>
             </Box>

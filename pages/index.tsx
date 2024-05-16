@@ -58,6 +58,7 @@ export default function Home() {
                 timeout={transitionDuration}
                 style={{
                     transitionDelay: `${showFloatingButton ? transitionDuration.exit : 0}ms`,
+                    backgroundColor: "#133F7F",
                 }}
                 unmountOnExit
             >
