@@ -17,7 +17,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     let iconSize = isLg ? 60 : isMd ? (isMobile ? 60 : 80) : 100;
-    let keywordFont = isLg ? 24 : isMd ? (isMobile ? 16 : 18) : 20;
+    let keywordFont = isLg ? 23 : isMd ? (isMobile ? 16 : 18) : 20;
 
     useEffect(() => {
         function handleResize() {
@@ -37,8 +37,8 @@ export default function KeywordBox(props: KeywordBoxProps) {
     return (
         <Box
             ref={boxRef}
-            width={"100%"}
-            height={"50%"}
+            width={400}
+            height={400}
             borderRadius={4}
             sx={{
                 // backgroundImage: `url(${props.imgUrl})`,
@@ -46,7 +46,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                 backgroundColor: "#000",
                 position: "relative",
                 transition: "background-color 1s ease",
-                boxShadow: "5px 5px 10px 5px rgba(0, 0, 0, 0.25)",
+                boxShadow: "0px 10px 30px 0px rgba(0, 0, 0, 0.25)",
                 "&:hover": {
                     backgroundColor: "#133F7F",
                     "& .icon": {
@@ -54,7 +54,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text": {
-                        transform: `translate(calc(5% - ${boxWidth * 0.42}px), -30%) scale(1.2)`,
+                        transform: `translate(calc(5% - ${boxWidth * 0.42}px), -30%)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text_typo": {
@@ -95,11 +95,9 @@ export default function KeywordBox(props: KeywordBoxProps) {
             >
                 <Typography
                     className="text_typo"
-                    fontFamily={"Pretendard"}
                     sx={{
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
                         fontSize: keywordFont,
-                        fontWeight: 700,
                         textAlign: "left",
                         color: "#fff",
                     }}

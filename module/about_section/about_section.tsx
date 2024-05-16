@@ -1,6 +1,6 @@
 import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import KeywordBox from "./keyword_box";
-import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
+import ArrowIcon from "@assets/arrow.svg";
 import { useRouter } from "next/router";
 
 const aboutList = [
@@ -57,19 +57,30 @@ export default function AboutSection() {
                 },
             }}
         >
-            <Box width={"100%"} height={"100%"} display={"flex"} flexDirection={isMobile ? "column" : "row"} alignItems={"center"} gap={3} px={"10%"}>
+            <Box
+                width={"100%"}
+                height={"100%"}
+                display={"flex"}
+                justifyContent={"center"}
+                flexDirection={isMobile ? "column" : "row"}
+                alignItems={"center"}
+                gap={3}
+                px={"10%"}
+            >
                 {aboutList.map((about, idx) => {
                     return <KeywordBox key={`keyword_${idx}`} imgUrl={about.imgUrl} keyword={about.keyword} />;
                 })}
             </Box>
-            <Box position={"absolute"} bottom={"10%"} right={"10%"}>
+            <Box position={"absolute"} bottom={"10%"} right={"17%"}>
                 <Button
                     onClick={() => router.push("/about")}
-                    endIcon={<TrendingFlatIcon sx={{ color: "#fff" }} />}
+                    endIcon={<ArrowIcon sx={{ color: "#fff" }} />}
                     sx={{
-                        px: 2,
+                        px: "13px",
+                        py: "9px",
                         background: "#000",
                         borderRadius: 4,
+                        textTransform: "none",
                         "&:hover": {
                             background: "#000",
                         },

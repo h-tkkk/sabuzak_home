@@ -23,8 +23,8 @@ export default function Header() {
             display={"flex"}
             justifyContent={"space-between"}
             width={"100%"}
-            height={64}
-            px={"10%"}
+            height={60}
+            px={42.5}
             position="fixed"
             bgcolor="rgba(255, 255, 255, 0.1)"
             boxShadow="0px 2px -1px rgba(0, 0, 0, 0.1)"
@@ -47,7 +47,6 @@ export default function Header() {
                                 <TextButton text="Portfolio" />
                                 <TextButton text="Contact" />
                             </Box>
-                            <Switch onClick={toggleColorMode} />
                         </Fragment>
                     ) : (
                         <IconButton onClick={handleDrawerToggle}>

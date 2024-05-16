@@ -1,12 +1,16 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, Button, IconButton, Typography } from "@mui/material";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const portfolioItem = ["Complex Academy", "SsyongSsyong", "hamingway"];
+import ArrowIcon from "@assets/arrow.svg";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useRouter } from "next/router";
 
 export default function PortfolioSection() {
+    const router = useRouter();
+
     return (
         <Box display={"flex"} flexDirection={"column"} alignItems={"center"} width={"100%"} height={"100%"} id={"portfolio"} pt={8}>
             <Carousel
@@ -22,14 +26,22 @@ export default function PortfolioSection() {
                 infiniteLoop={true}
                 renderArrowPrev={(clickHandler, hasPrev) => {
                     return (
-                        <IconButton onClick={clickHandler} sx={{ border: "1px solid" }} style={{ position: "absolute", left: "45%", top: "110%" }}>
+                        <IconButton
+                            onClick={clickHandler}
+                            sx={{ border: "1px solid", color: "#000" }}
+                            style={{ position: "absolute", left: "45%", top: "110%" }}
+                        >
                             <KeyboardArrowLeftIcon />
                         </IconButton>
                     );
                 }}
                 renderArrowNext={(clickHandler, hasNext) => {
                     return (
-                        <IconButton onClick={clickHandler} sx={{ border: "1px solid" }} style={{ position: "absolute", right: "45%", top: "110%" }}>
+                        <IconButton
+                            onClick={clickHandler}
+                            sx={{ border: "1px solid", color: "#000" }}
+                            style={{ position: "absolute", right: "45%", top: "110%" }}
+                        >
                             <KeyboardArrowRightIcon />
                         </IconButton>
                     );
@@ -43,6 +55,26 @@ export default function PortfolioSection() {
                     </Box>
                 ))}
             </Carousel>
+            <Box position={"absolute"} bottom={"-190%"} right={"17%"}>
+                <Button
+                    onClick={() => router.push("/portfolio")}
+                    endIcon={<ArrowIcon sx={{ color: "#fff" }} />}
+                    sx={{
+                        px: "13px",
+                        py: "9px",
+                        background: "#000",
+                        borderRadius: 4,
+                        textTransform: "none",
+                        "&:hover": {
+                            background: "#000",
+                        },
+                    }}
+                >
+                    <Typography fontFamily={"Pretendard"} fontSize={13.44} fontWeight={500} color={"#fff"}>
+                        {"View More"}
+                    </Typography>
+                </Button>
+            </Box>
         </Box>
     );
 }

@@ -53,7 +53,7 @@ export default function HomeSection() {
                 flexDirection={"column"}
                 position="absolute"
                 bottom={isMobile ? "5%" : 160}
-                left={isMobile ? 0 : "10%"}
+                left={isMobile ? 0 : "18%"}
                 p={2}
                 zIndex={2}
                 gap={1}
