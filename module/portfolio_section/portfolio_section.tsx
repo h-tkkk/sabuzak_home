@@ -8,14 +8,14 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-const portfolioItem = ["/img/main_prot/complex.png", "/img/main_prot/ssong.png", "/img/hamingway.png"];
+const portfolioItem = ["/img/main_prot/complex.png", "/img/main_prot/ssong.png", "/img/main_prot/haming.png"];
 
 export default function PortfolioSection() {
     const router = useRouter();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-    const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
-    const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+    // const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+    // const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
     const [selectedItem, setSelectedItem] = useState(0);
 
@@ -38,7 +38,7 @@ export default function PortfolioSection() {
                 showArrows={true}
                 centerMode={true}
                 centerSlidePercentage={50}
-                showThumbs={true}
+                showThumbs={false}
                 showStatus={false}
                 showIndicators={false}
                 autoFocus={true}
@@ -71,7 +71,6 @@ export default function PortfolioSection() {
             >
                 {portfolioItem.map((item, idx) => (
                     <Box
-                        className="carousel-slide"
                         key={`${portfolioItem}_${idx}`}
                         borderRadius={9}
                         sx={{
@@ -85,7 +84,6 @@ export default function PortfolioSection() {
                         onClick={() => handleItemClick(idx)}
                     >
                         <Box
-                            className="overlay"
                             sx={{
                                 position: "absolute",
                                 top: 0,
@@ -94,7 +92,7 @@ export default function PortfolioSection() {
                                 bottom: 0,
                                 backgroundColor: selectedItem === idx ? "transparent" : "rgba(0, 0, 0, 0.5)",
                                 borderRadius: "inherit",
-                                transition: "background-color 0.5s ease",
+                                transition: "background-color 0.5s ease, transform 0.5s ease",
                             }}
                         />
                     </Box>
