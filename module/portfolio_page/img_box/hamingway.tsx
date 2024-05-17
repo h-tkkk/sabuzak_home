@@ -24,7 +24,7 @@ export default function Hamingway() {
                 <Box display={"flex"} height={"100%"} alignItems={"flex-end"} pl={8}>
                     <img src={"/img/character_way.png"} alt={`image`} style={{ width: "100%", paddingBottom: "27px" }} />
                 </Box>
-                <Box display={"flex"} width={"auto"} flexDirection={"column"} gap={2}>
+                <Box display={"flex"} width={"auto"} flexDirection={"column"} gap={2} mt={3.75}>
                     <Box>
                         <Typography fontSize={32}>{"햄밍웨이"}</Typography>
                     </Box>
@@ -38,9 +38,9 @@ export default function Hamingway() {
                             {"멋진 선장이 되고픈 햄밍웨이와\n햄스터 마을 친구들의 아기자기한 일상"}
                         </Typography>
                     </Box>
-                    <Box display={"flex"} justifyContent={"flex-end"} width={"100%"}>
-                        <Button startIcon={<LinkTree />} onClick={handleButtonClick}>
-                            <Typography fontFamily={"Pretendard"} fontSize={9.6} fontWeight={500} color={"#000"}>
+                    <Box display={"flex"} justifyContent={"flex-end"} width={"100%"} mt={3}>
+                        <Button startIcon={<LinkTree />} onClick={handleButtonClick} sx={{ textTransform: "none" }}>
+                            <Typography fontFamily={"Pretendard"} fontSize={12} fontWeight={500} color={"#000"}>
                                 {"Linktree"}
                             </Typography>
                         </Button>

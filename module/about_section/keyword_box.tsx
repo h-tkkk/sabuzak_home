@@ -19,8 +19,8 @@ export default function KeywordBox(props: KeywordBoxProps) {
     const isMd = useMediaQuery(theme.breakpoints.down("md"));
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    let iconSize = isLg ? 60 : isMd ? (isMobile ? 24 : 34) : 40;
-    let keywordFont = isLg ? 22 : isMd ? (isMobile ? 14 : 12) : 16;
+    let iconSize = isLg ? 72 : isMd ? (isMobile ? 24 : 34) : 40;
+    let keywordFont = isLg ? 32 : isMd ? (isMobile ? 14 : 12) : 16;
     let boxSize = isLg ? 400 : isMd ? (isMobile ? 300 : 350) : 300;
 
     useEffect(() => {
@@ -61,17 +61,17 @@ export default function KeywordBox(props: KeywordBoxProps) {
                 "&:hover": {
                     backgroundColor: "#133F7F",
                     "& .icon": {
-                        transform: `translate(calc(-${boxWidth / 1.9}px + 50px), -220%) scale(0.8)`,
+                        transform: `translate(calc(-${boxWidth / 1.9}px + 50px), -210%) scale(0.8)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text": {
-                        transform: `translate(calc(-${boxWidth / 2}px + 50px), 140%)`,
+                        transform: `translate(calc(-${boxWidth / 2}px + 50px), 120%)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text_typo": {
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
                         fontWeight: 900,
-                        fontSize: 22,
+                        fontSize: 26,
                     },
                     "& .opacity_box": {
                         opacity: 1,
@@ -85,7 +85,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
             <Box
                 className="icon"
                 position={"absolute"}
-                top={"40%"}
+                top={"45%"}
                 left={"50%"}
                 sx={{
                     transform: "translate(-50%, -50%)",
@@ -99,7 +99,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
             <Box
                 className="text"
                 position={"absolute"}
-                top={"60%"}
+                top={"61.5%"}
                 left={"50%"}
                 sx={{
                     transform: "translate(-50%, -50%)",
@@ -128,7 +128,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     opacity: 0,
                 }}
             >
-                <Typography fontFamily={"Pretendard"} fontSize={16} color={"#fff"}>
+                <Typography fontFamily={"Pretendard"} fontSize={18} color={"#fff"}>
                     {props.sub_keyword}
                 </Typography>
             </Box>
