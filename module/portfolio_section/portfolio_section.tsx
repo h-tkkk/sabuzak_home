@@ -17,23 +17,11 @@ export default function PortfolioSection() {
     const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
     const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
-    const [slideHeight, setSlideHeight] = useState("36.3vh");
-    const [slideMinHeight, setSliderMinHeight] = useState(50);
+    const [selectedItem, setSelectedItem] = useState(0);
 
-    let keywordFont = isDesktop ? 22 : isTablet ? (isMobile ? 14 : 12) : 16;
-
-    useEffect(() => {
-        if (isMobile) {
-            setSliderMinHeight(20);
-            setSlideHeight("30vh");
-        } else if (isTablet) {
-            setSliderMinHeight(30);
-            setSlideHeight("40vh");
-        } else if (isDesktop) {
-            setSliderMinHeight(40);
-            setSlideHeight("36.3vh");
-        }
-    }, [isMobile, isTablet, isDesktop]);
+    const handleItemClick = (index) => {
+        setSelectedItem(index);
+    };
 
     return (
         <Box
@@ -50,18 +38,20 @@ export default function PortfolioSection() {
                 showArrows={true}
                 centerMode={true}
                 centerSlidePercentage={50}
-                showThumbs={false}
+                showThumbs={true}
                 showStatus={false}
                 showIndicators={false}
                 autoFocus={true}
                 autoPlay={false}
                 infiniteLoop={true}
+                selectedItem={selectedItem}
+                onChange={(index) => setSelectedItem(index)}
                 renderArrowPrev={(clickHandler, hasPrev) => {
                     return (
                         <IconButton
                             onClick={clickHandler}
                             sx={{ border: "1px solid", color: "#000", transform: "translate(-50%, -50%)" }}
-                            style={{ position: "absolute", left: isMobile ? "10%" : "45%", top: "110%" }}
+                            style={{ position: "absolute", left: isMobile ? "10%" : "47%", top: "110%" }}
                         >
                             <KeyboardArrowLeftIcon />
                         </IconButton>
@@ -72,7 +62,7 @@ export default function PortfolioSection() {
                         <IconButton
                             onClick={clickHandler}
                             sx={{ border: "1px solid", color: "#000", transform: "translate(-50%, -50%)" }}
-                            style={{ position: "absolute", right: isMobile ? "10%" : "45%", top: "110%" }}
+                            style={{ position: "absolute", right: isMobile ? "10%" : "43%", top: "110%" }}
                         >
                             <KeyboardArrowRightIcon />
                         </IconButton>
@@ -81,12 +71,33 @@ export default function PortfolioSection() {
             >
                 {portfolioItem.map((item, idx) => (
                     <Box
-                        width={"100%"}
-                        height={"100%"}
+                        className="carousel-slide"
                         key={`${portfolioItem}_${idx}`}
                         borderRadius={9}
-                        sx={{ backgroundImage: `url(${item})`, backgroundSize: "cover" }}
-                    />
+                        sx={{
+                            width: "100%",
+                            height: "100%",
+                            backgroundImage: `url(${item})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            position: "relative",
+                        }}
+                        onClick={() => handleItemClick(idx)}
+                    >
+                        <Box
+                            className="overlay"
+                            sx={{
+                                position: "absolute",
+                                top: 0,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                                backgroundColor: selectedItem === idx ? "transparent" : "rgba(0, 0, 0, 0.5)",
+                                borderRadius: "inherit",
+                                transition: "background-color 0.5s ease",
+                            }}
+                        />
+                    </Box>
                 ))}
             </Carousel>
             <Box position={"absolute"} bottom={"-190%"} right={"17%"}>

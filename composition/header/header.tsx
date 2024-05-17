@@ -28,7 +28,7 @@ const Header = observer(() => {
                 const rect = homeElement.getBoundingClientRect();
                 const isHalfScrolled = rect.top <= -rect.height;
 
-                isHalfScrolled ? rootStore.setHeaderColor("#fff") : rootStore.setHeaderColor(rootStore.homeMainNum == 1 ? "transparent" : "#123456");
+                isHalfScrolled ? rootStore.setHeaderColor("#fff") : rootStore.setHeaderColor("transparent");
                 isHalfScrolled ? rootStore.setMainScrollStatus(true) : rootStore.setMainScrollStatus(false);
             }
         };

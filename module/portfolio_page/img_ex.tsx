@@ -56,19 +56,20 @@ export default function ImgEx() {
             <Hamingway />
             <SsyongMargazine />
 
-            <Box display={"flex"} flexDirection={"column"} alignItems={"center"} py={6.25}>
-                <Gallery
-                    enableImageSelection={false}
-                    images={allImages.map((img, index) => ({
-                        ...img,
-                        customOverlay: <Box>{/* <Typography>h2</Typography> */}</Box>,
-                    }))}
-                    defaultContainerWidth={400}
-                    rowHeight={400}
-                />
-                <Gallery enableImageSelection={false} images={secondRowImages} rowHeight={240} defaultContainerWidth={240} />
-            </Box>
             <Footer />
         </Box>
     );
 }
+
+// <Box display={"flex"} flexDirection={"column"} alignItems={"center"} py={6.25}>
+//     <Gallery
+//         enableImageSelection={false}
+//         images={allImages.map((img, index) => ({
+//             ...img,
+//             customOverlay: <Box>{/* <Typography>h2</Typography> */}</Box>,
+//         }))}
+//         defaultContainerWidth={400}
+//         rowHeight={400}
+//     />
+//     <Gallery enableImageSelection={false} images={secondRowImages} rowHeight={240} defaultContainerWidth={240} />
+// </Box>

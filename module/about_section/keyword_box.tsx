@@ -1,15 +1,18 @@
 import { Box, Divider, Typography, useMediaQuery, useTheme } from "@mui/material";
 import VectorIcon from "@assets/mdi_vector-line.svg";
-import { useEffect, useRef, useState } from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
 
 interface KeywordBoxProps {
-    imgUrl: string;
     keyword: string;
+    hover_keyword: string;
+    sub_keyword: string;
+    icon: ReactElement;
 }
 
 export default function KeywordBox(props: KeywordBoxProps) {
     const boxRef = useRef(null);
     const [boxWidth, setBoxWidth] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
 
     const theme = useTheme();
     const isLg = useMediaQuery(theme.breakpoints.up("lg"));
@@ -35,6 +38,14 @@ export default function KeywordBox(props: KeywordBoxProps) {
         };
     }, []);
 
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
     return (
         <Box
             ref={boxRef}
@@ -42,20 +53,19 @@ export default function KeywordBox(props: KeywordBoxProps) {
             height={boxSize}
             borderRadius={5}
             sx={{
-                // backgroundImage: `url(${props.imgUrl})`,
                 backgroundSize: "cover",
-                backgroundColor: "#000",
+                backgroundColor: "#86B6FB",
                 position: "relative",
                 transition: "background-color 1s ease",
                 boxShadow: "0px 10px 30px 0px rgba(0, 0, 0, 0.25)",
                 "&:hover": {
                     backgroundColor: "#133F7F",
                     "& .icon": {
-                        transform: `translate(calc(-${boxWidth / 1.8}px + 50px), -220%) scale(0.8)`,
+                        transform: `translate(calc(-${boxWidth / 1.9}px + 50px), -220%) scale(0.8)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text": {
-                        transform: `translate(calc(-${boxWidth / 2}px + 50px), -50%)`,
+                        transform: `translate(calc(-${boxWidth / 2}px + 50px), 140%)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text_typo": {
@@ -69,6 +79,8 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     },
                 },
             }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
             <Box
                 className="icon"
@@ -82,7 +94,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     transition: "transform 0.5s ease-out",
                 }}
             >
-                <VectorIcon fill={"#fff"} sx={{ width: 1, height: 1 }} />
+                {props.icon}
             </Box>
             <Box
                 className="text"
@@ -103,7 +115,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                         color: "#fff",
                     }}
                 >
-                    {props.keyword}
+                    {isHovered ? props.hover_keyword : props.keyword}
                 </Typography>
             </Box>
             <Box
@@ -117,10 +129,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                 }}
             >
                 <Typography fontFamily={"Pretendard"} fontSize={16} color={"#fff"}>
-                    {"키워드에 관한 내용"}
-                </Typography>
-                <Typography fontFamily={"Pretendard"} fontSize={16} color={"#fff"}>
-                    {"한줄 두줄~"}
+                    {props.sub_keyword}
                 </Typography>
             </Box>
         </Box>

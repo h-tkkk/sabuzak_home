@@ -18,7 +18,6 @@ const NumberButtons = observer(() => {
         rootStore.setEntering(false);
         setTimeout(() => {
             if (num === 2) {
-                rootStore.setHeaderColor("#123456");
             } else {
                 rootStore.setHeaderColor("transparent");
             }

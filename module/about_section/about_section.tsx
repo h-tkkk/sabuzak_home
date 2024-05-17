@@ -2,19 +2,28 @@ import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material"
 import KeywordBox from "./keyword_box";
 import ArrowIcon from "@assets/arrow.svg";
 import { useRouter } from "next/router";
+import AboutZ from "@assets/about_z.svg";
+import AboutB from "@assets/about_b.svg";
+import AboutS from "@assets/about_s.svg";
 
 const aboutList = [
     {
-        imgUrl: "/img/ssyong_ssyong_magazine.jpg",
-        keyword: "컴플렉스 아카데미",
+        keyword: "S",
+        hover_keyword: "Serendipity",
+        sub_keyword: "주변의 일상",
+        icon: <AboutS />,
     },
     {
-        imgUrl: "/img/ssyong_ssyong_magazine.jpg",
-        keyword: "숑숑 매거진",
+        keyword: "B",
+        hover_keyword: "Beloved",
+        sub_keyword: "사랑받는",
+        icon: <AboutB />,
     },
     {
-        imgUrl: "/img/ssyong_ssyong_magazine.jpg",
-        keyword: "햄밍웨이",
+        keyword: "Z",
+        hover_keyword: "Zest",
+        sub_keyword: "레몬제스트처럼",
+        icon: <AboutZ />,
     },
 ];
 
@@ -68,7 +77,15 @@ export default function AboutSection() {
                 px={"10%"}
             >
                 {aboutList.map((about, idx) => {
-                    return <KeywordBox key={`keyword_${idx}`} imgUrl={about.imgUrl} keyword={about.keyword} />;
+                    return (
+                        <KeywordBox
+                            key={`keyword_${idx}`}
+                            icon={about.icon}
+                            keyword={about.keyword}
+                            hover_keyword={about.hover_keyword}
+                            sub_keyword={about.sub_keyword}
+                        />
+                    );
                 })}
             </Box>
             <Box position={"absolute"} bottom={"10%"} right={"17%"}>

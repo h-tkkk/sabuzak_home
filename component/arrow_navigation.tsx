@@ -52,7 +52,7 @@ export default function ArrowNavigation() {
         <Box
             position={"fixed"}
             bottom={0}
-            left={"49%"}
+            left={"50%"}
             sx={{
                 transform: "translate(-50%, -50%)",
                 animation: "bounce 2s infinite",
