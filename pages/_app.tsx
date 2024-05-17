@@ -30,7 +30,7 @@ export default function MyApp(props: MyAppProps) {
 
     const [initialRender, setInitialRender] = useState(true);
     // Color mode
-    const [mode, setMode] = useState<"dark" | "light">("dark");
+    const [mode, setMode] = useState<"dark" | "light">("light");
 
     useEffect(() => {
         const storedMode = localStorage.getItem("colorMode") as "dark" | "light";
