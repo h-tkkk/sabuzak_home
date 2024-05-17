@@ -1,7 +1,8 @@
 import { Box, Button, Divider, Typography } from "@mui/material";
 import Header from "../composition/header/header";
 import Footer from "../composition/footer/footer";
-import { CustomOverlayMap, Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk";
+import { CustomOverlayMap, Map, MapMarker, MapTypeId, useKakaoLoader } from "react-kakao-maps-sdk";
+import { useEffect, useState } from "react";
 
 export default function ContactPage() {
     const [loading, error] = useKakaoLoader({
@@ -22,14 +23,6 @@ export default function ContactPage() {
         );
 
         window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-
-        //         회사명 :
-        // 직책 / 직급 :
-        // 이름 :
-        // 연락처 :
-        // E-mail :
-
-        // 문의내용 :
     };
 
     return (
@@ -37,17 +30,33 @@ export default function ContactPage() {
             <Header />
 
             <Box height={"100%"} pt={8}>
-                <Map
-                    center={{ lat: 37.5138, lng: 127.023012 }}
-                    style={{ width: "100%", height: "466px" }}
-                    level={2}
-                    draggable={false}
-                    zoomable={false}
-                >
-                    <CustomOverlayMap position={{ lat: 37.5138, lng: 127.023012 }}>
-                        <Typography fontFamily={"Pretendard"} fontWeight={700}>
-                            SABUZAK STUDIO
-                        </Typography>
+                <Map center={{ lat: 37.5138312153826, lng: 127.02302635432 }} style={{ width: "100%", height: "466px" }} level={2}>
+                    <CustomOverlayMap position={{ lat: 37.5138312153826, lng: 127.02302635432 }}>
+                        <MapMarker // 마커를 생성합니다
+                            position={{
+                                // 마커가 표시될 위치입니다
+                                lat: 37.5138312153826,
+                                lng: 127.02302635432,
+                            }}
+                            image={{
+                                src: "/img/kakao_marker.png", // 마커이미지의 주소입니다
+                                size: {
+                                    width: 64,
+                                    height: 69,
+                                }, // 마커이미지의 크기입니다
+                                options: {
+                                    offset: {
+                                        x: 27,
+                                        y: 79,
+                                    }, // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+                                },
+                            }}
+                        />
+                        <Box bgcolor={"#fff"}>
+                            <Typography fontFamily={"Pretendard"} fontWeight={700}>
+                                SABUZAK STUDIO
+                            </Typography>
+                        </Box>
                     </CustomOverlayMap>
                 </Map>
 
