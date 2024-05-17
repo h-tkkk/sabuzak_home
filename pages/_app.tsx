@@ -9,6 +9,7 @@ import { dark_theme } from "../src/dark_theme";
 import { GlobalStyles } from "@mui/material";
 import { Provider } from "mobx-react";
 import { RootStore } from "../rootStore/rootStore";
+import Head from "next/head";
 
 export const ColorModeContext = createContext({
     toggleColorMode: () => {},
@@ -30,7 +31,7 @@ export default function MyApp(props: MyAppProps) {
 
     const [initialRender, setInitialRender] = useState(true);
     // Color mode
-    const [mode, setMode] = useState<"dark" | "light">("dark");
+    const [mode, setMode] = useState<"dark" | "light">("light");
 
     useEffect(() => {
         const storedMode = localStorage.getItem("colorMode") as "dark" | "light";
@@ -110,6 +111,23 @@ export default function MyApp(props: MyAppProps) {
                             },
                         }}
                     />
+                    <Head>
+                        <title>Sabuzak Studio</title>
+                        <meta name="description" content="A short description of your website." />
+
+                        {/* Open Graph meta tags */}
+                        <meta property="og:title" content="Your Website Title" />
+                        <meta property="og:description" content="A short description of your website." />
+                        <meta property="og:image" content="https://www.sbzsbz.com/path/to/your/image.jpg" />
+                        <meta property="og:url" content="https://www.sbzsbz.com" />
+                        <meta property="og:type" content="website" />
+
+                        {/* Twitter Card meta tags */}
+                        <meta name="twitter:card" content="summary_large_image" />
+                        <meta name="twitter:title" content="Your Website Title" />
+                        <meta name="twitter:description" content="A short description of your website." />
+                        <meta name="twitter:image" content="https://www.sbzsbz.com/path/to/your/image.jpg" />
+                    </Head>
                     <MainLayout>
                         <Component {...pageProps} />
                     </MainLayout>

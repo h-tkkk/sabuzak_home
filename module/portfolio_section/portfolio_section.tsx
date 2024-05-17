@@ -42,7 +42,7 @@ export default function PortfolioSection() {
                 showStatus={false}
                 showIndicators={false}
                 autoFocus={true}
-                autoPlay={false}
+                autoPlay={true}
                 infiniteLoop={true}
                 selectedItem={selectedItem}
                 onChange={(index) => setSelectedItem(index)}
