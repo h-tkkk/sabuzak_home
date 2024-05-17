@@ -14,6 +14,7 @@ const typographyStyles = (theme) => ({
     MuiTypography: {
         styleOverrides: {
             root: {
+                lineHeight: "normal",
                 fontFamily: "yg-jalnan",
                 // fontSize: "0.8rem",
                 // [theme.breakpoints.up("sm")]: {

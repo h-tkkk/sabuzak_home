@@ -1,23 +1,27 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Divider, Typography, useMediaQuery, useTheme } from "@mui/material";
 import VectorIcon from "@assets/mdi_vector-line.svg";
-import { useEffect, useRef, useState } from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
 
 interface KeywordBoxProps {
-    imgUrl: string;
     keyword: string;
+    hover_keyword: string;
+    sub_keyword: string;
+    icon: ReactElement;
 }
 
 export default function KeywordBox(props: KeywordBoxProps) {
     const boxRef = useRef(null);
     const [boxWidth, setBoxWidth] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
 
     const theme = useTheme();
     const isLg = useMediaQuery(theme.breakpoints.up("lg"));
     const isMd = useMediaQuery(theme.breakpoints.down("md"));
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    let iconSize = isLg ? 60 : isMd ? (isMobile ? 60 : 80) : 100;
-    let keywordFont = isLg ? 24 : isMd ? (isMobile ? 16 : 18) : 20;
+    let iconSize = isLg ? 60 : isMd ? (isMobile ? 24 : 34) : 40;
+    let keywordFont = isLg ? 22 : isMd ? (isMobile ? 14 : 12) : 16;
+    let boxSize = isLg ? 400 : isMd ? (isMobile ? 300 : 350) : 300;
 
     useEffect(() => {
         function handleResize() {
@@ -34,33 +38,40 @@ export default function KeywordBox(props: KeywordBoxProps) {
         };
     }, []);
 
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
     return (
         <Box
             ref={boxRef}
-            width={"100%"}
-            height={"50%"}
-            borderRadius={4}
+            width={boxSize}
+            height={boxSize}
+            borderRadius={5}
             sx={{
-                // backgroundImage: `url(${props.imgUrl})`,
                 backgroundSize: "cover",
-                backgroundColor: "#000",
+                backgroundColor: "#86B6FB",
                 position: "relative",
                 transition: "background-color 1s ease",
-                boxShadow: "5px 5px 10px 5px rgba(0, 0, 0, 0.25)",
+                boxShadow: "0px 10px 30px 0px rgba(0, 0, 0, 0.25)",
                 "&:hover": {
                     backgroundColor: "#133F7F",
                     "& .icon": {
-                        transform: `translate(calc(10% - ${boxWidth * 0.45}px), -220%) scale(0.8)`,
+                        transform: `translate(calc(-${boxWidth / 1.9}px + 50px), -220%) scale(0.8)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text": {
-                        transform: `translate(calc(5% - ${boxWidth * 0.42}px), -30%) scale(1.2)`,
+                        transform: `translate(calc(-${boxWidth / 2}px + 50px), 140%)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text_typo": {
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
                         fontWeight: 900,
-                        fontSize: 28,
+                        fontSize: 22,
                     },
                     "& .opacity_box": {
                         opacity: 1,
@@ -68,6 +79,8 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     },
                 },
             }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
             <Box
                 className="icon"
@@ -81,7 +94,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     transition: "transform 0.5s ease-out",
                 }}
             >
-                <VectorIcon fill={"#fff"} sx={{ width: 1, height: 1 }} />
+                {props.icon}
             </Box>
             <Box
                 className="text"
@@ -95,33 +108,28 @@ export default function KeywordBox(props: KeywordBoxProps) {
             >
                 <Typography
                     className="text_typo"
-                    fontFamily={"Pretendard"}
                     sx={{
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
                         fontSize: keywordFont,
-                        fontWeight: 700,
                         textAlign: "left",
                         color: "#fff",
                     }}
                 >
-                    {props.keyword}
+                    {isHovered ? props.hover_keyword : props.keyword}
                 </Typography>
             </Box>
             <Box
                 className="opacity_box"
                 position={"absolute"}
                 bottom={60}
-                left={30}
+                left={50}
                 sx={{
                     transition: "opacity 0.5s ease-out",
                     opacity: 0,
                 }}
             >
-                <Typography fontFamily={"Pretendard"} fontSize={18} color={"#fff"}>
-                    {"키워드에 관한 내용"}
-                </Typography>
-                <Typography fontFamily={"Pretendard"} fontSize={18} color={"#fff"}>
-                    {"한줄 두줄~"}
+                <Typography fontFamily={"Pretendard"} fontSize={16} color={"#fff"}>
+                    {props.sub_keyword}
                 </Typography>
             </Box>
         </Box>

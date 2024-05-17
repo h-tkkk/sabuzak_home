@@ -1,12 +1,17 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, IconButton, Typography } from "@mui/material";
+import LinkTree from "@assets/link_tree.svg";
 
 export default function Hamingway() {
+    const handleButtonClick = () => {
+        window.open("https://linktr.ee/_hamingway", "_blank");
+    };
+
     return (
         <Box
             className="boxWithDiagonalShadow"
             sx={{
                 height: 529,
-                background: `linear-gradient(-104deg, #BFA177 44%, rgba(255, 255, 255, 0) 44%), url('/img/port_img/port_way_bg.png')`,
+                background: `linear-gradient(-104deg, #FFE7B3 44%, rgba(255, 255, 255, 0) 44%), url('/img/port_img/port_way_bg.png')`,
                 //background: "linear-gradient(-110deg, #FFE7B3 50%, #BFA177 50%)",
                 display: "flex",
                 alignItems: "center",
@@ -15,11 +20,11 @@ export default function Hamingway() {
                 fontSize: "24px",
             }}
         >
-            <Box display={"flex"} width={"100%"} height={"100%"} alignItems={"center"}>
-                <Box display={"flex"} width={"50%"} height={"100%"} alignItems={"center"}>
-                    <img src={"/img/character_way.png"} alt={`image`} style={{ width: "100%" }} />
+            <Box display={"flex"} width={"100%"} height={"100%"} alignItems={"center"} gap={44}>
+                <Box display={"flex"} height={"100%"} alignItems={"flex-end"} pl={8}>
+                    <img src={"/img/character_way.png"} alt={`image`} style={{ width: "100%", paddingBottom: "27px" }} />
                 </Box>
-                <Box display={"flex"} width={"auto"} flexDirection={"column"} gap={2} pl={"20%"}>
+                <Box display={"flex"} width={"auto"} flexDirection={"column"} gap={2}>
                     <Box>
                         <Typography fontSize={32}>{"햄밍웨이"}</Typography>
                     </Box>
@@ -32,6 +37,13 @@ export default function Hamingway() {
                         <Typography fontSize={16} fontWeight={200} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
                             {"멋진 선장이 되고픈 햄밍웨이와\n햄스터 마을 친구들의 아기자기한 일상"}
                         </Typography>
+                    </Box>
+                    <Box display={"flex"} justifyContent={"flex-end"} width={"100%"}>
+                        <Button startIcon={<LinkTree />} onClick={handleButtonClick}>
+                            <Typography fontFamily={"Pretendard"} fontSize={9.6} fontWeight={500} color={"#000"}>
+                                {"Linktree"}
+                            </Typography>
+                        </Button>
                     </Box>
                 </Box>
             </Box>

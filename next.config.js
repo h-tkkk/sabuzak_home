@@ -4,6 +4,7 @@ const path = require("path");
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
+    headers: [{ key: "Access-Control-Allow-Origin", value: "*" }],
     webpack: (config, { isServer }) => {
         config.module.rules.push({
             test: /\.svg$/,

@@ -1,20 +1,29 @@
 import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import KeywordBox from "./keyword_box";
-import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
+import ArrowIcon from "@assets/arrow.svg";
 import { useRouter } from "next/router";
+import AboutZ from "@assets/about_z.svg";
+import AboutB from "@assets/about_b.svg";
+import AboutS from "@assets/about_s.svg";
 
 const aboutList = [
     {
-        imgUrl: "/img/ssyong_ssyong_magazine.jpg",
-        keyword: "컴플렉스 아카데미",
+        keyword: "S",
+        hover_keyword: "Serendipity",
+        sub_keyword: "주변의 일상",
+        icon: <AboutS />,
     },
     {
-        imgUrl: "/img/ssyong_ssyong_magazine.jpg",
-        keyword: "숑숑 매거진",
+        keyword: "B",
+        hover_keyword: "Beloved",
+        sub_keyword: "사랑받는",
+        icon: <AboutB />,
     },
     {
-        imgUrl: "/img/ssyong_ssyong_magazine.jpg",
-        keyword: "햄밍웨이",
+        keyword: "Z",
+        hover_keyword: "Zest",
+        sub_keyword: "레몬제스트처럼",
+        icon: <AboutZ />,
     },
 ];
 
@@ -57,19 +66,38 @@ export default function AboutSection() {
                 },
             }}
         >
-            <Box width={"100%"} height={"100%"} display={"flex"} flexDirection={isMobile ? "column" : "row"} alignItems={"center"} gap={3} px={"10%"}>
+            <Box
+                width={"100%"}
+                height={"100%"}
+                display={"flex"}
+                justifyContent={"center"}
+                flexDirection={isMobile ? "column" : "row"}
+                alignItems={"center"}
+                gap={3}
+                px={"10%"}
+            >
                 {aboutList.map((about, idx) => {
-                    return <KeywordBox key={`keyword_${idx}`} imgUrl={about.imgUrl} keyword={about.keyword} />;
+                    return (
+                        <KeywordBox
+                            key={`keyword_${idx}`}
+                            icon={about.icon}
+                            keyword={about.keyword}
+                            hover_keyword={about.hover_keyword}
+                            sub_keyword={about.sub_keyword}
+                        />
+                    );
                 })}
             </Box>
-            <Box position={"absolute"} bottom={"10%"} right={"10%"}>
+            <Box position={"absolute"} bottom={"10%"} right={"17%"}>
                 <Button
                     onClick={() => router.push("/about")}
-                    endIcon={<TrendingFlatIcon sx={{ color: "#fff" }} />}
+                    endIcon={<ArrowIcon sx={{ color: "#fff" }} />}
                     sx={{
-                        px: 2,
+                        px: "13px",
+                        py: "9px",
                         background: "#000",
                         borderRadius: 4,
+                        textTransform: "none",
                         "&:hover": {
                             background: "#000",
                         },

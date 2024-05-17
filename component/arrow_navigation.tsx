@@ -1,9 +1,12 @@
 import { Box, IconButton } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { useEffect, useState } from "react";
 
 const sections = ["home", "about", "portfolio", "introduction"];
 
 export default function ArrowNavigation() {
+    const [arrowColor, setArrowColor] = useState("#fff");
+
     const handleNextSection = () => {
         let targetSectionIndex = 0;
         for (let i = 0; i < sections.length; i++) {
@@ -27,18 +30,36 @@ export default function ArrowNavigation() {
         document.getElementById(nextSection).scrollIntoView({ behavior: "smooth" });
     };
 
+    useEffect(() => {
+        const checkScroll = () => {
+            const homeElement = document.getElementById("home");
+            if (homeElement) {
+                const rect = homeElement.getBoundingClientRect();
+                const isHalfScrolled = rect.top <= -rect.height / 2;
+
+                isHalfScrolled ? setArrowColor("#133F7F") : setArrowColor("#fff");
+            }
+        };
+
+        window.addEventListener("scroll", checkScroll);
+
+        return () => {
+            window.removeEventListener("scroll", checkScroll);
+        };
+    }, []);
+
     return (
         <Box
             position={"fixed"}
             bottom={0}
-            left={"49%"}
+            left={"50%"}
             sx={{
                 transform: "translate(-50%, -50%)",
                 animation: "bounce 2s infinite",
             }}
         >
             <IconButton onClick={handleNextSection} sx={{ padding: 0 }}>
-                <KeyboardArrowDownIcon sx={{ width: 36, height: 36, color: "#fff" }} />
+                <KeyboardArrowDownIcon sx={{ width: 36, height: 36, color: arrowColor }} />
             </IconButton>
         </Box>
     );

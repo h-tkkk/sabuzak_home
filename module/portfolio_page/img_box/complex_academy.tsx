@@ -6,7 +6,8 @@ export default function ComplexAcademy() {
             className="boxWithDiagonalShadow_2"
             sx={{
                 height: 529,
-                background: "linear-gradient(-76deg, #FFF8D6 46%, #FFE676 46%)",
+                background: `linear-gradient(-76deg, #FFE676 46%, rgba(255, 255, 255, 0) 46%), url('/img/port_img/port_coplex_bg.png')`,
+                // background: "linear-gradient(-76deg, #FFF8D6 46%, #FFE676 46%)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -18,7 +19,7 @@ export default function ComplexAcademy() {
                 <Box display={"flex"} width={"50%"} height={"100%"} alignItems={"flex-end"}>
                     <img src={"/img/character_comp.png"} alt={`image`} style={{ width: "100%" }} />
                 </Box>
-                <Box display={"flex"} width={"auto"} flexDirection={"column"} gap={2} pl={"20%"}>
+                <Box display={"flex"} width={"auto"} flexDirection={"column"} gap={2} pl={"18%"}>
                     <Box>
                         <Typography fontSize={32}>{"콤플렉스 아카데미"}</Typography>
                     </Box>

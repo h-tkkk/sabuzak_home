@@ -1,16 +1,22 @@
 import { Box, Button, Typography } from "@mui/material";
+import { observer } from "mobx-react";
 import Link from "next/link";
+import { useRootStores } from "../../rootStore/rootStore";
 
 interface TextButtonProps {
     text: string;
 }
 
-export default function TextButton(props: TextButtonProps) {
+const TextButton = observer((props: TextButtonProps) => {
+    const rootStore = useRootStores();
+
     return (
         <Link href={props.text.toLowerCase()}>
-            <Typography fontFamily={"Pretendard"} color={"#000"} fontSize={18} fontWeight={500}>
+            <Typography fontFamily={"Pretendard"} color={rootStore.mainScrollStatus ? "#000" : "#fff"} fontSize={18} fontWeight={400}>
                 {props.text}
             </Typography>
         </Link>
     );
-}
+});
+
+export default TextButton;

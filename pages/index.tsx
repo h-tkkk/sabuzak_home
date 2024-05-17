@@ -58,6 +58,7 @@ export default function Home() {
                 timeout={transitionDuration}
                 style={{
                     transitionDelay: `${showFloatingButton ? transitionDuration.exit : 0}ms`,
+                    backgroundColor: "#133F7F",
                 }}
                 unmountOnExit
             >
@@ -69,7 +70,4 @@ export default function Home() {
     );
 }
 
-// about
-// pro
-// contenx s
-// instar api
+// 포트폴리오 애니메이션 최적화 / 이미지 추가
