@@ -15,14 +15,15 @@ const typographyStyles = (theme) => ({
     MuiTypography: {
         styleOverrides: {
             root: {
+                lineHeight: "normal",
                 fontFamily: "yg-jalnan",
-                fontSize: "1rem",
-                [theme.breakpoints.up("sm")]: {
-                    fontSize: "1.2rem", // 태블릿과 데스크탑에서 폰트 크기 증가
-                },
-                [theme.breakpoints.up("lg")]: {
-                    fontSize: "1.5rem", // 큰 데스크탑에서 더 큰 폰트 크기
-                },
+                // fontSize: "0.8rem",
+                // [theme.breakpoints.up("sm")]: {
+                //     fontSize: "1rem",
+                // },
+                // [theme.breakpoints.up("lg")]: {
+                //     fontSize: "1.125rem",
+                // },
             },
         },
     },

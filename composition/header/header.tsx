@@ -82,6 +82,7 @@ const Header = observer(() => {
                                 <TextButton text="Portfolio" />
                                 <TextButton text="Contact" />
                             </Box>
+                            <Switch onClick={toggleColorMode} />
                         </Fragment>
                     ) : (
                         <IconButton onClick={handleDrawerToggle}>
