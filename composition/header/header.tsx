@@ -8,8 +8,10 @@ import TextButton from "../../component/button/text_button";
 import Link from "next/link";
 import { useRootStores } from "../../rootStore/rootStore";
 import { observer } from "mobx-react";
+import { useRouter } from "next/router";
 
 const Header = observer(() => {
+    const router = useRouter();
     const rootStore = useRootStores();
     const { toggleColorMode, mode } = useContext(ColorModeContext);
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -39,6 +41,16 @@ const Header = observer(() => {
             window.removeEventListener("scroll", checkScroll);
         };
     });
+
+    useEffect(() => {
+        if (router.pathname !== "/") {
+            rootStore.setHeaderColor("#fff");
+            rootStore.setMainScrollStatus(true);
+        } else {
+            rootStore.setHeaderColor("transparent");
+            rootStore.setMainScrollStatus(false);
+        }
+    }, [router.pathname]);
 
     return (
         <Box

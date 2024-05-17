@@ -70,7 +70,8 @@ export default function Home() {
     );
 }
 
-// about
-// pro
-// contenx s
-// instar api
+// 포트폴리오 애니메이션 최적화 / 이미지 추가
+// 포트폴리오 페이지 링크트리
+// 콘텍트 마커
+
+//

@@ -11,7 +11,15 @@ export default function ContactPage() {
     const handleEmailSend = () => {
         const email = "sabuzakx2studio@gmail.com";
         const subject = encodeURIComponent("사부작 스튜디오 제휴 문의");
-        const body = encodeURIComponent("제휴에 관심이 있어 연락드립니다.\n자세한 내용을 논의하고 싶습니다.");
+        const body = encodeURIComponent(
+            "회사명 : \n" +
+                "직책 / 직급 : \n" +
+                "이름 : \n" +
+                "연락처 : \n" +
+                "E-mail : \n\n\n\n" +
+                "문의내용 : \n\n\n\n\n" +
+                "제휴에 관심이 있어 연락드립니다.\n자세한 내용을 논의하고 싶습니다."
+        );
 
         window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
 

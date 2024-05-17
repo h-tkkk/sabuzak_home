@@ -51,7 +51,7 @@ export default function ImgEx() {
     // };
 
     return (
-        <Box height={"100%"} pt={8}>
+        <Box height={"100%"} pt={9}>
             <ComplexAcademy />
             <Hamingway />
             <SsyongMargazine />

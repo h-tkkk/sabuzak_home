@@ -1,6 +1,11 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import LinkTree from "@assets/link_tree.svg";
 
 export default function SsyongMargazine() {
+    const handleButtonClick = () => {
+        window.open("https://www.instagram.com/ssyong.ssyong_magazine/", "_blank");
+    };
+
     return (
         <Box
             className="boxWithDiagonalShadow_2"
@@ -32,6 +37,13 @@ export default function SsyongMargazine() {
                         <Typography fontSize={16} fontWeight={200} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
                             {"※연재는 내가 하고 싶을 때-_-^"}
                         </Typography>
+                    </Box>
+                    <Box display={"flex"} justifyContent={"flex-end"} width={"100%"}>
+                        <Button startIcon={<LinkTree />} onClick={handleButtonClick}>
+                            <Typography fontFamily={"Pretendard"} fontSize={9.6} fontWeight={500} color={"#000"}>
+                                {"Linktree"}
+                            </Typography>
+                        </Button>
                     </Box>
                 </Box>
             </Box>
