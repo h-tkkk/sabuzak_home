@@ -4,6 +4,7 @@ import { ColorModeContext } from "../../pages/_app";
 import SabuzakWhite from "@assets/sabuzak_icon_white.svg";
 import MenuIcon from "@mui/icons-material/Menu";
 import SabuzakIcon from "@assets/logo_sm.svg";
+import SabuzakSmIcon from "@assets/sm_home.svg";
 import TextButton from "../../component/button/text_button";
 import Link from "next/link";
 import { useRootStores } from "../../rootStore/rootStore";
@@ -71,7 +72,15 @@ const Header = observer(() => {
             <Box width={"100%"} display="flex" justifyContent="space-between" alignItems="center">
                 <Box display="flex" alignItems={"center"}>
                     <Link href={"/"} style={{ display: "flex" }}>
-                        {rootStore.mainScrollStatus ? <SabuzakIcon /> : <SabuzakWhite />}
+                        {isMd ? (
+                            rootStore.mainScrollStatus ? (
+                                <SabuzakIcon />
+                            ) : (
+                                <SabuzakWhite />
+                            )
+                        ) : (
+                            <SabuzakSmIcon width={42} height={42} fill={rootStore.mainScrollStatus ? "#133F7F" : "#fff"} />
+                        )}
                     </Link>
                 </Box>
                 <Box display="flex" alignItems="center">
@@ -85,7 +94,7 @@ const Header = observer(() => {
                         </Fragment>
                     ) : (
                         <IconButton onClick={handleDrawerToggle}>
-                            <MenuIcon />
+                            <MenuIcon sx={{ color: "#fff" }} />
                         </IconButton>
                     )}
                 </Box>

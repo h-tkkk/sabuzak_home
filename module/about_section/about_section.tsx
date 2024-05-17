@@ -38,16 +38,20 @@ export default function AboutSection() {
     let bgFont = isLg ? 180 : isMd ? 100 : 140;
     let bgTopOpset = isLg ? "6%" : isMd ? "9%" : "7.5%";
 
+    const bgImage = isMobile
+        ? "linear-gradient(#fff 0%, #fff 0%, #E3ECF9 0%, #E3ECF9 75%)"
+        : "linear-gradient(#fff 25%, #fff 25%, #E3ECF9 25%, #E3ECF9 75%)";
+
     return (
         <Box
             width={"100%"}
             height={"100%"}
             display={"flex"}
             justifyContent={"center"}
-            pt={8}
+            pt={isMobile ? 0 : 8}
             id="about"
             sx={{
-                backgroundImage: "linear-gradient(#fff 25%, #fff 25%, #E3ECF9 25%, #E3ECF9 75%)",
+                backgroundImage: bgImage,
                 position: "relative",
                 "&::before": {
                     content: '"About"',
@@ -88,7 +92,7 @@ export default function AboutSection() {
                     );
                 })}
             </Box>
-            <Box position={"absolute"} bottom={"10%"} right={"17%"}>
+            <Box position={"absolute"} bottom={isMobile ? "3%" : "10%"} right={isMobile ? "35%" : "17%"}>
                 <Button
                     onClick={() => router.push("/about")}
                     endIcon={<ArrowIcon sx={{ color: "#fff" }} />}
