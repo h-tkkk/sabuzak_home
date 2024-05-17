@@ -11,7 +11,7 @@ export default function Footer() {
             <Box>{isMd ? null : <MyIcon fill={"#fff"} />}</Box>
             <Box display={"flex"} flexDirection={isMobile ? "column" : "row"} gap={isMobile ? 0 : 3}>
                 <Typography fontFamily={"Pretendard"} fontWeight={500} sx={{ fontSize: { xs: "10px", md: "14px", lg: "16px" } }} color={"#fff"}>
-                    {"Copyright 2024. Sabuzak Studio. All rights reserved."}
+                    {"Copyright 2023. Sabuzakx2studio. All rights reserved."}
                 </Typography>
                 <Typography fontFamily={"Pretendard"} fontWeight={500} sx={{ fontSize: { xs: "10px", md: "14px", lg: "16px" } }} color={"#fff"}>
                     {"서울특별시 강남구 학동로7길 29"}

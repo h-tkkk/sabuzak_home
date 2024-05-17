@@ -37,12 +37,12 @@ export default function PortfolioSection() {
                 width={"100%"}
                 showArrows={true}
                 centerMode={true}
-                centerSlidePercentage={50}
+                centerSlidePercentage={isMobile ? 80 : 50}
                 showThumbs={false}
                 showStatus={false}
                 showIndicators={false}
                 autoFocus={true}
-                autoPlay={true}
+                autoPlay={false}
                 infiniteLoop={true}
                 selectedItem={selectedItem}
                 onChange={(index) => setSelectedItem(index)}
@@ -51,7 +51,7 @@ export default function PortfolioSection() {
                         <IconButton
                             onClick={clickHandler}
                             sx={{ border: "1px solid", color: "#000", transform: "translate(-50%, -50%)" }}
-                            style={{ position: "absolute", left: isMobile ? "10%" : "47%", top: "110%" }}
+                            style={{ position: "absolute", left: isMobile ? "40%" : "47%", top: isMobile ? "100%" : "110%" }}
                         >
                             <KeyboardArrowLeftIcon />
                         </IconButton>
@@ -62,7 +62,7 @@ export default function PortfolioSection() {
                         <IconButton
                             onClick={clickHandler}
                             sx={{ border: "1px solid", color: "#000", transform: "translate(-50%, -50%)" }}
-                            style={{ position: "absolute", right: isMobile ? "10%" : "43%", top: "110%" }}
+                            style={{ position: "absolute", right: isMobile ? "30%" : "43%", top: isMobile ? "100%" : "110%" }}
                         >
                             <KeyboardArrowRightIcon />
                         </IconButton>
@@ -98,7 +98,7 @@ export default function PortfolioSection() {
                     </Box>
                 ))}
             </Carousel>
-            <Box position={"absolute"} bottom={"-190%"} right={"17%"}>
+            <Box position={"absolute"} bottom={isMobile ? "-115%" : "-190%"} right={isMobile ? "36%" : "17%"}>
                 <Button
                     onClick={() => router.push("/portfolio")}
                     endIcon={<ArrowIcon sx={{ color: "#fff" }} />}

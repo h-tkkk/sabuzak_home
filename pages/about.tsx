@@ -1,17 +1,22 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Header from "../composition/header/header";
 import Footer from "../composition/footer/footer";
 
 export default function AboutPage() {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
     return (
         <Box height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"}>
             <Header />
             <Box height={"100%"} pt={9}>
-                <Box height={400} sx={{ backgroundImage: "url(/img/about_banner.png)" }} />
+                <Box height={isMobile ? "20%" : 400} sx={{ backgroundImage: "url(/img/about_banner.png)", backgroundSize: "cover" }} />
                 <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
                     <Box display={"flex"} flexDirection={"column"} alignItems={"center"} pt={6.25}>
-                        <Typography fontSize={32}>{"작은 불씨부터 번져가는 불꽃"}</Typography>
-                        <Typography fontSize={32}>{"사부작사부작 스튜디오의 무한한 상상력을 보여드리겠습니다."}</Typography>
+                        <Typography fontSize={isMobile ? 24 : 32}>{"작은 불씨부터 번져가는 불꽃"}</Typography>
+                        <Typography fontSize={isMobile ? 24 : 32} textAlign={"center"}>
+                            {"사부작사부작 스튜디오의 무한한 상상력을 보여드리겠습니다."}
+                        </Typography>
                     </Box>
                     <Box display={"flex"} flexDirection={"column"} py={6.25}>
                         <Box display={"flex"} alignItems={"center"}>

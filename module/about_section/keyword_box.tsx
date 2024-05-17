@@ -19,9 +19,11 @@ export default function KeywordBox(props: KeywordBoxProps) {
     const isMd = useMediaQuery(theme.breakpoints.down("md"));
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    let iconSize = isLg ? 72 : isMd ? (isMobile ? 24 : 34) : 40;
+    let iconSize = isLg ? 72 : isMd ? (isMobile ? 62 : 62) : 62;
     let keywordFont = isLg ? 32 : isMd ? (isMobile ? 14 : 12) : 16;
-    let boxSize = isLg ? 400 : isMd ? (isMobile ? 300 : 350) : 300;
+    let boxSize = isLg ? "400px" : isMd ? (isMobile ? "100%" : "350px") : "300px";
+    let textOffSet = isLg ? 40 : isMd ? (isMobile ? -30 : 30) : 20;
+    let iconOffSet = isLg ? 150 : isMd ? (isMobile ? 60 : 130) : 110;
 
     useEffect(() => {
         function handleResize() {
@@ -50,7 +52,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
         <Box
             ref={boxRef}
             width={boxSize}
-            height={boxSize}
+            height={isMobile ? "160px" : boxSize}
             borderRadius={5}
             sx={{
                 backgroundSize: "cover",
@@ -61,11 +63,11 @@ export default function KeywordBox(props: KeywordBoxProps) {
                 "&:hover": {
                     backgroundColor: "#133F7F",
                     "& .icon": {
-                        transform: `translate(calc(-${boxWidth / 1.9}px + 50px), -210%) scale(0.8)`,
+                        transform: `translate(calc(-${boxWidth / 1.9}px + 50px), -${iconOffSet}px) scale(0.8)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text": {
-                        transform: `translate(calc(-${boxWidth / 2}px + 50px), 120%)`,
+                        transform: `translate(calc(-${boxWidth / 2}px + 50px), ${textOffSet}px)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text_typo": {
@@ -92,6 +94,10 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     width: iconSize,
                     height: iconSize,
                     transition: "transform 0.5s ease-out",
+                    "& .svg": {
+                        width: iconSize,
+                        height: iconSize,
+                    },
                 }}
             >
                 {props.icon}
@@ -99,7 +105,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
             <Box
                 className="text"
                 position={"absolute"}
-                top={"61.5%"}
+                top={isMobile ? "71.5%" : "61.5%"}
                 left={"50%"}
                 sx={{
                     transform: "translate(-50%, -50%)",
@@ -121,7 +127,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
             <Box
                 className="opacity_box"
                 position={"absolute"}
-                bottom={60}
+                bottom={"15%"}
                 left={50}
                 sx={{
                     transition: "opacity 0.5s ease-out",
