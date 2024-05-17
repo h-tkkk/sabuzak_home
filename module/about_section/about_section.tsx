@@ -10,19 +10,19 @@ const aboutList = [
     {
         keyword: "S",
         hover_keyword: "Serendipity",
-        sub_keyword: "주변의 일상",
+        sub_keyword: "뜻밖의 재미",
         icon: <AboutS />,
     },
     {
         keyword: "B",
         hover_keyword: "Beloved",
-        sub_keyword: "사랑받는",
+        sub_keyword: "사랑받는 캐릭터",
         icon: <AboutB />,
     },
     {
         keyword: "Z",
         hover_keyword: "Zest",
-        sub_keyword: "레몬제스트처럼",
+        sub_keyword: "열의",
         icon: <AboutZ />,
     },
 ];

@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import LinkTree from "@assets/link_tree.svg";
+import InstarIcon from "@assets/mdi_instagram.svg";
 
 export default function SsyongMargazine() {
     const handleButtonClick = () => {
@@ -24,24 +24,24 @@ export default function SsyongMargazine() {
                 <Box display={"flex"} width={"50%"} height={"100%"} alignItems={"center"}>
                     <img src={"/img/character_ssong.png"} alt={`image`} style={{ width: "100%", objectFit: "none" }} />
                 </Box>
-                <Box display={"flex"} width={"auto"} flexDirection={"column"} gap={2} pl={"20%"}>
+                <Box display={"flex"} width={"auto"} flexDirection={"column"} gap={2} pl={"17.5%"} mt={5}>
                     <Box>
                         <Typography fontSize={32}>{"쑝쑝 매거진"}</Typography>
                     </Box>
                     <Box>
                         <Typography fontSize={24} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
-                            {"우당탕탕 좌우충돌 빙글빙글\n천방지축 귀여븐 동물들의\n레디~ 리.액쑝!"}
+                            {"겁많은 홀랭, 충격반전 개꿀쓰,\n못말리는 올이,\n그리고 그놈은 쓉 양아치-\n기타 등등.. 그들이 모였다!"}
                         </Typography>
                     </Box>
                     <Box>
                         <Typography fontSize={16} fontWeight={200} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
-                            {"※연재는 내가 하고 싶을 때-_-^"}
+                            {"그 시절.. 그 감성.. 그 만화.. \n그리고 얼렁뚱땅 한 방울;;; \n새롭고 개성 넘치는 말장난 \n코믹-쑝쑝 매거진"}
                         </Typography>
                     </Box>
-                    <Box display={"flex"} justifyContent={"flex-end"} width={"100%"}>
-                        <Button startIcon={<LinkTree />} onClick={handleButtonClick}>
-                            <Typography fontFamily={"Pretendard"} fontSize={9.6} fontWeight={500} color={"#000"}>
-                                {"Linktree"}
+                    <Box display={"flex"} justifyContent={"flex-end"} width={"100%"} mt={1.75}>
+                        <Button startIcon={<InstarIcon />} onClick={handleButtonClick} sx={{ textTransform: "none" }}>
+                            <Typography fontFamily={"Pretendard"} fontSize={12} fontWeight={500} color={"#000"}>
+                                {"Instagram"}
                             </Typography>
                         </Button>
                     </Box>
