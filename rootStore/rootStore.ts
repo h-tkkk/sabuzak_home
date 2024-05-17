@@ -1,9 +1,12 @@
-import { makeObservable, observable } from "mobx";
+import { action, makeObservable, observable } from "mobx";
 import { MobXProviderContext } from "mobx-react";
 import { useContext } from "react";
 
 interface RootStoreProps {
     headerColor: string;
+    homeMainNum: number;
+    entering: boolean;
+    mainScrollStatus: boolean;
 }
 
 export class RootStore implements RootStoreProps {
@@ -19,6 +22,10 @@ export class RootStore implements RootStoreProps {
             homeMainNum: observable,
             entering: observable,
             mainScrollStatus: observable,
+            setHeaderColor: action,
+            setHomeMainNum: action,
+            setEntering: action,
+            setMainScrollStatus: action,
         });
     }
 
