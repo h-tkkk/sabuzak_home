@@ -2,7 +2,6 @@ import { Box, Fab, Zoom } from "@mui/material";
 import Header from "../composition/header/header";
 import Footer from "../composition/footer/footer";
 import ContextUs from "../module/context_us";
-import Testing from "../module/testing";
 import HomeSection from "../module/home_section/home_section";
 import ArrowNavigation from "../component/arrow_navigation";
 import AboutSection from "../module/about_section/about_section";
@@ -41,7 +40,7 @@ export default function Home() {
     };
 
     return (
-        <Box height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"}>
+        <Box height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"} position={"relative"}>
             <Header />
             {/* Content */}
             <Box width={"100%"} height={"100%"}>
@@ -69,5 +68,3 @@ export default function Home() {
         </Box>
     );
 }
-
-// 포트폴리오 애니메이션 최적화 / 이미지 추가

@@ -8,14 +8,14 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-const portfolioItem = ["/img/main_prot/complex.png", "/img/main_prot/ssong.png", "/img/main_prot/haming.png"];
+const portfolioItem = ["complex.png", "ssong.png", "haming.png"];
 
 export default function PortfolioSection() {
     const router = useRouter();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-    // const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
-    // const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+    const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+    const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
     const [selectedItem, setSelectedItem] = useState(0);
 
@@ -32,6 +32,7 @@ export default function PortfolioSection() {
             width={"100%"}
             height={"100%"}
             id={"portfolio"}
+            position={"relative"}
         >
             <Carousel
                 width={"100%"}
@@ -47,26 +48,34 @@ export default function PortfolioSection() {
                 selectedItem={selectedItem}
                 onChange={(index) => setSelectedItem(index)}
                 renderArrowPrev={(clickHandler, hasPrev) => {
-                    return (
-                        <IconButton
-                            onClick={clickHandler}
-                            sx={{ border: "1px solid", color: "#000", transform: "translate(-50%, -50%)" }}
-                            style={{ position: "absolute", left: isMobile ? "40%" : "47%", top: isMobile ? "100%" : "110%" }}
-                        >
-                            <KeyboardArrowLeftIcon />
-                        </IconButton>
-                    );
+                    if (isDesktop) {
+                        return (
+                            <IconButton
+                                onClick={clickHandler}
+                                sx={{ border: "1px solid", color: "#000", transform: "translate(-40%, -40%)" }}
+                                style={{ position: "absolute", left: isMobile ? "40%" : "40%", top: isMobile ? "100%" : "110%" }}
+                            >
+                                <KeyboardArrowLeftIcon />
+                            </IconButton>
+                        );
+                    } else {
+                        return null;
+                    }
                 }}
                 renderArrowNext={(clickHandler, hasNext) => {
-                    return (
-                        <IconButton
-                            onClick={clickHandler}
-                            sx={{ border: "1px solid", color: "#000", transform: "translate(-50%, -50%)" }}
-                            style={{ position: "absolute", right: isMobile ? "30%" : "43%", top: isMobile ? "100%" : "110%" }}
-                        >
-                            <KeyboardArrowRightIcon />
-                        </IconButton>
-                    );
+                    if (isDesktop) {
+                        return (
+                            <IconButton
+                                onClick={clickHandler}
+                                sx={{ border: "1px solid", color: "#000", transform: "translate(-40%, -40%)" }}
+                                style={{ position: "absolute", right: isMobile ? "30%" : "40%", top: isMobile ? "100%" : "110%" }}
+                            >
+                                <KeyboardArrowRightIcon />
+                            </IconButton>
+                        );
+                    } else {
+                        return null;
+                    }
                 }}
             >
                 {portfolioItem.map((item, idx) => (
@@ -76,7 +85,7 @@ export default function PortfolioSection() {
                         sx={{
                             width: "100%",
                             height: "100%",
-                            backgroundImage: `url(${item})`,
+                            backgroundImage: `url(/img/main_prot/${isTablet ? `tab_${item}` : item})`,
                             backgroundSize: "cover",
                             backgroundPosition: "center",
                             position: "relative",
@@ -98,7 +107,7 @@ export default function PortfolioSection() {
                     </Box>
                 ))}
             </Carousel>
-            <Box position={"absolute"} bottom={isMobile ? "-115%" : "-190%"} right={isMobile ? "36%" : "17%"}>
+            <Box position={"absolute"} bottom={"5%"} right={isMobile ? "none" : "17%"}>
                 <Button
                     onClick={() => router.push("/portfolio")}
                     endIcon={<ArrowIcon sx={{ color: "#fff" }} />}

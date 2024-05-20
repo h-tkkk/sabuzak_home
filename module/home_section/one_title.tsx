@@ -2,7 +2,7 @@ import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Fragment, useEffect, useState } from "react";
 
 const mainAnimationText = ["재미를", "행복을", "감동을", "웃음을"];
-const subTitle = ["다양한 즐거움을 드리기 위해", "더 많이 고민합니다.", "다양한 시도를 통해", "더 많은 웃음을 만들어 갑니다."];
+const subTitle = ["다양한 즐거움을 위해", "더 많이 고민합니다.", "다양한 시도를 통해", "더 많은 웃음을 만들어 갑니다."];
 
 export default function OneTitle() {
     const [word, setWord] = useState(mainAnimationText[0]);

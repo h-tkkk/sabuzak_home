@@ -1,11 +1,17 @@
 import { createTheme } from "@mui/material";
 
+// m => 430
+
+// 768
+
+// table => 768
 const breakpoints = {
     values: {
         xs: 0,
-        sm: 600,
-        md: 960,
-        lg: 1280,
+        sm: 600, //
+        // _test: 768,
+        md: 960, //
+        lg: 1280, //
         xl: 1920,
     },
 };

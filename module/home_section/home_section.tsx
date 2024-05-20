@@ -11,6 +11,7 @@ const HomeSection = observer(() => {
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+    const isTablet = useMediaQuery(theme.breakpoints.down("md"));
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -51,7 +52,7 @@ const HomeSection = observer(() => {
             ) : (
                 <Box
                     sx={{
-                        backgroundImage: "url(/img/fullpage_img.png)",
+                        backgroundImage: isTablet ? "url(/img/main_section/tab_img.png)" : "url(/img/main_section/full_img.png)",
                         backgroundSize: "contain",
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",

@@ -21,19 +21,19 @@ export default function TwoTitle() {
             </Box>
             <Box pt={4.5}>
                 <Typography fontFamily={"Pretendard"} fontWeight={400} color={"#fff"} fontSize={subTitleFont}>
-                    {"때로는 마법을 배우기도 하고"}
+                    {"멋진 마법을 배우고"}
                 </Typography>
                 <Typography fontFamily={"Pretendard"} fontWeight={400} color={"#fff"} fontSize={subTitleFont}>
-                    {"친구들과 어려움을 극복하기도 하죠."}
+                    {"친구들과 함께 어려움을 극복하기도 하죠."}
                 </Typography>
                 <Typography fontFamily={"Pretendard"} fontWeight={400} color={"#fff"} fontSize={subTitleFont}>
-                    {"꿈을 이루기 위한 노력을 하고"}
+                    {"꿈을 이루기 위한 노력의 과정에서"}
                 </Typography>
                 <Typography fontFamily={"Pretendard"} fontWeight={400} color={"#fff"} fontSize={subTitleFont}>
                     {"더욱 넓은 세상을 마주하기도 합니다."}
                 </Typography>
                 <Typography fontFamily={"Pretendard"} fontWeight={400} color={"#fff"} fontSize={subTitleFont}>
-                    {"재미있는 이야기를 통해 웃음을 만들기도 합니다."}
+                    {"때로는 그저 재미있는 이야기로 웃음을 만듭니다."}
                 </Typography>
             </Box>
         </Box>

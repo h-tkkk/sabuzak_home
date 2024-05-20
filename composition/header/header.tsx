@@ -94,7 +94,7 @@ const Header = observer(() => {
                         </Fragment>
                     ) : (
                         <IconButton onClick={handleDrawerToggle}>
-                            <MenuIcon sx={{ color: "#fff" }} />
+                            <MenuIcon sx={{ color: rootStore.mainScrollStatus ? "#000" : "#fff" }} />
                         </IconButton>
                     )}
                 </Box>
@@ -113,17 +113,19 @@ const Header = observer(() => {
                     flexDirection={"column"}
                     justifyContent={"space-between"}
                     role="presentation"
+                    bgcolor={"#133F7F"}
                     onClick={handleDrawerToggle}
                     onKeyDown={handleDrawerToggle}
+                    py={3}
                 >
-                    <Box>
+                    <Box display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} gap={2}>
                         <TextButton text="About" />
                         <TextButton text="Portfolio" />
                         <TextButton text="Contact" />
                     </Box>
-                    <Box>
+                    {/* <Box>
                         <Switch onClick={toggleColorMode} />
-                    </Box>
+                    </Box> */}
                 </Box>
             </Drawer>
         </Box>

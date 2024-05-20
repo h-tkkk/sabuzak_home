@@ -50,11 +50,12 @@ export default function ArrowNavigation() {
 
     return (
         <Box
+            width={"100%"}
+            display={"flex"}
+            justifyContent={"center"}
             position={"fixed"}
             bottom={0}
-            left={"50%"}
             sx={{
-                transform: "translate(-50%, -50%)",
                 animation: "bounce 2s infinite",
             }}
         >
