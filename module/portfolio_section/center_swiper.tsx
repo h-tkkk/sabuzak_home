@@ -40,7 +40,7 @@ const CenterSwiper = () => {
                                 width: "100%",
                                 height: "100%",
                                 backgroundImage: `url(/img/main_prot/tab_${item})`,
-                                backgroundSize: "cover",
+                                backgroundSize: "contain",
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center",
                             }}
