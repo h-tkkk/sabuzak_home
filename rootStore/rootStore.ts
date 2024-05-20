@@ -7,6 +7,7 @@ interface RootStoreProps {
     homeMainNum: number;
     entering: boolean;
     mainScrollStatus: boolean;
+    sidebarOpen: boolean;
 }
 
 export class RootStore implements RootStoreProps {
@@ -15,6 +16,7 @@ export class RootStore implements RootStoreProps {
     entering: boolean = false;
 
     mainScrollStatus: boolean = false;
+    sidebarOpen: boolean = false;
 
     constructor() {
         makeObservable(this, {
@@ -22,10 +24,12 @@ export class RootStore implements RootStoreProps {
             homeMainNum: observable,
             entering: observable,
             mainScrollStatus: observable,
+            sidebarOpen: observable,
             setHeaderColor: action,
             setHomeMainNum: action,
             setEntering: action,
             setMainScrollStatus: action,
+            setSidebarOpen: action,
         });
     }
 
@@ -44,6 +48,10 @@ export class RootStore implements RootStoreProps {
 
     setMainScrollStatus = (bool: boolean) => {
         this.mainScrollStatus = bool;
+    };
+
+    setSidebarOpen = (bool: boolean) => {
+        this.sidebarOpen = bool;
     };
 }
 
