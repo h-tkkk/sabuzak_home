@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import AboutZ from "@assets/about_z.svg";
 import AboutB from "@assets/about_b.svg";
 import AboutS from "@assets/about_s.svg";
+import MobileBox from "./mobile_box";
 
 const aboutList = [
     {
@@ -35,20 +36,20 @@ export default function AboutSection() {
     const isMd = useMediaQuery(theme.breakpoints.down("md"));
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    let bgFont = isLg ? 180 : isMd ? 100 : 140;
-    let bgTopOpset = isLg ? "6%" : isMd ? "9%" : "7.5%";
+    let bgFont = isLg ? 180 : isMd ? (isMobile ? 100 : 140) : 100;
+    let bgTopOpset = isLg ? "6%" : isMd ? (isMobile ? "-4%" : "-3.5%") : "7.5%";
 
-    const bgImage = isMobile
-        ? "linear-gradient(#fff 0%, #fff 0%, #E3ECF9 0%, #E3ECF9 75%)"
+    const bgImage = isMd
+        ? "linear-gradient(#fff 12%, #fff 12%, #E3ECF9 12%, #E3ECF9 75%)"
         : "linear-gradient(#fff 25%, #fff 25%, #E3ECF9 25%, #E3ECF9 75%)";
 
     return (
         <Box
             width={"100%"}
-            height={"100%"}
+            height={isMd ? "auto" : "100%"}
             display={"flex"}
             justifyContent={"center"}
-            pt={isMobile ? 0 : 8}
+            py={isMd ? 30 : 8}
             id="about"
             sx={{
                 backgroundImage: bgImage,
@@ -57,12 +58,12 @@ export default function AboutSection() {
                     content: '"About"',
                     position: "absolute",
                     top: bgTopOpset,
-                    left: "2%",
+                    left: isMd ? "" : "2%",
                     width: "auto",
                     height: "25%",
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "flex-start",
+                    justifyContent: isMd ? "center" : "flex-start",
                     fontSize: bgFont,
                     fontWeight: "bold",
                     color: "#E3ECF9",
@@ -70,28 +71,53 @@ export default function AboutSection() {
                 },
             }}
         >
-            <Box
-                width={"100%"}
-                height={"100%"}
-                display={"flex"}
-                justifyContent={"center"}
-                flexDirection={isMobile ? "column" : "row"}
-                alignItems={"center"}
-                gap={3}
-                px={"10%"}
-            >
-                {aboutList.map((about, idx) => {
-                    return (
-                        <KeywordBox
-                            key={`keyword_${idx}`}
-                            icon={about.icon}
-                            keyword={about.keyword}
-                            hover_keyword={about.hover_keyword}
-                            sub_keyword={about.sub_keyword}
-                        />
-                    );
-                })}
-            </Box>
+            {isMd ? (
+                <Box
+                    width={"100%"}
+                    height={"100%"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    flexDirection={isMd ? "column" : "row"}
+                    alignItems={"center"}
+                    gap={3}
+                    px={"10%"}
+                >
+                    {aboutList.map((about, idx) => {
+                        return (
+                            <MobileBox
+                                key={`keyword_${idx}`}
+                                icon={about.icon}
+                                keyword={about.keyword}
+                                hover_keyword={about.hover_keyword}
+                                sub_keyword={about.sub_keyword}
+                            />
+                        );
+                    })}
+                </Box>
+            ) : (
+                <Box
+                    width={"100%"}
+                    height={"100%"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    flexDirection={isMd ? "column" : "row"}
+                    alignItems={"center"}
+                    gap={3}
+                    px={"10%"}
+                >
+                    {aboutList.map((about, idx) => {
+                        return (
+                            <KeywordBox
+                                key={`keyword_${idx}`}
+                                icon={about.icon}
+                                keyword={about.keyword}
+                                hover_keyword={about.hover_keyword}
+                                sub_keyword={about.sub_keyword}
+                            />
+                        );
+                    })}
+                </Box>
+            )}
             <Box position={"absolute"} bottom={"5%"} right={isMobile ? "none" : "17%"}>
                 <Button
                     onClick={() => router.push("/about")}

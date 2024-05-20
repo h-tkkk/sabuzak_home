@@ -1,4 +1,4 @@
-import { Box, Fab, Zoom } from "@mui/material";
+import { Box, Fab, Zoom, useMediaQuery, useTheme } from "@mui/material";
 import Header from "../composition/header/header";
 import Footer from "../composition/footer/footer";
 import ContextUs from "../module/context_us";
@@ -9,9 +9,13 @@ import { useEffect, useState } from "react";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { theme } from "../src/theme";
 import PortfolioSection from "../module/portfolio_section/portfolio_section";
+import CenterSwiper from "../module/portfolio_section/center_swiper";
 
 export default function Home() {
     const [showFloatingButton, setShowFloatingButton] = useState(false);
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     useEffect(() => {
         const checkScroll = () => {
@@ -46,7 +50,7 @@ export default function Home() {
             <Box width={"100%"} height={"100%"}>
                 <HomeSection />
                 <AboutSection />
-                <PortfolioSection />
+                {isMobile ? <CenterSwiper /> : <PortfolioSection />}
                 <ContextUs />
                 <Footer />
             </Box>

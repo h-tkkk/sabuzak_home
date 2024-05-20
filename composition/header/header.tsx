@@ -15,13 +15,12 @@ const Header = observer(() => {
     const router = useRouter();
     const rootStore = useRootStores();
     const { toggleColorMode, mode } = useContext(ColorModeContext);
-    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const theme = useTheme();
     const isMd = useMediaQuery(theme.breakpoints.up("md"));
 
     const handleDrawerToggle = () => {
-        setSidebarOpen(!sidebarOpen);
+        rootStore.setSidebarOpen(!rootStore.sidebarOpen);
     };
 
     useEffect(() => {
@@ -101,10 +100,10 @@ const Header = observer(() => {
             </Box>
             <Drawer
                 anchor="right"
-                open={sidebarOpen}
+                open={rootStore.sidebarOpen}
                 onClose={handleDrawerToggle}
                 sx={{
-                    "& .MuiDrawer-paper": { width: "80%", maxWidth: 300 },
+                    "& .MuiDrawer-paper": { width: "80%", maxWidth: 300, borderRadius: "10px 0 0 10px" },
                 }}
             >
                 <Box

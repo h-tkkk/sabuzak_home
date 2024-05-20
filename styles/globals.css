@@ -80,7 +80,7 @@ video {
 .slide.selected {
     margin-left: 24px !important;
     margin-right: 24px !important;
-    height: 68vh;
+    height: 56vh;
     transform: scale(1.005);
     transition: transform 0.5s ease, height 0.5s ease-in-out;
 }
@@ -116,4 +116,31 @@ video {
     height: 100%;
     background: linear-gradient(-76deg, transparent 45%, rgba(0, 0, 0, 0.125) 46%, transparent 45%);
     pointer-events: none; /* 마우스 이벤트가 이 요소에 영향을 받지 않도록 설정 */
+}
+
+.swiper {
+    width: 100%; /* 65 */
+    height: 50%; /* 50 */
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 36px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.swiper-slide:nth-child(1n) {
+    background-color: "transparent";
+}
+
+.swiper-slide:nth-child(2n) {
+    background-color: "transparent";
+}
+
+.swiper-slide:nth-child(3n) {
+    background-color: "transparent";
 }
