@@ -32,20 +32,14 @@ const CenterSwiper = () => {
         >
             <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards]} className="mySwiper">
                 {portfolioItem.map((item, idx) => (
-                    <SwiperSlide key={`${portfolioItem}_dd${idx}`}>
-                        <Box
-                            key={`${portfolioItem}_${idx}`}
-                            borderRadius={9}
-                            sx={{
-                                width: "100%",
-                                height: "100%",
-                                backgroundImage: `url(/img/main_prot/tab_${item})`,
-                                backgroundSize: "contain",
-                                backgroundRepeat: "no-repeat",
-                                backgroundPosition: "center",
-                            }}
-                        />
-                    </SwiperSlide>
+                    <SwiperSlide
+                        key={`${portfolioItem}_dd${idx}`}
+                        style={{
+                            backgroundImage: `url(/img/main_prot/tab_${item})`,
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                        }}
+                    />
                 ))}
             </Swiper>
             <Button
