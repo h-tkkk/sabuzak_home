@@ -118,7 +118,7 @@ const Header = observer(() => {
                     onKeyDown={handleDrawerToggle}
                     py={3}
                 >
-                    <Box display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} gap={2}>
+                    <Box display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} gap={3.75} py={10}>
                         <TextButton text="About" />
                         <TextButton text="Portfolio" />
                         <TextButton text="Contact" />

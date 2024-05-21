@@ -13,7 +13,7 @@ const TextButton = observer((props: TextButtonProps) => {
     return (
         <Link href={props.text.toLowerCase()}>
             <Typography
-                fontFamily={"Pretendard"}
+                fontFamily={rootStore.sidebarOpen ? "yg-jalnan" : "Pretendard"}
                 color={rootStore.sidebarOpen ? "#fff" : rootStore.mainScrollStatus ? "#000" : "#fff"}
                 fontSize={18}
                 fontWeight={400}
