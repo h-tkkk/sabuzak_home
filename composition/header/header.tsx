@@ -18,6 +18,7 @@ const Header = observer(() => {
 
     const theme = useTheme();
     const isMd = useMediaQuery(theme.breakpoints.up("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     const handleDrawerToggle = () => {
         rootStore.setSidebarOpen(!rootStore.sidebarOpen);
@@ -59,7 +60,7 @@ const Header = observer(() => {
             width={"100%"}
             height={"auto"}
             // px={42.5}
-            px={"18%"}
+            px={isMobile ? "10.5%" : "18%"}
             bgcolor={rootStore.headerColor}
             position="fixed"
             boxShadow="0px 2px -1px rgba(0, 0, 0, 0.1)"

@@ -27,12 +27,12 @@ export default function ComplexAcademy() {
                                 <Typography fontSize={24}>{"콤플렉스 아카데미"}</Typography>
                             </Box>
                             <Box>
-                                <Typography fontSize={18} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
+                                <Typography fontSize={16} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
                                     {"콤플렉스를 극복하지 않아도\n있는 그대로의 내가 행복이다."}
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography fontSize={16} fontWeight={200} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
+                                <Typography fontSize={14} fontWeight={200} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
                                     {"라미와 친구들의 마법 학교 일상을 통해 보여주는\n여러가지 콤플렉스와 그를 통해 성장하는 이야기"}
                                 </Typography>
                             </Box>

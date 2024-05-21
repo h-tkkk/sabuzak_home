@@ -1,10 +1,13 @@
-import { Box, Button, Divider, Typography } from "@mui/material";
+import { Box, Button, Divider, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Header from "../composition/header/header";
 import Footer from "../composition/footer/footer";
 import { CustomOverlayMap, Map, MapMarker, MapTypeId, useKakaoLoader } from "react-kakao-maps-sdk";
 import { useEffect, useState } from "react";
 
 export default function ContactPage() {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
     const [loading, error] = useKakaoLoader({
         appkey: "431a6afd7c870f435c3fca23a03699c5",
     });
@@ -67,13 +70,13 @@ export default function ContactPage() {
                         </Typography>
                     </Box>
                     <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={"30px"} pt={"60px"}>
-                        <Typography fontFamily={"Pretendard"} fontWeight={600} sx={{ fontSize: { xs: "10px", md: "14px", lg: "28px" } }}>
+                        <Typography fontFamily={"Pretendard"} fontWeight={600} sx={{ fontSize: { xs: "14px", md: "16px", lg: "28px" } }}>
                             {"서울특별시 강남구 학동로7길 29"}
                         </Typography>
-                        <Typography fontFamily={"Pretendard"} fontWeight={600} sx={{ fontSize: { xs: "10px", md: "14px", lg: "28px" } }}>
+                        <Typography fontFamily={"Pretendard"} fontWeight={600} sx={{ fontSize: { xs: "14px", md: "16px", lg: "28px" } }}>
                             {"(02)-6213-3100 (평일 09:00 ~ 18:00)"}
                         </Typography>
-                        <Typography fontFamily={"Pretendard"} fontWeight={600} sx={{ fontSize: { xs: "10px", md: "14px", lg: "28px" } }}>
+                        <Typography fontFamily={"Pretendard"} fontWeight={600} sx={{ fontSize: { xs: "14px", md: "16px", lg: "28px" } }}>
                             {"sabuzakx2studio@gmail.com"}
                         </Typography>
                     </Box>
@@ -84,8 +87,8 @@ export default function ContactPage() {
                         <Button
                             onClick={handleEmailSend}
                             sx={{
-                                px: "37px",
-                                py: "18px",
+                                px: isMobile ? 3 : "37px",
+                                py: isMobile ? 2 : "18px",
                                 background: "#000",
                                 borderRadius: "30px",
                                 "&:hover": {
@@ -93,7 +96,7 @@ export default function ContactPage() {
                                 },
                             }}
                         >
-                            <Typography fontFamily={"Pretendard"} fontSize={20} fontWeight={500} color={"#fff"}>
+                            <Typography fontFamily={"Pretendard"} sx={{ fontSize: { xs: 14, md: "16px", lg: 20 } }} fontWeight={500} color={"#fff"}>
                                 {"제휴문의 보내기"}
                             </Typography>
                         </Button>
