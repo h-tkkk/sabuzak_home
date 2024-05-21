@@ -18,11 +18,16 @@ export default function MobileBox(props: KeywordBoxProps) {
     const isMd = useMediaQuery(theme.breakpoints.down("md"));
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    let iconSize = isLg ? 72 : isMd ? (isMobile ? 62 : 62) : 62;
-    let keywordFont = isLg ? 32 : isMd ? (isMobile ? 14 : 12) : 16;
-    let boxSize = isLg ? "400px" : isMd ? (isMobile ? "100%" : "350px") : "300px";
-    let textOffSet = isLg ? 40 : isMd ? (isMobile ? -30 : 30) : 20;
-    let iconOffSet = isLg ? 150 : isMd ? (isMobile ? 60 : 130) : 110;
+    let iconSize = isLg ? 72 : isMd ? (isMobile ? 48 : 58.8) : 62;
+    let keywordFont = isLg ? 32 : isMd ? (isMobile ? 18 : 24) : 16;
+
+    let subKeywordFont = isLg ? 18 : isMd ? (isMobile ? 14 : 16) : 16;
+
+    let boxSize = isLg ? "400px" : isMd ? (isMobile ? "230px" : "360px") : "300px";
+    let textOffSet = isLg ? 40 : isMd ? (isMobile ? -15 : 34) : 20;
+    let iconOffSet = isLg ? 150 : isMd ? (isMobile ? 80 : 130) : 110;
+
+    let leftOffSet = isMobile ? 30 : 50;
 
     useEffect(() => {
         function handleResize() {
@@ -43,7 +48,7 @@ export default function MobileBox(props: KeywordBoxProps) {
         <Box
             ref={boxRef}
             width={boxSize}
-            height={isMobile ? "160px" : boxSize}
+            height={isMobile ? "230px" : boxSize}
             borderRadius={5}
             sx={{
                 backgroundSize: "cover",
@@ -59,7 +64,7 @@ export default function MobileBox(props: KeywordBoxProps) {
                 top={"45%"}
                 left={"50%"}
                 sx={{
-                    transform: `translate(calc(-${boxWidth / 1.9}px + 50px), -${iconOffSet}px) scale(0.8)`,
+                    transform: `translate(calc(-${boxWidth / 1.9}px + ${leftOffSet}px), -${iconOffSet}px) scale(0.8)`,
                     width: iconSize,
                     height: iconSize,
                     transition: "transform 0.5s ease-out",
@@ -77,7 +82,7 @@ export default function MobileBox(props: KeywordBoxProps) {
                 top={isMobile ? "71.5%" : "61.5%"}
                 left={"50%"}
                 sx={{
-                    transform: `translate(calc(-${boxWidth / 2}px + 50px), ${textOffSet}px)`,
+                    transform: `translate(calc(-${boxWidth / 2}px + ${leftOffSet}px), ${textOffSet}px)`,
                     transition: "transform 0.5s ease-out",
                 }}
             >
@@ -86,7 +91,7 @@ export default function MobileBox(props: KeywordBoxProps) {
                     sx={{
                         transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
                         fontWeight: 900,
-                        fontSize: 26,
+                        fontSize: keywordFont,
                         textAlign: "left",
                         color: "#fff",
                     }}
@@ -94,8 +99,9 @@ export default function MobileBox(props: KeywordBoxProps) {
                     {props.hover_keyword}
                 </Typography>
             </Box>
-            <Box className="opacity_box" position={"absolute"} bottom={"15%"} left={50}>
-                <Typography fontFamily={"Pretendard"} fontSize={18} color={"#fff"}>
+            <Box className="opacity_box" position={"absolute"} bottom={"15%"} left={leftOffSet}>
+                {/* 모바일 14 */}
+                <Typography fontFamily={"Pretendard"} fontSize={subKeywordFont} color={"#fff"}>
                     {props.sub_keyword}
                 </Typography>
             </Box>

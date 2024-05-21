@@ -118,7 +118,7 @@ export default function AboutSection() {
                     })}
                 </Box>
             )}
-            <Box position={"absolute"} bottom={"5%"} right={isMobile ? "none" : "17%"}>
+            <Box position={"absolute"} bottom={isMobile ? "10%" : "5%"} right={isMobile ? "none" : "17%"}>
                 <Button
                     onClick={() => router.push("/about")}
                     endIcon={<ArrowIcon sx={{ color: "#fff" }} />}

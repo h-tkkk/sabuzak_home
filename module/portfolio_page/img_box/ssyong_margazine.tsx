@@ -66,7 +66,7 @@ export default function SsyongMargazine() {
             >
                 <Box display={"flex"} width={"100%"} height={"100%"} alignItems={"center"}>
                     <Box display={"flex"} width={"50%"} height={"100%"} alignItems={"center"}>
-                        <img src={"/img/character_ssong.png"} alt={`image`} style={{ width: "100%" }} />
+                        <img src={isMd ? "/img/tab_character_ssong.png" : "/img/character_ssong.png"} alt={`image`} style={{ width: "100%" }} />
                     </Box>
                     <Box
                         display={"flex"}
