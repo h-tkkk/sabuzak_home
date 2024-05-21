@@ -43,6 +43,13 @@ export default function Hamingway() {
                             </Box>
                         </Box>
                     </Box>
+                    <Box display={"flex"} justifyContent={"flex-end"} width={"100%"} mt={3} pr={2}>
+                        <Button startIcon={<LinkTree />} onClick={handleButtonClick} sx={{ textTransform: "none" }}>
+                            <Typography fontFamily={"Pretendard"} fontSize={12} fontWeight={500} color={"#000"}>
+                                {"Linktree"}
+                            </Typography>
+                        </Button>
+                    </Box>
                 </Box>
             </Box>
         );

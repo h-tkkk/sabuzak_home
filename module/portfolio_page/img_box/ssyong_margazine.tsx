@@ -43,6 +43,13 @@ export default function SsyongMargazine() {
                                 </Typography>
                             </Box>
                         </Box>
+                        <Box display={"flex"} justifyContent={"flex-end"} width={"100%"} mt={isMd ? 0 : 1.75} pr={2}>
+                            <Button startIcon={<InstarIcon />} onClick={handleButtonClick} sx={{ textTransform: "none" }}>
+                                <Typography fontFamily={"Pretendard"} fontSize={12} fontWeight={500} color={"#000"}>
+                                    {"Instagram"}
+                                </Typography>
+                            </Button>
+                        </Box>
                     </Box>
                 </Box>
             </Box>
