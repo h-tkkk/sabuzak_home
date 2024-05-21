@@ -57,7 +57,7 @@ export default function ContactPage() {
                         />
                         <Box bgcolor={"#fff"}>
                             <Typography fontFamily={"Pretendard"} fontWeight={700}>
-                                SABUZAK STUDIO
+                                {"SABUZAKx2 STUDIO"}
                             </Typography>
                         </Box>
                     </CustomOverlayMap>

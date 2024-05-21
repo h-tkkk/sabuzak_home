@@ -34,12 +34,12 @@ export default function SsyongMargazine() {
                             </Box>
                             <Box>
                                 <Typography fontSize={16} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"} textAlign={"center"}>
-                                    {"겁많은 홀랭, 충격반전 개꿀쓰,못말리는 올이,그리고\n 그놈은 쓉 양아치-기타 등등.. 그들이 모였다!"}
+                                    {"겁많은 홀랭, 충격반전 개꿀쓰,\n못말리는 올이,\n그리고 그놈은 쓉 양아치-\n기타 등등.. 그들이 모였다!"}
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography fontSize={14} fontWeight={200} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
-                                    {"그 시절.. 그 감성.. 그 만화.. \n그리고 얼렁뚱땅 한 방울;;; \n새롭고 개성 넘치는 말장난 \n코믹-쑝쑝 매거진"}
+                                <Typography fontSize={14} fontWeight={200} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"} textAlign={"center"}>
+                                    {"그 시절.. 그 감성.. 그 만화..\n그리고 얼렁뚱땅 한 방울;;;\n새롭고 개성 넘치는 말장난\n코믹-쑝쑝 매거진"}
                                 </Typography>
                             </Box>
                         </Box>
