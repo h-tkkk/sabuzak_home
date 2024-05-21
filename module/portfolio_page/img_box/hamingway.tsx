@@ -33,7 +33,7 @@ export default function Hamingway() {
                             </Box>
                             <Box>
                                 <Typography fontSize={16} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"} textAlign={"center"}>
-                                    {"나, 햄밍웨이 1.3세, 70구람!\n눈물 한 방울 💧 흘려 본 적 없는\n 싸나이!"}
+                                    {"나, 햄밍웨이 1.3세, 70구람!\n눈물 한 방울 💧 흘려 본 적 없는\n싸나이!"}
                                 </Typography>
                             </Box>
                             <Box>
@@ -87,7 +87,7 @@ export default function Hamingway() {
                         </Box>
                         <Box>
                             <Typography sx={{ fontSize: { sm: 16, mm: 17, md: 20, lg: 24 } }} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
-                                {"나, 햄밍웨이 1.3세, 70구람!\n눈물 한 방울 💧 흘려 본 적 없는\n 싸나이!"}
+                                {"나, 햄밍웨이 1.3세, 70구람!\n눈물 한 방울 💧 흘려 본 적 없는\n싸나이!"}
                             </Typography>
                         </Box>
                         <Box>
