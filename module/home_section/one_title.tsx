@@ -55,7 +55,7 @@ export default function OneTitle() {
                 </Box>
                 <Box>
                     <Typography color={"#fff"} fontSize={mainTitleFont}>
-                        {" 만듭니다."}
+                        {" 만듭니다"}
                     </Typography>
                 </Box>
             </Box>

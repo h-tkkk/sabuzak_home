@@ -15,7 +15,7 @@ export default function AboutPage() {
                     <Box display={"flex"} flexDirection={"column"} alignItems={"center"} pt={6.25}>
                         <Typography fontSize={isMobile ? 21 : 32}>{"작은 불씨부터 번져가는 불꽃"}</Typography>
                         <Typography fontSize={isMobile ? 21 : 32} textAlign={"center"}>
-                            {"사부작사부작 스튜디오의 무한한 상상력을 보여드리겠습니다."}
+                            {"사부작사부작 스튜디오의 무한한 상상력을 보여드리겠습니다"}
                         </Typography>
                     </Box>
                     <Box display={"flex"} flexDirection={"column"} py={6.25}>

@@ -33,7 +33,7 @@ export default function ComplexAcademy() {
                             </Box>
                             <Box>
                                 <Typography fontSize={14} fontWeight={200} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"} textAlign={"center"}>
-                                    {"라미와 친구들의 우당탕탕 마법 학교 일상과\n성장기 고민, 우정, 그리고 치유에 대한 이야기"}
+                                    {"라미와 친구들의 우당탕탕 마법 학교 일상과\n성장기 고민, 우정 그리고 치유에 대한 이야기"}
                                 </Typography>
                             </Box>
                         </Box>
@@ -68,7 +68,7 @@ export default function ComplexAcademy() {
                         </Box>
                         <Box>
                             <Typography sx={{ fontSize: { sm: 16, mm: 17, md: 20, lg: 24 } }} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
-                                {"콤플렉스를 극복하지 않아도\n있는 그대로의 내가 행복이다."}
+                                {"콤플렉스를 극복하지 않아도\n있는 그대로의 내가 행복이다"}
                             </Typography>
                         </Box>
                         <Box>
@@ -78,7 +78,7 @@ export default function ComplexAcademy() {
                                 fontFamily={"Pretendard"}
                                 whiteSpace={"pre-wrap"}
                             >
-                                {"라미와 친구들의 우당탕탕 마법 학교 일상과\n성장기 고민, 우정, 그리고 치유에 대한 이야기"}
+                                {"라미와 친구들의 우당탕탕 마법 학교 일상과\n성장기 고민, 우정 그리고 치유에 대한 이야기"}
                             </Typography>
                         </Box>
                     </Box>

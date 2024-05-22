@@ -15,8 +15,8 @@ export default function TwoTitle() {
                 <Typography color={"#fff"} fontSize={mainTitleFont}>
                     {"다양한 캐릭터가 만들어내는"}
                 </Typography>
-                <Typography color={"#fff"} fontSize={mainTitleFont}>
-                    {"색다른 이야기들이 기다립니다."}
+                <Typography color={"#fff"} sx={{ fontSize: { xs: 16.5, sm: 22.5, mm: 22, md: 33, lg: 40.75 } }}>
+                    {"특별한 이야기들이 기다립니다"}
                 </Typography>
             </Box>
             <Box pt={4.5}>

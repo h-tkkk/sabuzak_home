@@ -55,7 +55,8 @@ const HomeSection = observer(() => {
                         backgroundImage: isTablet ? "url(/img/main_section/tab_img.png)" : "url(/img/main_section/full_img.png)",
                         backgroundSize: "contain",
                         backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center",
+                        backgroundPosition: isTablet ? "right" : "center",
+                        backgroundPositionY: isTablet ? 100 : 0,
                     }}
                     style={{
                         width: "100%",
@@ -67,7 +68,7 @@ const HomeSection = observer(() => {
                 display={"flex"}
                 flexDirection={"column"}
                 position="absolute"
-                bottom={isMobile ? "5%" : "8%"}
+                bottom={isMobile ? "5%" : "16%"}
                 left={isMobile ? "5%" : "18%"}
                 zIndex={2}
             >

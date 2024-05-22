@@ -38,7 +38,7 @@ export default function Hamingway() {
                             </Box>
                             <Box>
                                 <Typography fontSize={14} fontWeight={200} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"} textAlign={"center"}>
-                                    {"멋진 선장이 되고픈 햄밍웨이와\n햄스터 마을 친구들의 아기자기한 일상"}
+                                    {"멋진 선장이 되고픈 가출 햄스터 햄밍웨이와\n햄스터 마을 친구들의 아기자기한 리얼 라이프"}
                                 </Typography>
                             </Box>
                         </Box>
@@ -97,7 +97,7 @@ export default function Hamingway() {
                                 fontFamily={"Pretendard"}
                                 whiteSpace={"pre-wrap"}
                             >
-                                {"멋진 선장이 되고픈 햄밍웨이와\n햄스터 마을 친구들의 아기자기한 일상"}
+                                {"멋진 선장이 되고픈 가출 햄스터 햄밍웨이와\n햄스터 마을 친구들의 아기자기한 리얼 라이프"}
                             </Typography>
                         </Box>
                         <Box display={"flex"} justifyContent={"flex-end"} width={"100%"} mt={3}>
