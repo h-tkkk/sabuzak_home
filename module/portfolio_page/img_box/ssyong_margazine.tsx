@@ -34,7 +34,7 @@ export default function SsyongMargazine() {
                             </Box>
                             <Box>
                                 <Typography fontSize={16} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"} textAlign={"center"}>
-                                    {"겁많은 홀랭, 충격반전 개꿀쓰,\n못말리는 올이,\n그리고 그놈은 쓉 양아치-\n기타 등등.. 그들이 모였다!"}
+                                    {"겁많은 홀랭, 충격반전 개꿀쓰,\n못말리는 올이\n그리고 그놈은 쓉 양아치-\n기타 등등.. 그들이 모였다!"}
                                 </Typography>
                             </Box>
                             <Box>
@@ -88,7 +88,7 @@ export default function SsyongMargazine() {
                         </Box>
                         <Box>
                             <Typography sx={{ fontSize: { sm: 16, mm: 17, md: 20, lg: 24 } }} fontFamily={"Pretendard"} whiteSpace={"pre-wrap"}>
-                                {"겁많은 홀랭, 충격반전 개꿀쓰,\n못말리는 올이,\n그리고 그놈은 쓉 양아치-\n기타 등등.. 그들이 모였다!"}
+                                {"겁많은 홀랭, 충격반전 개꿀쓰,\n못말리는 올이\n그리고 그놈은 쓉 양아치-\n기타 등등.. 그들이 모였다!"}
                             </Typography>
                         </Box>
                         <Box>
