@@ -128,6 +128,10 @@ export default function MyApp(props: MyAppProps) {
                         <meta name="twitter:title" content="Your Website Title" />
                         <meta name="twitter:description" content="A short description of your website." />
                         <meta name="twitter:image" content="https://www.sbzsbz.com/path/to/your/image.jpg" />
+
+                        <meta name="naver-site-verification" content="네이버 제공 인증 코드" />
+
+                        <link rel="canonical" href="https://www.sbzsbz.com" />
                     </Head>
                     <MainLayout>
                         <Component {...pageProps} />
