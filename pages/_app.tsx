@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-head-element */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { AppProps } from "next/app";
 import "../styles/globals.css";
@@ -111,7 +112,7 @@ export default function MyApp(props: MyAppProps) {
                             },
                         }}
                     />
-                    <Head>
+                    <head>
                         <title>Sabuzak Studio</title>
                         <meta name="google-site-verification" content="MF1bKjXjgvrg6RgHOipe-DdlbnnTYZqVUKmDBZdVKeA" />
                         <meta name="naver-site-verification" content="e28872b5016b420276e8606e6b59d8d4eb700b32" />
@@ -121,7 +122,7 @@ export default function MyApp(props: MyAppProps) {
                         <meta property="og:description" content="A short description of your website." />
                         <meta property="og:image" content="https://www.sbzsbz.com/path/to/your/image.jpg" />
                         <link rel="canonical" href="https://www.sbzsbz.com" />
-                    </Head>
+                    </head>
                     <MainLayout>
                         <Component {...pageProps} />
                     </MainLayout>
