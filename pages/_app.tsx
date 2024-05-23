@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-head-element */
-/* eslint-disable react-hooks/exhaustive-deps */
+import Head from "next/head";
 import { AppProps } from "next/app";
 import "../styles/globals.css";
 import React, { createContext, useEffect, useMemo, useState } from "react";
@@ -10,7 +9,6 @@ import { dark_theme } from "../src/dark_theme";
 import { GlobalStyles } from "@mui/material";
 import { Provider } from "mobx-react";
 import { RootStore } from "../rootStore/rootStore";
-import Head from "next/head";
 
 export const ColorModeContext = createContext({
     toggleColorMode: () => {},
@@ -75,12 +73,12 @@ export default function MyApp(props: MyAppProps) {
                         styles={{
                             "@keyframes bounce": {
                                 "0%, 100%": {
-                                    transform: "translateY(0)", // 초기 위치
-                                    animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)", // 가속도
+                                    transform: "translateY(0)",
+                                    animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)",
                                 },
                                 "50%": {
-                                    transform: "translateY(-20px)", // 최대 20px 위로 이동
-                                    animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)", // 감속도
+                                    transform: "translateY(-20px)",
+                                    animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
                                 },
                             },
                             "@keyframes fadeMoveUp": {
@@ -112,17 +110,17 @@ export default function MyApp(props: MyAppProps) {
                             },
                         }}
                     />
-                    <head>
+                    <Head>
                         <title>Sabuzak Studio</title>
                         <meta name="google-site-verification" content="MF1bKjXjgvrg6RgHOipe-DdlbnnTYZqVUKmDBZdVKeA" />
                         <meta name="naver-site-verification" content="e28872b5016b420276e8606e6b59d8d4eb700b32" />
 
                         {/* Open Graph meta tags */}
-                        <meta property="og:title" content="Your Website Title" />
-                        <meta property="og:description" content="A short description of your website." />
+                        <meta property="og:title" content="Sabuzakx2 Studio" />
+                        <meta property="og:description" content="Sabuzakx2 Studio" />
                         <meta property="og:image" content="https://www.sbzsbz.com/path/to/your/image.jpg" />
                         <link rel="canonical" href="https://www.sbzsbz.com" />
-                    </head>
+                    </Head>
                     <MainLayout>
                         <Component {...pageProps} />
                     </MainLayout>
