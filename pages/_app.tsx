@@ -113,6 +113,7 @@ export default function MyApp(props: MyAppProps) {
                     />
                     <Head>
                         <title>Sabuzak Studio</title>
+                        <meta name="google-site-verification" content="MF1bKjXjgvrg6RgHOipe-DdlbnnTYZqVUKmDBZdVKeA" />
                         <meta name="naver-site-verification" content="e28872b5016b420276e8606e6b59d8d4eb700b32" />
 
                         {/* Open Graph meta tags */}
