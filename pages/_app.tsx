@@ -122,7 +122,7 @@ export default function MyApp(props: MyAppProps) {
                         {/* Open Graph meta tags */}
                         <meta property="og:title" content="Sabuzakx2 Studio" />
                         <meta property="og:description" content="Sabuzakx2 Studio" />
-                        <meta property="og:image" content="https://www.sbzsbz.com/path/to/your/image.jpg" />
+                        <meta property="og:image" content="https://www.sbzsbz.com/img/main_section/full_img.png" />
                         <link rel="canonical" href="https://www.sbzsbz.com" />
                     </Head>
                     <MainLayout>

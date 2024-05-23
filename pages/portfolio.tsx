@@ -56,7 +56,7 @@ export default function portfolioPage() {
     return (
         <>
             <Head>
-                <title>Contact - Sabuzak Studio</title>
+                <title>Portfolio - Sabuzak Studio</title>
                 <meta name="description" content="Portfolio - Sabuzak Studio." />
                 <meta property="og:title" content="Portfolio - Sabuzak Studio" />
                 <meta property="og:description" content="Portfolio - Sabuzak Studio" />
