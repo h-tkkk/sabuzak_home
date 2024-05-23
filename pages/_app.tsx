@@ -114,23 +114,11 @@ export default function MyApp(props: MyAppProps) {
                     <Head>
                         <title>Sabuzak Studio</title>
                         <meta name="naver-site-verification" content="e28872b5016b420276e8606e6b59d8d4eb700b32" />
-                        <meta name="description" content="A short description of your website." />
 
                         {/* Open Graph meta tags */}
                         <meta property="og:title" content="Your Website Title" />
                         <meta property="og:description" content="A short description of your website." />
                         <meta property="og:image" content="https://www.sbzsbz.com/path/to/your/image.jpg" />
-                        <meta property="og:url" content="https://www.sbzsbz.com" />
-                        <meta property="og:type" content="website" />
-
-                        {/* Twitter Card meta tags */}
-                        <meta name="twitter:card" content="summary_large_image" />
-                        <meta name="twitter:title" content="Your Website Title" />
-                        <meta name="twitter:description" content="A short description of your website." />
-                        <meta name="twitter:image" content="https://www.sbzsbz.com/path/to/your/image.jpg" />
-
-                        <meta name="naver-site-verification" content="네이버 제공 인증 코드" />
-
                         <link rel="canonical" href="https://www.sbzsbz.com" />
                     </Head>
                     <MainLayout>
