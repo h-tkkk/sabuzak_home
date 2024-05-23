@@ -115,6 +115,10 @@ export default function MyApp(props: MyAppProps) {
                         <meta name="google-site-verification" content="MF1bKjXjgvrg6RgHOipe-DdlbnnTYZqVUKmDBZdVKeA" />
                         <meta name="naver-site-verification" content="e28872b5016b420276e8606e6b59d8d4eb700b32" />
 
+                        <meta name="description" content="사부작사부작 스튜디오" />
+                        <meta name="keywords" content="SBZ, sbz" />
+                        <meta name="robots" content="index,follow" />
+
                         {/* Open Graph meta tags */}
                         <meta property="og:title" content="Sabuzakx2 Studio" />
                         <meta property="og:description" content="Sabuzakx2 Studio" />
@@ -129,13 +133,3 @@ export default function MyApp(props: MyAppProps) {
         </ColorModeContext.Provider>
     );
 }
-
-// 100 - Thin
-// 200 - Extra Light (Ultra Light)
-// 300 - Light
-// 400 - Normal
-// 500 - Medium
-// 600 - Semi Bold (Demi Bold)
-// 700 - Bold
-// 800 - Extra Bold (Ultra Bold)
-// 900 - Black (Heavy)

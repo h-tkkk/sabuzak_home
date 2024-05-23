@@ -46,8 +46,8 @@ export default function Home() {
 
     return (
         <>
-            <head>
-                <title>Sabuzak Studio</title>
+            <Head>
+                <title>Sabuzakx2 Studio</title>
                 <meta name="google-site-verification" content="MF1bKjXjgvrg6RgHOipe-DdlbnnTYZqVUKmDBZdVKeA" />
                 <meta name="naver-site-verification" content="e28872b5016b420276e8606e6b59d8d4eb700b32" />
 
@@ -56,7 +56,7 @@ export default function Home() {
                 <meta property="og:description" content="Sabuzakx2 studio" />
                 <meta property="og:image" content="https://www.sbzsbz.com/path/to/your/image.jpg" />
                 <link rel="canonical" href="https://www.sbzsbz.com" />
-            </head>
+            </Head>
             <Box height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"} position={"relative"}>
                 <Header />
                 {/* Content */}
