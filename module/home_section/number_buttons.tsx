@@ -27,7 +27,7 @@ const NumberButtons = observer(() => {
     };
 
     return (
-        <Box display={"flex"} gap={"26px"} pt={17.75} px={3}>
+        <Box display={"flex"} gap={"26px"} pt={isMobile ? 3.5 : 17.75} px={3}>
             {[1, 2].map((number) => (
                 <Button
                     key={number}
