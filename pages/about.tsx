@@ -47,7 +47,7 @@ export default function AboutPage() {
                                 <Box mb={-5.25}>
                                     <Typography fontSize={isMobile ? 28 : 32}>{"eloved"}</Typography>
                                     <Typography fontFamily={"Pretendard"} fontSize={isMobile ? 18 : 24} whiteSpace={"pre-wrap"}>
-                                        {"누구에게나 사랑받을 수 있는 캐릭터"}
+                                        {isMobile ? "누구에게나 사랑받을 수 있는\n캐릭터" : "누구에게나 사랑받을 수 있는 캐릭터"}
                                     </Typography>
                                 </Box>
                             </Box>
@@ -57,7 +57,7 @@ export default function AboutPage() {
                                 </Typography>
                                 <Box mb={-5.25}>
                                     <Typography fontSize={isMobile ? 28 : 32}>{"est"}</Typography>
-                                    <Typography fontFamily={"Pretendard"} fontSize={24} whiteSpace={"pre-wrap"}>
+                                    <Typography fontFamily={"Pretendard"} fontSize={isMobile ? 18 : 24} whiteSpace={"pre-wrap"}>
                                         {"콘텐츠에 대한 열의"}
                                     </Typography>
                                 </Box>
