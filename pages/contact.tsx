@@ -84,7 +84,7 @@ export default function ContactPage() {
                                 {"서울특별시 강남구 학동로7길 29"}
                             </Typography>
                             <Typography fontFamily={"Pretendard"} fontWeight={600} sx={{ fontSize: { xs: "14px", md: "16px", lg: "28px" } }}>
-                                {"(02)-6213-3100 (평일 09:00 ~ 18:00)"}
+                                {"02-6213-3100 (평일 09:00 ~ 18:00)"}
                             </Typography>
                             <Typography fontFamily={"Pretendard"} fontWeight={600} sx={{ fontSize: { xs: "14px", md: "16px", lg: "28px" } }}>
                                 {"sabuzakx2studio@gmail.com"}
