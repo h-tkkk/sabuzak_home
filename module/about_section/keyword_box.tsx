@@ -6,6 +6,7 @@ interface KeywordBoxProps {
     keyword: string;
     hover_keyword: string;
     sub_keyword: string;
+    videoSrc: string;
     icon: ReactElement;
 }
 
@@ -65,17 +66,23 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     "& .icon": {
                         transform: `translate(calc(-${boxWidth / 1.9}px + 50px), -${iconOffSet}px) scale(0.8)`,
                         transition: "transform 0.5s ease-out",
+                        width: 0,
                     },
                     "& .text": {
                         transform: `translate(calc(-${boxWidth / 2}px + 50px), ${textOffSet}px)`,
                         transition: "transform 0.5s ease-out",
                     },
                     "& .text_typo": {
-                        transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
+                        transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out, color 1s ease",
                         fontWeight: 900,
+                        color: "#000",
                         fontSize: 26,
                     },
                     "& .opacity_box": {
+                        opacity: 1,
+                        transition: "opacity 0.5s ease-out",
+                    },
+                    "& .hover_video": {
                         opacity: 1,
                         transition: "opacity 0.5s ease-out",
                     },
@@ -84,6 +91,32 @@ export default function KeywordBox(props: KeywordBoxProps) {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
+            <Box
+                className="hover_video"
+                sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    opacity: 0,
+                    pointerEvents: "none",
+                    transition: "opacity 0.5s ease-out",
+                }}
+            >
+                <video
+                    src={props.videoSrc}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        borderRadius: "16px",
+                    }}
+                    autoPlay
+                    loop
+                    muted
+                />
+            </Box>
             <Box
                 className="icon"
                 position={"absolute"}
@@ -94,6 +127,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     width: iconSize,
                     height: iconSize,
                     transition: "transform 0.5s ease-out",
+                    fill: "#000",
                     "& .svg": {
                         width: iconSize,
                         height: iconSize,
@@ -115,7 +149,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                 <Typography
                     className="text_typo"
                     sx={{
-                        transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out",
+                        transition: "font-weight 0.5s ease-out, font-size 0.5s ease-out, color 1s ease",
                         fontSize: keywordFont,
                         textAlign: "left",
                         color: "#fff",
@@ -134,7 +168,7 @@ export default function KeywordBox(props: KeywordBoxProps) {
                     opacity: 0,
                 }}
             >
-                <Typography fontFamily={"Pretendard"} fontSize={18} color={"#fff"}>
+                <Typography fontFamily={"Pretendard"} fontSize={18} color={"#000"}>
                     {props.sub_keyword}
                 </Typography>
             </Box>

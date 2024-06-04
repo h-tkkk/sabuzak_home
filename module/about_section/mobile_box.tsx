@@ -6,6 +6,7 @@ interface KeywordBoxProps {
     keyword: string;
     hover_keyword: string;
     sub_keyword: string;
+    videoSrc: string;
     icon: ReactElement;
 }
 
@@ -58,24 +59,18 @@ export default function MobileBox(props: KeywordBoxProps) {
                 boxShadow: "0px 10px 30px 0px rgba(0, 0, 0, 0.25)",
             }}
         >
-            <Box
-                className="icon"
-                position={"absolute"}
-                top={"45%"}
-                left={"50%"}
-                sx={{
-                    transform: `translate(calc(-${boxWidth / 1.9}px + ${leftOffSet}px), -${iconOffSet}px) scale(0.8)`,
-                    width: iconSize,
-                    height: iconSize,
-                    transition: "transform 0.5s ease-out",
-                    "& .svg": {
-                        width: iconSize,
-                        height: iconSize,
-                    },
+            <video
+                src={props.videoSrc}
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "16px",
                 }}
-            >
-                {props.icon}
-            </Box>
+                autoPlay
+                loop
+                muted
+            />
             <Box
                 className="text"
                 position={"absolute"}
@@ -93,7 +88,7 @@ export default function MobileBox(props: KeywordBoxProps) {
                         fontWeight: 900,
                         fontSize: keywordFont,
                         textAlign: "left",
-                        color: "#fff",
+                        color: "#000",
                     }}
                 >
                     {props.hover_keyword}
@@ -101,7 +96,7 @@ export default function MobileBox(props: KeywordBoxProps) {
             </Box>
             <Box className="opacity_box" position={"absolute"} bottom={"15%"} left={leftOffSet}>
                 {/* 모바일 14 */}
-                <Typography fontFamily={"Pretendard"} fontSize={subKeywordFont} color={"#fff"}>
+                <Typography fontFamily={"Pretendard"} fontSize={subKeywordFont} color={"#000"}>
                     {props.sub_keyword}
                 </Typography>
             </Box>

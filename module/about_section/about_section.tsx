@@ -12,18 +12,21 @@ const aboutList = [
         keyword: "S",
         hover_keyword: "Serendipity",
         sub_keyword: "뜻밖의 재미",
+        videoSrc: "/video/ad_01.mp4",
         icon: <AboutS />,
     },
     {
         keyword: "B",
         hover_keyword: "Beloved",
         sub_keyword: "사랑받는 캐릭터",
+        videoSrc: "/video/ad_02.mp4",
         icon: <AboutB />,
     },
     {
         keyword: "Z",
         hover_keyword: "Zest",
         sub_keyword: "열의",
+        videoSrc: "/video/ad_03.mp4",
         icon: <AboutZ />,
     },
 ];
@@ -83,12 +86,15 @@ export default function AboutSection() {
                     px={"10%"}
                 >
                     {aboutList.map((about, idx) => {
+                        let vedioIndex = idx + 1;
+
                         return (
                             <MobileBox
                                 key={`keyword_${idx}`}
                                 icon={about.icon}
                                 keyword={about.keyword}
                                 hover_keyword={about.hover_keyword}
+                                videoSrc={`/video/ad_0${vedioIndex}.mp4`}
                                 sub_keyword={about.sub_keyword}
                             />
                         );
@@ -106,12 +112,14 @@ export default function AboutSection() {
                     px={"10%"}
                 >
                     {aboutList.map((about, idx) => {
+                        let vedioIndex = idx + 1;
                         return (
                             <KeywordBox
                                 key={`keyword_${idx}`}
                                 icon={about.icon}
                                 keyword={about.keyword}
                                 hover_keyword={about.hover_keyword}
+                                videoSrc={`/video/ad_0${vedioIndex}.mp4`}
                                 sub_keyword={about.sub_keyword}
                             />
                         );
