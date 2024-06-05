@@ -9,7 +9,17 @@ export default function Footer() {
     return (
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"} bgcolor={"#133F7F"} height={80}>
             {/* <Box>{isMd ? null : <MyIcon fill={"#fff"} />}</Box> */}
-            <Box display={"flex"} flexDirection={isMobile ? "column" : "row"} gap={isMobile ? 0 : 3}>
+            <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={isMobile ? 0 : 1}>
+                <Typography
+                    whiteSpace={"pre-wrap"}
+                    fontFamily={"Pretendard"}
+                    textAlign={"center"}
+                    fontWeight={500}
+                    sx={{ fontSize: { xs: "10px", md: "14px", lg: "16px" } }}
+                    color={"#fff"}
+                >
+                    {`서울특별시 강남구 학동로7길 29 | email: sabuzakx2studio@gmail.com ${isMobile ? "\n" : "|"} tel: 02-6213-3100 | 대표 : 손지유`}
+                </Typography>
                 <Typography fontFamily={"Pretendard"} fontWeight={500} sx={{ fontSize: { xs: "10px", md: "14px", lg: "16px" } }} color={"#fff"}>
                     {"Copyright 2023. Sabuzakx2studio. All rights reserved."}
                 </Typography>
