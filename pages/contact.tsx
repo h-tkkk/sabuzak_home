@@ -65,9 +65,12 @@ export default function ContactPage() {
                                     },
                                 }}
                             />
-                            <Box bgcolor={"#fff"}>
-                                <Typography fontFamily={"Pretendard"} fontWeight={700}>
+                            <Box bgcolor={"#000"} sx={{ opacity: 0.8 }} textAlign={"center"} p={1} borderRadius={2}>
+                                <Typography fontFamily={"Pretendard"} fontWeight={700} color={"#fff"}>
                                     {"SABUZAKx2 STUDIO"}
+                                </Typography>
+                                <Typography fontFamily={"Pretendard"} fontWeight={700} color={"#fff"}>
+                                    {"SABUZAK Ent"}
                                 </Typography>
                             </Box>
                         </CustomOverlayMap>
