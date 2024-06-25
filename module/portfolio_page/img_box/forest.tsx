@@ -2,7 +2,6 @@ import { Box, Button, IconButton, Typography, styled, useMediaQuery, useTheme } 
 import LinkTree from "@assets/link_tree.svg";
 import { useState } from "react";
 import ArrowIcon from "@assets/jalnan_arrow.svg";
-import TextButton from "../../../component/button/text_button";
 import Link from "next/link";
 
 const title = "꾀죄죄한 작은 숲";
