@@ -10,13 +10,13 @@ export default function ComplexAcademy() {
                 <Box
                     height={225}
                     sx={{
-                        backgroundImage: "url('/img/port_img/port_coplex_bg.png')",
+                        backgroundImage: "url('/img/portfoilo_page/portfoilo_complex.jpg')",
                         backgroundSize: "cover",
                     }}
                 >
                     <Box display={"flex"} flexDirection={"column"} width={"100%"} height={"100%"} alignItems={"center"}>
                         <Box display={"flex"} width={"100%"} height={"100%"} alignItems={"flex-end"}>
-                            <img src={"/img/character_comp.png"} alt={`image`} style={{ width: "100%" }} />
+                            {/* <img src={"/img/portfoilo_page/portfoilo_complex.jpg"} alt={`image`} style={{ width: "100%" }} /> */}
                         </Box>
                     </Box>
                 </Box>
@@ -46,23 +46,40 @@ export default function ComplexAcademy() {
             <Box
                 className="boxWithDiagonalShadow_2"
                 sx={{
+                    position: "relative",
                     height: { sm: 267, md: 400, lg: 529 },
-                    background: `linear-gradient(-76deg, #FFE676 46%, rgba(255, 255, 255, 0) 46%), url('/img/port_img/port_coplex_bg.png')`,
-                    // background: "linear-gradient(-76deg, #FFF8D6 46%, #FFE676 46%)",
+                    background: `linear-gradient(-76deg, #FFE676 46%, rgba(255, 255, 255, 0) 46%)`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     color: "#000",
                     fontSize: "24px",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "contain",
+                    "&:hover": {
+                        ".hoverBox": {
+                            display: "contents",
+                            background: "#FFE676",
+                            zIndex: 10,
+                        },
+                    },
                 }}
             >
-                <Box display={"flex"} width={"100%"} height={"100%"} alignItems={"center"}>
-                    <Box display={"flex"} width={"50%"} height={"100%"} alignItems={"flex-end"}>
-                        <img src={"/img/character_comp.png"} alt={`image`} style={{ width: "100%" }} />
-                    </Box>
-                    <Box display={"flex"} width={"auto"} flexDirection={"column"} gap={2} sx={{ pl: { sm: "10%", mm: "12%", md: "16%", lg: "18%" } }}>
+                <Box
+                    component="img"
+                    src="/img/portfoilo_page/portfoilo_complex.jpg"
+                    alt="background image"
+                    sx={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "58.39%",
+                        height: "100%",
+                        objectFit: "cover",
+                        zIndex: -1,
+                    }}
+                />
+                <Box display="flex" width="100%" height="100%" alignItems="center">
+                    <Box display="flex" width="50%" height="100%" alignItems="flex-end" />
+                    <Box display="flex" width="auto" flexDirection="column" gap={2} sx={{ pl: { sm: "10%", mm: "12%", md: "16%", lg: "18%" } }}>
                         <Box>
                             <Typography sx={{ fontSize: { sm: 21, mm: 23, md: 28, lg: 32 } }}>{"콤플렉스 아카데미"}</Typography>
                         </Box>
@@ -83,6 +100,15 @@ export default function ComplexAcademy() {
                         </Box>
                     </Box>
                 </Box>
+                {/* <Box
+                    className="hoverBox"
+                    sx={{
+                        position: "absolute",
+                        zIndex: -1,
+                    }}
+                >
+                    <Typography>{"콤플렉스 아카데이 페이지"}</Typography>
+                </Box> */}
             </Box>
         );
     }

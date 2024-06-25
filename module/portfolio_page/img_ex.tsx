@@ -5,6 +5,7 @@ import Hamingway from "./img_box/hamingway";
 import SsyongMargazine from "./img_box/ssyong_margazine";
 import { Gallery, ThumbnailImageProps } from "react-grid-gallery";
 import { useEffect, useState } from "react";
+import Forest from "./img_box/forest";
 
 const allImages = [
     { src: "/img/port_img/img1.png", width: 400, height: 400 },
@@ -55,6 +56,7 @@ export default function ImgEx() {
             <ComplexAcademy />
             <Hamingway />
             <SsyongMargazine />
+            <Forest />
 
             <Footer />
         </Box>
