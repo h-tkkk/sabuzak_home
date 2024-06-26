@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography } from "@mui/material";
+import { Box, Grid, Paper, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import LeftArrow from "@assets/left-arrow.svg";
 import RightArrow from "@assets/right-arrow.svg";
@@ -31,6 +31,9 @@ const items = [
 ];
 
 export default function CharacterInfo() {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
     return (
         <Box display={"flex"} flexDirection={"column"}>
             <Box px={"18%"} pb={4.875}>
@@ -41,7 +44,7 @@ export default function CharacterInfo() {
                     NextIcon={<RightArrow />}
                     PrevIcon={<LeftArrow />}
                     autoPlay={true}
-                    navButtonsAlwaysVisible={true}
+                    navButtonsAlwaysVisible={!isMobile}
                     fullHeightHover={true}
                     navButtonsProps={{
                         style: {

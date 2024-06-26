@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography } from "@mui/material";
+import { Box, Button, Grid, Paper, Typography } from "@mui/material";
 
 const storeItem = [
     {
@@ -47,8 +47,8 @@ export default function SleathyStore() {
     return (
         <Box display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} py={5.625} gap={3.75}>
             <Typography fontSize={48}>{"스토어"}</Typography>
-            <Box px={"18%"} pb={6.125}>
-                <Grid item xs={12}>
+            <Box pb={6.125}>
+                <Grid item xs={12} px={"18%"}>
                     <Grid container justifyContent="center" spacing={2}>
                         {storeItem.map((value) => (
                             <Grid key={value.storeLink} item>
@@ -71,6 +71,20 @@ export default function SleathyStore() {
                     </Grid>
                 </Grid>
             </Box>
+            <Button
+                sx={{
+                    border: "2px solid",
+                    color: "#000",
+                    borderRadius: "30px",
+                    paddingY: 2,
+                    paddingX: 3,
+                }}
+                onClick={() => window.open("https://smartstore.naver.com/grovy", "_blank")}
+            >
+                <Typography fontFamily={"Pretendard"} sx={{ fontSize: { sm: 16, mm: 17, md: 20, lg: 24 } }}>
+                    {"스토어 바로가기"}
+                </Typography>
+            </Button>
         </Box>
     );
 }

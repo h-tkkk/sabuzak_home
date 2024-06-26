@@ -1,16 +1,18 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Footer from "../../composition/footer/footer";
 import CharacterInfo from "./character_info";
 import LinkCarousel from "./link_carousel";
 import SleathyStore from "./sleathy_store";
 
 export default function MainLayout() {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
     return (
         <Box width={"100%"} height={"100%"} pt={9}>
-            {/* header */}
+            {/* banner */}
             <Box
-                height={"100%"}
-                maxHeight={500}
+                height={isMobile ? "20%" : 400}
                 sx={{
                     backgroundImage: `url(/img/sleathygroves_banner.png)`,
                     backgroundSize: "cover",
@@ -37,7 +39,9 @@ export default function MainLayout() {
             <CharacterInfo />
             {/* more */}
             <Box display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} pt={5.625} gap={3.75}>
-                <Typography fontSize={{ xs: 28, sm: 36, md: 42, lg: 48 }}>{"꾀죄죄한 작은 숲이 궁금하다면"}</Typography>
+                <Typography fontSize={{ xs: 28, sm: 36, md: 42, lg: 48 }} textAlign={"center"}>
+                    {"꾀죄죄한 작은 숲이 궁금하다면"}
+                </Typography>
                 <Box pb={6.125}>
                     <Typography
                         sx={{ fontSize: { sm: 16, mm: 17, md: 20, lg: 24 } }}
