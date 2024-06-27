@@ -15,13 +15,16 @@ const formatted = (sitemap) => prettier.format(sitemap, { parser: "html" });
         "../pages/*.tsx",
         // exclude
         "!../pages/_*.tsx",
+        "!pages/_*.tsx",
+        "!pages/api",
     ]);
 
     const pagesSitemap = `
     ${pages
         .map((page) => {
             const path = page
-                .replace("../pages/", "")
+                // .replace("../pages/", "")
+                .replace("pages/", "")
                 .replace(".tsx", "")
                 .replace(/\/index/g, "");
             const routePath = path === "index" ? "" : path;
@@ -29,6 +32,8 @@ const formatted = (sitemap) => prettier.format(sitemap, { parser: "html" });
           <url>
             <loc>${YOUR_AWESOME_DOMAIN}/${routePath}</loc>
             <lastmod>${getDate}</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.7</priority>
           </url>
         `;
         })

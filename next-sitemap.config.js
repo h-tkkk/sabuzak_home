@@ -13,5 +13,6 @@ module.exports = {
                 allow: "/",
             },
         ],
+        additionalSitemaps: ["https://www.sbzsbz.com/sitemap-common.xml"],
     },
 };
