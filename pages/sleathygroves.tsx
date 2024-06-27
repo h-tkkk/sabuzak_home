@@ -4,8 +4,18 @@ import Header from "../composition/header/header";
 import MainLayout from "../module/sleathygroves_page/main_layout";
 import PortfolioHead from "../component/portfolio_head";
 import { NextSeo } from "next-seo";
+import { GetServerSideProps } from "next";
 
-export default function SleathygrovesPage() {
+interface HomePageProps {
+    seo: {
+        title: string;
+        description: string;
+        url: string;
+        image: string;
+    };
+}
+
+export default function SleathygrovesPage({ seo }: HomePageProps) {
     const title = "꾀죄죄한 작은 숲";
     const description =
         "우리 근처에 있지만, 우리는 눈치채지 못하는 작고 꾀죄죄한 곳 털복숭이 숲요정 '그로비' 들과 해발고도 4cm,세상에서 가장 작은 산 '마운틴 옹' 그리고 조금은 특별한 색채를 가진 숲속 친구들의 이야기";
@@ -31,16 +41,14 @@ export default function SleathygrovesPage() {
                 <meta name="keywords" content="꾀죄죄,꾀죄죄한 작은 숲,마운팅옹,그로비,씨조새,숲요정,해발고도" />
             </Head> */}
             <NextSeo
-                title={"꾀죄죄한 작은 숲"}
-                description={
-                    "우리 근처에 있지만, 우리는 눈치채지 못하는 작고 꾀죄죄한 곳 털복숭이 숲요정 '그로비' 들과 해발고도 4cm,세상에서 가장 작은 산 '마운틴 옹' 그리고 조금은 특별한 색채를 가진 숲속 친구들의 이야기"
-                }
-                canonical={url}
+                title={seo.title}
+                description={seo.description}
+                canonical={seo.url}
                 openGraph={{
-                    title: title,
-                    description: description,
-                    images: [{ url: images }],
-                    url: url,
+                    title: seo.title,
+                    description: seo.description,
+                    images: [{ url: seo.image }],
+                    url: seo.url,
                 }}
                 twitter={{
                     handle: "@handle",
@@ -55,3 +63,21 @@ export default function SleathygrovesPage() {
         </>
     );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    const seo = {
+        title: "꾀죄죄한 작은 숲 - Sabuzakx2 Studio",
+        description:
+            "우리 근처에 있지만, 우리는 눈치채지 못하는 작고 꾀죄죄한 곳 털복숭이 숲요정 '그로비' 들과 해발고도 4cm,세상에서 가장 작은 산 '마운틴 옹' 그리고 조금은 특별한 색채를 가진 숲속 친구들의 이야기",
+        url: "https://www.sbzsbz.com/sleathygroves",
+        image: "https://www.sbzsbz.com/img/sleathygroves_banner.png",
+    };
+
+    console.log(seo);
+
+    return {
+        props: {
+            seo,
+        },
+    };
+};
