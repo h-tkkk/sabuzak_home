@@ -72,7 +72,6 @@ export default function Home({ seo }: HomePageProps) {
             </Head>
             <Box height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"} position={"relative"}>
                 <Header />
-                <h1>{seo.title}</h1>
                 {/* Content */}
                 <Box width={"100%"} height={"100%"}>
                     <HomeSection />
