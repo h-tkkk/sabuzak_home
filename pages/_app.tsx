@@ -9,6 +9,33 @@ import { dark_theme } from "../src/dark_theme";
 import { GlobalStyles } from "@mui/material";
 import { Provider } from "mobx-react";
 import { RootStore } from "../rootStore/rootStore";
+import { DefaultSeo } from "next-seo";
+
+const DEFAULT_SEO = {
+    title: "Sabuzakx2 Studio",
+    description: "사부작사부작 스튜디오",
+    canonical: "https://www.sbzsbz.com",
+    openGraph: {
+        type: "website",
+        locale: "ko_KR",
+        url: "https://www.sbzsbz.com",
+        title: "사부작사부작 스튜디오",
+        site_name: "사부작사부작 스튜디오",
+        images: [
+            {
+                url: "https://www.sbzsbz.com/img/main_section/full_img.png",
+                width: 285,
+                height: 167,
+                alt: "mainImage",
+            },
+        ],
+    },
+    twitter: {
+        handle: "@handle",
+        site: "@site",
+        cardType: "summary_large_image",
+    },
+};
 
 export const ColorModeContext = createContext({
     toggleColorMode: () => {},
@@ -114,10 +141,9 @@ export default function MyApp(props: MyAppProps) {
                         <title>Sabuzak Studio</title>
                         <meta name="google-site-verification" content="MF1bKjXjgvrg6RgHOipe-DdlbnnTYZqVUKmDBZdVKeA" />
                         <meta name="naver-site-verification" content="e28872b5016b420276e8606e6b59d8d4eb700b32" />
-
-                        <meta name="description" content="사부작사부작 스튜디오" />
                         <meta name="robots" content="index,follow" />
                     </Head>
+                    <DefaultSeo {...DEFAULT_SEO} />
                     <MainLayout>
                         <Component {...pageProps} />
                     </MainLayout>
