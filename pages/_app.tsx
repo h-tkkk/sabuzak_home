@@ -116,7 +116,10 @@ export default function MyApp(props: MyAppProps) {
                         <meta name="naver-site-verification" content="e28872b5016b420276e8606e6b59d8d4eb700b32" />
 
                         <meta name="description" content="사부작사부작 스튜디오" />
-                        <meta name="keywords" content="SBZ, sbz" />
+                        <meta
+                            name="keywords"
+                            content="SBZ, sbz, 사부작 스튜디오,사부작,햄밍웨이,콤플렉스 아카데미,쑝쑝 메거진,꾀죄죄한작은숲,꾀작숲,사부작사부작스튜디오"
+                        />
                         <meta name="robots" content="index,follow" />
 
                         {/* Open Graph meta tags */}

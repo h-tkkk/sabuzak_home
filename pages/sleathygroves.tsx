@@ -13,6 +13,7 @@ export default function SleathygrovesPage() {
                 <meta property="og:description" content="꾀죄죄한 작은 숲 - Sabuzak Studio" />
                 <meta property="og:image" content="https://www.sbzsbz.com/img/sleathygroves_banner.png" />
                 <link rel="canonical" href="https://www.sbzsbz.com/sleathygroves" />
+                <meta name="keywords" content="꾀죄죄,꾀죄죄한 작은 숲,마운팅옹,그로비,씨조새,숲요정,해발고도" />
             </Head>
             <Box height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"}>
                 <Header />
