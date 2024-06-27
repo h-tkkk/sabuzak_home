@@ -4,48 +4,14 @@ import ArrowIcon from "@assets/jalnan_arrow.svg";
 import { useState } from "react";
 import { styled } from "@mui/system";
 import Link from "next/link";
+import Overlay from "../../../component/overlay";
+import HoverBox from "../../../component/hover_box";
 
 const title = "쑝쑝 매거진";
 const mainContent = "겁많은 홀랭, 충격반전 개꿀쓰,\n못말리는 올이\n그리고 그놈은 쓉 양아치-\n기타 등등.. 그들이 모였다!";
 const subContent = "그 시절.. 그 감성.. 그 만화..\n그리고 얼렁뚱땅 한 방울;;;\n새롭고 개성 넘치는 말장난\n코믹-쑝쑝 매거진";
 const color = "#D2EFFF";
 const imgPath = "/img/portfoilo_page/portfolio_ssyong.png";
-
-const HoverBox = styled(Box)({
-    position: "relative",
-    height: "100%",
-    width: "100%",
-    overflow: "hidden",
-    transition: "background-color 0.3s ease",
-    "&:hover": {
-        backgroundColor: color,
-        "& .content": {
-            opacity: 0,
-            transition: "opacity 0.3s ease",
-        },
-        "& .overlay": {
-            opacity: 1,
-            transition: "opacity 0.3s ease",
-            pointerEvents: "all",
-        },
-    },
-});
-
-const Overlay = styled(Box)({
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    opacity: 0,
-    transition: "opacity 0.3s ease",
-    zIndex: 1,
-    textAlign: "center",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    pointerEvents: "none",
-});
 
 export default function SsyongMargazine() {
     const theme = useTheme();
@@ -106,6 +72,7 @@ export default function SsyongMargazine() {
     } else {
         return (
             <HoverBox
+                color={color}
                 className={isHovered ? "" : "boxWithDiagonalShadow_2"}
                 sx={{
                     position: "relative",
@@ -160,7 +127,7 @@ export default function SsyongMargazine() {
                 </Box>
                 <Overlay className="overlay">
                     <Link href={"/"} passHref>
-                        <Box component="a" sx={{ display: "flex", alignItems: "center", textDecration: "none", color: "inherit" }}>
+                        <Box sx={{ display: "flex", alignItems: "center", textDecration: "none", color: "inherit" }}>
                             <Typography sx={{ fontSize: 40, color: "#000" }}>{`${title} 페이지`}</Typography>
                             <ArrowIcon />
                         </Box>

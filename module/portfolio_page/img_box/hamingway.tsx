@@ -4,48 +4,14 @@ import { useState } from "react";
 import { styled } from "@mui/system";
 import ArrowIcon from "@assets/jalnan_arrow.svg";
 import Link from "next/link";
+import HoverBox from "../../../component/hover_box";
+import Overlay from "../../../component/overlay";
 
 const title = "햄밍웨이";
 const mainContent = "나, 햄밍웨이 1.3세, 70구람!\n눈물 한 방울 💧 흘려 본 적 없는\n싸나이!";
 const subContent = "멋진 선장이 되고픈 가출 햄스터 햄밍웨이와\n햄스터 마을 친구들의 아기자기한 리얼 라이프";
 const color = "#FFE7B3";
 const imgPath = "/img/portfoilo_page/portfolio_haming.jpg";
-
-const HoverBox = styled(Box)({
-    position: "relative",
-    height: "100%",
-    width: "100%",
-    overflow: "hidden",
-    transition: "background-color 0.3s ease",
-    "&:hover": {
-        backgroundColor: color,
-        "& .content": {
-            opacity: 0,
-            transition: "opacity 0.3s ease",
-        },
-        "& .overlay": {
-            opacity: 1,
-            transition: "opacity 0.3s ease",
-            pointerEvents: "all",
-        },
-    },
-});
-
-const Overlay = styled(Box)({
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    opacity: 0,
-    transition: "opacity 0.3s ease",
-    zIndex: 1,
-    textAlign: "center",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    pointerEvents: "none",
-});
 
 export default function Hamingway() {
     const theme = useTheme();
@@ -105,6 +71,7 @@ export default function Hamingway() {
     } else {
         return (
             <HoverBox
+                color={color}
                 className={isHovered ? "" : "boxWithDiagonalShadow"}
                 sx={{
                     position: "relative",
@@ -158,8 +125,8 @@ export default function Hamingway() {
                     </Box>
                 </Box>
                 <Overlay className="overlay">
-                    <Link href={"/"} passHref>
-                        <Box component="a" sx={{ display: "flex", alignItems: "center", textDecration: "none", color: "inherit" }}>
+                    <Link href={"/hamingway"} passHref>
+                        <Box sx={{ display: "flex", alignItems: "center", textDecration: "none", color: "inherit" }}>
                             <Typography sx={{ fontSize: 40, color: "#000" }}>{`${title} 페이지 `}</Typography>
                             <ArrowIcon />
                         </Box>

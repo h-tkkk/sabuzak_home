@@ -3,48 +3,14 @@ import LinkTree from "@assets/link_tree.svg";
 import { useState } from "react";
 import ArrowIcon from "@assets/jalnan_arrow.svg";
 import Link from "next/link";
+import HoverBox from "../../../component/hover_box";
+import Overlay from "../../../component/overlay";
 
 const title = "꾀죄죄한 작은 숲";
 const mainContent = "우리 근처에 있지만,\n우리는 눈치채지 못하는\n작고 꾀죄죄한 곳";
 const subContent =
     "털복숭이 숲요정 '그로비'들과\n해발고도 4cm,\n세상에서 가장 작은 산 '마운틴 옹'\n그리고 조금은 특별한 색채를 가진\n숲속 친구들의 이야기";
 const color = "#CDEDA3";
-
-const HoverBox = styled(Box)({
-    position: "relative",
-    height: "100%",
-    width: "100%",
-    overflow: "hidden",
-    transition: "background-color 0.3s ease",
-    "&:hover": {
-        backgroundColor: color,
-        "& .content": {
-            opacity: 0,
-            transition: "opacity 0.3s ease",
-        },
-        "& .overlay": {
-            opacity: 1,
-            transition: "opacity 0.3s ease",
-            pointerEvents: "all",
-        },
-    },
-});
-
-const Overlay = styled(Box)({
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    opacity: 0,
-    transition: "opacity 0.3s ease",
-    zIndex: 1,
-    textAlign: "center",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    pointerEvents: "none",
-});
 
 export default function Forest() {
     const theme = useTheme();
@@ -102,6 +68,7 @@ export default function Forest() {
         // portfolio_sleathygroves.png
         return (
             <HoverBox
+                color={color}
                 className={isHovered ? "" : "boxWithDiagonalShadow"}
                 sx={{
                     height: { sm: 267, md: 400, lg: 529 },
@@ -155,7 +122,7 @@ export default function Forest() {
                 </Box>
                 <Overlay className="overlay">
                     <Link href={"sleathygroves"} passHref>
-                        <Box component="a" sx={{ display: "flex", alignItems: "center", textDecration: "none", color: "inherit" }}>
+                        <Box sx={{ display: "flex", alignItems: "center", textDecration: "none", color: "inherit" }}>
                             <Typography sx={{ fontSize: 40, color: "#000" }}>{"꾀죄죄한 작은 숲 페이지 "}</Typography>
                             <ArrowIcon />
                         </Box>

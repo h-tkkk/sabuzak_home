@@ -8,11 +8,11 @@ export default function SleathygrovesPage() {
         <>
             <Head>
                 <title>꾀죄죄한 작은 숲 - Sabuzak Studio</title>
-                <meta name="description" content="Portfolio - Sabuzak Studio." />
-                <meta property="og:title" content="Portfolio - Sabuzak Studio" />
-                <meta property="og:description" content="Portfolio - Sabuzak Studio" />
-                <meta property="og:image" content="https://www.sbzsbz.com/img/port_img/port_coplex_bg.png" />
-                <link rel="canonical" href="https://www.sbzsbz.com/portfolio" />
+                <meta name="description" content="꾀죄죄한 작은 숲 - Sabuzak Studio." />
+                <meta property="og:title" content="꾀죄죄한 작은 숲 - Sabuzak Studio" />
+                <meta property="og:description" content="꾀죄죄한 작은 숲 - Sabuzak Studio" />
+                <meta property="og:image" content="https://www.sbzsbz.com/img/sleathygroves_banner.png" />
+                <link rel="canonical" href="https://www.sbzsbz.com/sleathygroves" />
             </Head>
             <Box height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"}>
                 <Header />

@@ -5,10 +5,10 @@ import RightArrow from "@assets/right-arrow.svg";
 
 const items = [
     {
-        name: "그로비",
-        imgPaths: ["/img/sleat_char/grovy1.png", "/img/sleat_char/grovy2.png", "/img/sleat_char/grovy3.png"],
+        name: "마운틴.옹",
+        imgPaths: ["/img/sleat_char/mountin1.png", "/img/sleat_char/mountin2.png", "/img/sleat_char/mountin3.png"],
         description:
-            "그로비는 꾀죄죄한 작은숲 메인 캐릭터로 작은 숲에\n모여사는 자그마한 종족입니다. 인간들을 매우 좋아하며,\n인간의 삶을 동경합니다. 앙증맞은 팔다리와 복실복실\n털이 특징이며, 흔들면 삐약삐약 웁니다.",
+            "마운팅.옹은 꾀죄죄한 작은 숲에서 탄생한\n아주 작은 '산' 친구들입니다.\n해발고도 4cm의 세상에서 가장 작은 산이지만\n어마어마하게 큰 매력을 가지고 있습니다.",
     },
     {
         name: "럭키 깨구리 & 럭키 맹꽁이",
@@ -17,10 +17,10 @@ const items = [
             "럭키 깨구리와 럭키 맹꽁이는\n꾀죄죄한 작은 숲 속에서 행운의 상징으로\n대표되는 전설의 동물입니다.\n빵실한 엉덩이가 매력 포인트입니다.",
     },
     {
-        name: "마운틴.옹",
-        imgPaths: ["/img/sleat_char/mountin1.png", "/img/sleat_char/mountin2.png", "/img/sleat_char/mountin3.png"],
+        name: "그로비",
+        imgPaths: ["/img/sleat_char/grovy1.png", "/img/sleat_char/grovy2.png", "/img/sleat_char/grovy3.png"],
         description:
-            "마운팅.옹은 꾀죄죄한 작은 숲에서 탄생한\n아주 작은 '산' 친구들입니다.\n해발고도 4cm의 세상에서 가장 작은 산이지만\n어마어마하게 큰 매력을 가지고 있습니다.",
+            "그로비는 꾀죄죄한 작은숲 메인 캐릭터로 작은 숲에\n모여사는 자그마한 종족입니다. 인간들을 매우 좋아하며,\n인간의 삶을 동경합니다. 앙증맞은 팔다리와 복실복실\n털이 특징이며, 흔들면 삐약삐약 웁니다.",
     },
     {
         name: "벗(친구)나무와 씨조새",
@@ -43,21 +43,38 @@ export default function CharacterInfo() {
                 <Carousel
                     NextIcon={<RightArrow />}
                     PrevIcon={<LeftArrow />}
-                    autoPlay={true}
+                    autoPlay={false}
                     navButtonsAlwaysVisible={!isMobile}
                     fullHeightHover={true}
                     navButtonsProps={{
                         style: {
                             backgroundColor: "transparent",
                             borderRadius: 0,
-                            paddingRight: "5vw",
-                            paddingLeft: "5vw",
+                            marginRight: "5vw",
+                            marginLeft: "5vw",
                         },
                     }}
                     indicatorContainerProps={{
                         style: {
                             textAlign: "end",
                             paddingRight: "18%",
+                        },
+                    }}
+                    indicatorIconButtonProps={{
+                        style: {
+                            width: 10,
+                            height: 10,
+                            paddingRight: 8,
+                            paddingLeft: 8,
+                            color: "#777",
+                        },
+                    }}
+                    activeIndicatorIconButtonProps={{
+                        style: {
+                            width: 16,
+                            height: 16,
+                            backgroundColor: "#000", // 2
+                            color: "#000",
                         },
                     }}
                 >

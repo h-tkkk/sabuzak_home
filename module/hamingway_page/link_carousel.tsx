@@ -1,22 +1,21 @@
-import { Box, Button, Grid, Paper, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Carousel } from "@trendyol-js/react-carousel";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import ArrowSvg from "@assets/link_btn.svg";
 
 const items = [
     {
-        name: "꾀죄죄한작은숲 인스타그램",
-        img: "/img/sleat_link/sleat_link1.png",
+        name: "인스타그램",
+        img: "/img/hamingway_link/hamingway_link1.png",
         link: "https://www.instagram.com/sleathygroves/",
     },
     {
-        name: "투데이솜 인스타그램",
-        img: "/img/sleat_link/sleat_link2.png",
+        name: "트위터 (X)",
+        img: "/img/hamingway_link/hamingway_link2.png",
         link: "https://www.instagram.com/todaysom/",
     },
     {
-        name: "꾀.병 인형병원 인스타그램",
-        img: "/img/sleat_link/sleat_link2.png",
+        name: "유튜브",
+        img: "/img/hamingway_link/hamingway_link3.png",
         link: "https://www.instagram.com/scruffy_hospital/",
     },
 ];
@@ -66,17 +65,15 @@ export default function Linkarousel() {
                     flexDirection={isMobile ? "column" : "row"}
                     justifyContent="space-between"
                     bgcolor="#FFFAF0"
-                    py="7.4%"
-                    px="4.3%"
+                    py="2.7%"
+                    px="1.5625%"
                     sx={{ borderRadius: "0 0 30px 30px" }}
                 >
                     <Typography fontSize={{ xs: 16, sm: 20, md: 24, lg: 28 }}>{props.item.name}</Typography>
                     <Button
                         sx={{
                             display: "flex",
-                            height: 29,
-                            p: 0,
-                            px: { xs: 0, sm: 3, md: 4, lg: 4.5 },
+                            px: { xs: 2, sm: 3, md: 4, lg: 4.5 },
                             background: "#EEE",
                             borderRadius: 7.5,
                             color: "#000",

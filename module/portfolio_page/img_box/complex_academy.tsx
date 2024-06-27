@@ -1,49 +1,14 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { styled } from "@mui/system";
 import Link from "next/link";
 import ArrowIcon from "@assets/jalnan_arrow.svg";
 import { useState } from "react";
+import HoverBox from "../../../component/hover_box";
+import Overlay from "../../../component/overlay";
 
 const title = "콤플렉스 아카데미";
-const mainContent = "콤플렉스를 극복하지 않아도\n있는 그래도의 내가 행복이다";
+const mainContent = "콤플렉스를 극복하지 않아도\n있는 그대로의 내가 행복이다";
 const subContent = "라미와 친구들의 우당탕탕 마법 학교 일상과\n성장기 고민, 우정 그리고 치유에 대한 이야기";
 const color = "#FFE676";
-
-const HoverBox = styled(Box)({
-    position: "relative",
-    height: "100%",
-    width: "100%",
-    overflow: "hidden",
-    transition: "background-color 0.3s ease",
-    "&:hover": {
-        backgroundColor: color,
-        "& .content": {
-            opacity: 0,
-            transition: "opacity 0.3s ease",
-        },
-        "& .overlay": {
-            opacity: 1,
-            transition: "opacity 0.3s ease",
-            pointerEvents: "all",
-        },
-    },
-});
-
-const Overlay = styled(Box)({
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    opacity: 0,
-    transition: "opacity 0.3s ease",
-    zIndex: 1,
-    textAlign: "center",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    pointerEvents: "none",
-});
 
 export default function ComplexAcademy() {
     const theme = useTheme();
@@ -92,6 +57,7 @@ export default function ComplexAcademy() {
     } else {
         return (
             <HoverBox
+                color={color}
                 className={isHovered ? "" : "boxWithDiagonalShadow_2"}
                 sx={{
                     position: "relative",
@@ -144,8 +110,8 @@ export default function ComplexAcademy() {
                     </Box>
                 </Box>
                 <Overlay className="overlay">
-                    <Link href={"/"} passHref>
-                        <Box component="a" sx={{ display: "flex", alignItems: "center", textDecration: "none", color: "inherit" }}>
+                    <Link href={"/complex_academy"} passHref>
+                        <Box sx={{ display: "flex", alignItems: "center", textDecration: "none", color: "inherit" }}>
                             <Typography sx={{ fontSize: 40, color: "#000" }}>{"콤플렉스 아카데미 페이지 "}</Typography>
                             <ArrowIcon />
                         </Box>
