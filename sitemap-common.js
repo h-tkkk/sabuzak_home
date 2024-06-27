@@ -13,6 +13,8 @@ const formatted = (sitemap) => prettier.format(sitemap, { parser: "html" });
         // include
         "../pages/**/*.tsx",
         "../pages/*.tsx",
+        "pages/**/*.tsx",
+        "pages/*.tsx",
         // exclude
         "!../pages/_*.tsx",
         "!pages/_*.tsx",
