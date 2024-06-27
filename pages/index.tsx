@@ -47,14 +47,16 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Sabuzakx2 Studio</title>
-                <meta name="google-site-verification" content="MF1bKjXjgvrg6RgHOipe-DdlbnnTYZqVUKmDBZdVKeA" />
-                <meta name="naver-site-verification" content="e28872b5016b420276e8606e6b59d8d4eb700b32" />
-
+                <title>Sabuzak Studio</title>
+                <meta name="description" content="사부작사부작 스튜디오" />
+                <meta
+                    name="keywords"
+                    content="sbz,사부작 스튜디오,사부작,햄밍웨이,콤플렉스 아카데미,쑝쑝 메거진,꾀죄죄한작은숲,꾀작숲,사부작사부작스튜디오"
+                />
                 {/* Open Graph meta tags */}
-                <meta property="og:title" content="Sabuzakx2 studio" />
-                <meta property="og:description" content="Sabuzakx2 studio" />
-                <meta property="og:image" content="https://www.sbzsbz.com/path/to/your/image.jpg" />
+                <meta property="og:title" content="Sabuzakx2 Studio" />
+                <meta property="og:description" content="Sabuzakx2 Studio" />
+                <meta property="og:image" content="https://www.sbzsbz.com/img/main_section/full_img.png" />
                 <link rel="canonical" href="https://www.sbzsbz.com" />
             </Head>
             <Box height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"} position={"relative"}>
