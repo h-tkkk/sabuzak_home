@@ -26,10 +26,10 @@ export default function Linkarousel() {
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
-        <Box display={"flex"} flexDirection={"column"} pl={"3.125%"} sx={{ overflow: "hidden" }}>
+        <Box display={"flex"} flexDirection={"column"} pl={"3.125%"}>
             <Carousel
                 dynamic={true}
-                swipeOn={0.1}
+                // swipeOn={0.1}
                 show={isMobile ? 1.5 : 2.75}
                 slide={1}
                 swiping={true}
