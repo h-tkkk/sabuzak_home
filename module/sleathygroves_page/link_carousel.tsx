@@ -27,9 +27,18 @@ export default function Linkarousel() {
 
     return (
         <Box display={"flex"} flexDirection={"column"} pl={"3.125%"} sx={{ overflow: "hidden" }}>
-            <Carousel swipeOn={0.1} show={isMobile ? 1.5 : 2.75} slide={1} swiping={true} responsive={true} leftArrow={<></>} rightArrow={<></>}>
+            <Carousel
+                dynamic={true}
+                swipeOn={0.1}
+                show={isMobile ? 1.5 : 2.75}
+                slide={1}
+                swiping={true}
+                responsive={true}
+                leftArrow={<></>}
+                rightArrow={<></>}
+            >
                 {items.map((item, i) => (
-                    <Item key={i} item={item} />
+                    <Item key={`link_item_${i}`} item={item} />
                 ))}
             </Carousel>
         </Box>
