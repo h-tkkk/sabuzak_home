@@ -13,16 +13,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import PortfolioSection from "../module/portfolio_section/portfolio_section";
 import CenterSwiper from "../module/portfolio_section/center_swiper";
 
-interface HomePageProps {
-    seo: {
-        title: string;
-        description: string;
-        url: string;
-        image: string;
-    };
-}
-
-export default function Home({ seo }: HomePageProps) {
+export default function Home() {
     const [showFloatingButton, setShowFloatingButton] = useState(false);
 
     const theme = useTheme();
