@@ -46,8 +46,7 @@ export default function CharacterInfo() {
                     NextIcon={isMobile ? null : <RightArrow />}
                     PrevIcon={isMobile ? null : <LeftArrow />}
                     autoPlay={false}
-                    navButtonsAlwaysVisible={isMobile ? false : true}
-                    navButtonsAlwaysInvisible={isMobile ? false : true}
+                    navButtonsAlwaysVisible={true}
                     fullHeightHover={true}
                     navButtonsProps={{
                         style: {

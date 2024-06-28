@@ -26,17 +26,8 @@ export default function Linkarousel() {
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
-        <Box display={"flex"} flexDirection={"column"} pl={"3.125%"}>
-            <Carousel
-                dynamic={true}
-                // swipeOn={0.1}
-                show={isMobile ? 1.5 : 2.75}
-                slide={1}
-                swiping={true}
-                responsive={true}
-                leftArrow={<></>}
-                rightArrow={<></>}
-            >
+        <Box display={"flex"} flexDirection={"column"} pl={"3.125%"} sx={{ overflow: "hidden" }}>
+            <Carousel swipeOn={0.1} show={isMobile ? 1.5 : 2.75} slide={1} swiping={true} responsive={true} leftArrow={<></>} rightArrow={<></>}>
                 {items.map((item, i) => (
                     <Item key={`link_item_${i}`} item={item} />
                 ))}
@@ -45,28 +36,28 @@ export default function Linkarousel() {
     );
 
     function Item(props) {
-        const percentage = (397 / 1920) * 100;
-
         return (
             <Box
                 display="flex"
                 flexDirection="column"
                 sx={{
                     borderRadius: 7.5,
-                    // margin: isMobile ? "1%" : "2%",
                     marginX: isMobile ? "1%" : "3%",
                 }}
             >
                 <Box height={isMobile ? 200 : 540} bgcolor="#FFFAF0" sx={{ borderRadius: 7.5, width: "100%", position: "relative" }}>
-                    <Image
+                    <img
                         src={props.item.img}
                         alt={`image`}
-                        layout="fill"
-                        objectFit="cover"
                         style={{
+                            width: "100%",
+                            height: "100%",
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            objectFit: "cover",
                             borderRadius: "30px 30px 0 0",
                         }}
-                        loading="lazy"
                     />
                 </Box>
                 <Box
