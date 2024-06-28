@@ -66,30 +66,37 @@ export default function Linkarousel() {
                     width="100%"
                     display="flex"
                     flexDirection={isMobile ? "column" : "row"}
-                    justifyContent="space-between"
+                    justifyContent={isMobile ? "flex-end" : "space-between"}
                     bgcolor="#FFFAF0"
                     py={isMobile ? "5%" : "7.4%"}
                     px={isMobile ? "2%" : "4.3%"}
                     sx={{ borderRadius: "0 0 30px 30px" }}
                 >
                     <Typography fontSize={{ xs: 14, sm: 18, md: 20, lg: 24 }}>{props.item.name}</Typography>
-                    <Button
-                        sx={{
-                            display: "flex",
-                            height: isMobile ? 24 : 29,
-                            p: 0,
-                            px: { xs: 2, sm: 3, md: 4, lg: 4.5 },
-                            background: "#EEE",
-                            borderRadius: 7.5,
-                            color: "#000",
-                        }}
-                        onClick={() => window.open(props.item.link, "_blank")}
+                    <Box
+                        display="flex"
+                        flexDirection={isMobile ? "row" : "column"}
+                        justifyContent={isMobile ? "flex-end" : "space-between"}
+                        mt={isMobile ? 2 : 0}
                     >
-                        <Typography fontFamily="Pretendard" sx={{ fontSize: { xs: 10, sm: 12, md: 14, lg: 16 } }} color="#000">
-                            {"방문하기"}
-                        </Typography>
-                        <KeyboardArrowRightIcon />
-                    </Button>
+                        <Button
+                            sx={{
+                                display: "flex",
+                                height: isMobile ? 24 : 29,
+                                p: 0,
+                                px: { xs: 2, sm: 3, md: 4, lg: 4.5 },
+                                background: "#EEE",
+                                borderRadius: 7.5,
+                                color: "#000",
+                            }}
+                            onClick={() => window.open(props.item.link, "_blank")}
+                        >
+                            <Typography fontFamily="Pretendard" sx={{ fontSize: { xs: 10, sm: 12, md: 14, lg: 16 } }} color="#000">
+                                {"방문하기"}
+                            </Typography>
+                            <KeyboardArrowRightIcon />
+                        </Button>
+                    </Box>
                 </Box>
             </Box>
         );
