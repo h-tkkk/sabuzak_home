@@ -51,7 +51,10 @@ export default function Home({ seo }: HomePageProps) {
     };
 
     const handleHomeSectionMove = () => {
-        document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+        const homeElement = document.getElementById("home");
+        if (homeElement) {
+            homeElement.scrollIntoView({ behavior: "smooth" });
+        }
     };
 
     return (

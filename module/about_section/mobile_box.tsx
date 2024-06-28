@@ -11,7 +11,7 @@ interface KeywordBoxProps {
 }
 
 export default function MobileBox(props: KeywordBoxProps) {
-    const boxRef = useRef(null);
+    const boxRef = useRef<HTMLDivElement | null>(null);
     const [boxWidth, setBoxWidth] = useState(0);
 
     const theme = useTheme();
