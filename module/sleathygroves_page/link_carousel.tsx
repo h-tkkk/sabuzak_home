@@ -25,7 +25,7 @@ export default function Linkarousel() {
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
-        <Box display={"flex"} flexDirection={"column"} pl={"3.125%"}>
+        <Box display={"flex"} flexDirection={"column"} pl={"3.125%"} sx={{ overflow: "hidden" }}>
             <Carousel show={isMobile ? 1.5 : 2.75} slide={1} swiping={true} responsive={true} leftArrow={<></>} rightArrow={<></>}>
                 {items.map((item, i) => (
                     <Item key={i} item={item} />
