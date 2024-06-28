@@ -59,7 +59,8 @@ const Item = ({ item }) => {
                     style={{
                         borderRadius: "30px 30px 0 0",
                     }}
-                    loading="lazy"
+                    // loading="lazy"
+                    priority
                 />
             </Box>
             <Box
