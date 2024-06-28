@@ -2,6 +2,7 @@ import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material"
 import { Carousel } from "@trendyol-js/react-carousel";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import Image from "next/image";
+import { memo } from "react";
 
 const items = [
     {
@@ -29,74 +30,76 @@ export default function Linkarousel() {
         <Box display={"flex"} flexDirection={"column"} pl={"3.125%"} sx={{ overflow: "hidden" }}>
             <Carousel swipeOn={0.1} show={isMobile ? 1.5 : 2.75} slide={1} swiping={true} responsive={true} leftArrow={<></>} rightArrow={<></>}>
                 {items.map((item, i) => (
-                    <Item key={`link_item_${i}`} item={item} />
+                    <MemoizedItem key={`link_item_${i}`} item={item} />
                 ))}
             </Carousel>
         </Box>
     );
+}
 
-    function Item(props) {
-        return (
+const Item = ({ item }) => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+    return (
+        <Box
+            display="flex"
+            flexDirection="column"
+            sx={{
+                borderRadius: 7.5,
+                marginX: isMobile ? "1%" : "3%",
+            }}
+        >
+            <Box height={isMobile ? 200 : 540} bgcolor="#FFFAF0" sx={{ borderRadius: 7.5, width: "100%", position: "relative" }}>
+                <Image
+                    src={item.img}
+                    alt={`image`}
+                    layout="fill"
+                    objectFit="cover"
+                    style={{
+                        borderRadius: "30px 30px 0 0",
+                    }}
+                    loading="lazy"
+                />
+            </Box>
             <Box
+                width="100%"
                 display="flex"
-                flexDirection="column"
-                sx={{
-                    borderRadius: 7.5,
-                    marginX: isMobile ? "1%" : "3%",
-                }}
+                flexDirection={isMobile ? "column" : "row"}
+                justifyContent={isMobile ? "flex-end" : "space-between"}
+                bgcolor="#FFFAF0"
+                py={isMobile ? "5%" : "7.4%"}
+                px={isMobile ? "2%" : "4.3%"}
+                sx={{ borderRadius: "0 0 30px 30px" }}
             >
-                <Box height={isMobile ? 200 : 540} bgcolor="#FFFAF0" sx={{ borderRadius: 7.5, width: "100%", position: "relative" }}>
-                    <img
-                        src={props.item.img}
-                        alt={`image`}
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            objectFit: "cover",
-                            borderRadius: "30px 30px 0 0",
-                        }}
-                    />
-                </Box>
+                <Typography fontSize={{ xs: 14, sm: 18, md: 20, lg: 24 }}>{item.name}</Typography>
                 <Box
-                    width="100%"
                     display="flex"
-                    flexDirection={isMobile ? "column" : "row"}
+                    flexDirection={isMobile ? "row" : "column"}
                     justifyContent={isMobile ? "flex-end" : "space-between"}
-                    bgcolor="#FFFAF0"
-                    py={isMobile ? "5%" : "7.4%"}
-                    px={isMobile ? "2%" : "4.3%"}
-                    sx={{ borderRadius: "0 0 30px 30px" }}
+                    mt={isMobile ? 2 : 0}
                 >
-                    <Typography fontSize={{ xs: 14, sm: 18, md: 20, lg: 24 }}>{props.item.name}</Typography>
-                    <Box
-                        display="flex"
-                        flexDirection={isMobile ? "row" : "column"}
-                        justifyContent={isMobile ? "flex-end" : "space-between"}
-                        mt={isMobile ? 2 : 0}
+                    <Button
+                        sx={{
+                            display: "flex",
+                            height: isMobile ? 24 : 29,
+                            p: 0,
+                            px: { xs: 2, sm: 3, md: 4, lg: 4.5 },
+                            background: "#EEE",
+                            borderRadius: 7.5,
+                            color: "#000",
+                        }}
+                        onClick={() => window.open(item.link, "_blank")}
                     >
-                        <Button
-                            sx={{
-                                display: "flex",
-                                height: isMobile ? 24 : 29,
-                                p: 0,
-                                px: { xs: 2, sm: 3, md: 4, lg: 4.5 },
-                                background: "#EEE",
-                                borderRadius: 7.5,
-                                color: "#000",
-                            }}
-                            onClick={() => window.open(props.item.link, "_blank")}
-                        >
-                            <Typography fontFamily="Pretendard" sx={{ fontSize: { xs: 10, sm: 12, md: 14, lg: 16 } }} color="#000">
-                                {"방문하기"}
-                            </Typography>
-                            <KeyboardArrowRightIcon />
-                        </Button>
-                    </Box>
+                        <Typography fontFamily="Pretendard" sx={{ fontSize: { xs: 10, sm: 12, md: 14, lg: 16 } }} color="#000">
+                            {"방문하기"}
+                        </Typography>
+                        <KeyboardArrowRightIcon />
+                    </Button>
                 </Box>
             </Box>
-        );
-    }
-}
+        </Box>
+    );
+};
+
+const MemoizedItem = memo(Item);
