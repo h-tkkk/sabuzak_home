@@ -4,7 +4,14 @@ const path = require("path");
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
-    headers: [{ key: "Access-Control-Allow-Origin", value: "*" }],
+    async headers() {
+        return [
+            {
+                source: "/(.*)", // 모든 경로에 대해 헤더 적용
+                headers: [{ key: "Access-Control-Allow-Origin", value: "*" }],
+            },
+        ];
+    },
     webpack: (config, { isServer }) => {
         config.module.rules.push({
             test: /\.svg$/,

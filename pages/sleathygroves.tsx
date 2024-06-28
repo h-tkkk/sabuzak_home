@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Head from "next/head";
 import Header from "../composition/header/header";
 import MainLayout from "../module/sleathygroves_page/main_layout";
