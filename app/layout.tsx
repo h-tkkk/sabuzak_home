@@ -1,6 +1,8 @@
+import Head from "next/head";
 import RootLazyout from "./root_lazyout";
+import { Metadata } from "next";
 
-export async function generateMetadata() {
+export function generateMetadata(): Metadata {
     return {
         title: "Sabuzakx2 Studio",
         description:
@@ -19,6 +21,16 @@ export async function generateMetadata() {
                     alt: "Sleathygroves banner",
                 },
             ],
+        },
+        verification: {
+            google: "MF1bKjXjgvrg6RgHOipe-DdlbnnTYZqVUKmDBZdVKeA",
+            other: {
+                naver: "e28872b5016b420276e8606e6b59d8d4eb700b32",
+            },
+        },
+        robots: {
+            index: true,
+            follow: true,
         },
     };
 }

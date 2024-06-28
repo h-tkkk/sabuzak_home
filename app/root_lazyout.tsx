@@ -10,6 +10,7 @@ import { dark_theme } from "../src/dark_theme";
 import ColorModeContext from "../context/color_mode_context";
 import { RootStore } from "../rootStore/rootStore";
 import { DefaultSeo } from "next-seo";
+import Head from "next/head";
 
 const DEFAULT_SEO = {
     title: "Sabuzakx2 Studio",
