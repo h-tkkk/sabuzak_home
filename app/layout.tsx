@@ -1,4 +1,3 @@
-import Head from "next/head";
 import RootLazyout from "./root_lazyout";
 import { Metadata } from "next";
 

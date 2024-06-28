@@ -1,6 +1,7 @@
 import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Carousel } from "@trendyol-js/react-carousel";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import Image from "next/image";
 
 const items = [
     {
@@ -48,18 +49,15 @@ export default function Linkarousel() {
                 }}
             >
                 <Box height={isMobile ? 200 : 540} bgcolor="#FFFAF0" sx={{ borderRadius: 7.5, width: "100%", position: "relative" }}>
-                    <img
+                    <Image
                         src={props.item.img}
                         alt={`image`}
+                        layout="fill"
+                        objectFit="cover"
                         style={{
-                            width: "100%",
-                            height: "100%",
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            objectFit: "cover",
                             borderRadius: "30px 30px 0 0",
                         }}
+                        loading="lazy"
                     />
                 </Box>
                 <Box
