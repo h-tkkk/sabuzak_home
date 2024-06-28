@@ -43,10 +43,11 @@ export default function CharacterInfo() {
             </Box>
             <Box height={"100%"}>
                 <Carousel
-                    NextIcon={<RightArrow />}
-                    PrevIcon={<LeftArrow />}
+                    NextIcon={isMobile ? null : <RightArrow />}
+                    PrevIcon={isMobile ? null : <LeftArrow />}
                     autoPlay={false}
-                    navButtonsAlwaysVisible={!isMobile}
+                    navButtonsAlwaysVisible={isMobile ? false : true}
+                    navButtonsAlwaysInvisible={isMobile ? false : true}
                     fullHeightHover={true}
                     navButtonsProps={{
                         style: {
