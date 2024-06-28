@@ -4,11 +4,27 @@ const path = require("path");
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
+    experimental: {
+        modern: true,
+    },
     async headers() {
         return [
             {
-                source: "/(.*)", // 모든 경로에 대해 헤더 적용
-                headers: [{ key: "Access-Control-Allow-Origin", value: "*" }],
+                source: "/(.*)",
+                headers: [
+                    {
+                        key: "Cache-Control",
+                        value: "no-store, no-cache, must-revalidate, proxy-revalidate",
+                    },
+                    {
+                        key: "Pragma",
+                        value: "no-cache",
+                    },
+                    {
+                        key: "Expires",
+                        value: "0",
+                    },
+                ],
             },
         ];
     },
