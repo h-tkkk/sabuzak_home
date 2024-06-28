@@ -110,7 +110,8 @@ export default function ComplexAcademy() {
                     </Box>
                 </Box>
                 <Overlay className="overlay">
-                    <Link href={"/complex_academy"} passHref>
+                    {/* <Link href={"/complex_academy"} passHref> */}
+                    <Link href={"/"} passHref>
                         <Box sx={{ display: "flex", alignItems: "center", textDecration: "none", color: "inherit" }}>
                             <Typography sx={{ fontSize: 40, color: "#000" }}>{"콤플렉스 아카데미 페이지 "}</Typography>
                             <ArrowIcon />

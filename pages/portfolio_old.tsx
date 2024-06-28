@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Header from "../composition/header/header";
 import ImgEx from "../module/portfolio_page/img_ex";
 import Head from "next/head";

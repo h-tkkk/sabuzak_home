@@ -2,20 +2,20 @@ import RootLazyout from "./root_lazyout";
 
 export async function generateMetadata() {
     return {
-        title: "꾀죄죄한 작은 숲 - Sabuzakx2 Studio",
+        title: "Sabuzakx2 Studio",
         description:
-            "우리 근처에 있지만, 우리는 눈치채지 못하는 작고 꾀죄죄한 곳 털복숭이 숲요정 '그로비' 들과 해발고도 4cm,세상에서 가장 작은 산 '마운틴 옹' 그리고 조금은 특별한 색채를 가진 숲속 친구들의 이야기",
+            "사부작사부작 스튜디오는 창의적이고 멋진 아이디어를 가지고 계신 제작자분들과의 협업을 기다립니다 재미있고 감동적인 이야기를 함께 만들어나갈 날들을 기대합니다",
         openGraph: {
-            url: "https://www.sbzsbz.com/sleathygroves",
+            url: "https://www.sbzsbz.com",
             type: "website",
-            title: "꾀죄죄한 작은 숲 - Sabuzakx2 Studio",
+            title: "Sabuzakx2 Studio",
             description:
-                "우리 근처에 있지만, 우리는 눈치채지 못하는 작고 꾀죄죄한 곳 털복숭이 숲요정 '그로비' 들과 해발고도 4cm,세상에서 가장 작은 산 '마운틴 옹' 그리고 조금은 특별한 색채를 가진 숲속 친구들의 이야기",
+                "사부작사부작 스튜디오는 창의적이고 멋진 아이디어를 가지고 계신 제작자분들과의 협업을 기다립니다 재미있고 감동적인 이야기를 함께 만들어나갈 날들을 기대합니다",
             images: [
                 {
-                    url: "https://www.sbzsbz.com/img/sleathygroves_banner.png",
-                    width: 800,
-                    height: 600,
+                    url: "https://www.sbzsbz.com/img/og_main.png",
+                    width: 1200,
+                    height: 630,
                     alt: "Sleathygroves banner",
                 },
             ],
@@ -25,7 +25,7 @@ export async function generateMetadata() {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
+        <html lang="ko">
             <body>
                 <RootLazyout>{children}</RootLazyout>
             </body>

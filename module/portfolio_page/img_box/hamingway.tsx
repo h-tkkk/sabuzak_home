@@ -125,7 +125,8 @@ export default function Hamingway() {
                     </Box>
                 </Box>
                 <Overlay className="overlay">
-                    <Link href={"/hamingway"} passHref>
+                    {/* <Link href={"/hamingway"} passHref> */}
+                    <Link href={"/"} passHref>
                         <Box sx={{ display: "flex", alignItems: "center", textDecration: "none", color: "inherit" }}>
                             <Typography sx={{ fontSize: 40, color: "#000" }}>{`${title} 페이지 `}</Typography>
                             <ArrowIcon />
