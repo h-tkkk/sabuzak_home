@@ -13,7 +13,7 @@ export async function generateMetadata() {
             description: "사부작사부작 스튜디오 포트폴리오",
             images: [
                 {
-                    url: "https://www.sbzsbz.com/img/main_prot/complex.png",
+                    url: "https://www.sbzsbz.com/img/og_portfoilo.png",
                     width: 1200,
                     height: 630,
                     alt: "About Sabuzakx2 Studio",

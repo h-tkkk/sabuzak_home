@@ -13,7 +13,7 @@ export async function generateMetadata() {
             description: "서울특별시 강남구 학동로7길 29 | email: sabuzakx2studio@gmail.com | tel: 02-6213-3100",
             images: [
                 {
-                    url: "https://www.sbzsbz.com/img/main_prot/complex.png",
+                    url: "https://www.sbzsbz.com/img/og_contact.png",
                     width: 1200,
                     height: 630,
                     alt: "About Sabuzakx2 Studio",
