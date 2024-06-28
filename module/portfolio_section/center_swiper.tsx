@@ -1,5 +1,5 @@
 import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ArrowIcon from "@assets/arrow.svg";
 

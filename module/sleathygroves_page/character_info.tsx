@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Grid, Paper, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import LeftArrow from "@assets/left-arrow.svg";

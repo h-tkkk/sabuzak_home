@@ -1,6 +1,7 @@
+"use client";
+
 import { Backdrop, Box, Button, Drawer, IconButton, Switch, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { Fragment, useContext, useEffect, useState } from "react";
-import { ColorModeContext } from "../../pages/_app";
+import { Fragment, useEffect, useState } from "react";
 import SabuzakWhite from "@assets/sabuzak_icon_white.svg";
 import MenuIcon from "@mui/icons-material/Menu";
 import SabuzakIcon from "@assets/logo_sm.svg";
@@ -9,12 +10,13 @@ import TextButton from "../../component/button/text_button";
 import Link from "next/link";
 import { useRootStores } from "../../rootStore/rootStore";
 import { observer } from "mobx-react";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
+// import ColorModeContext from "../../context/color_mode_context";
 
 const Header = observer(() => {
-    const router = useRouter();
+    const pathname = usePathname();
     const rootStore = useRootStores();
-    const { toggleColorMode, mode } = useContext(ColorModeContext);
+    // const { toggleColorMode, mode } = useContext(ColorModeContext);
 
     const theme = useTheme();
     const isMd = useMediaQuery(theme.breakpoints.up("md"));
@@ -41,17 +43,17 @@ const Header = observer(() => {
         return () => {
             window.removeEventListener("scroll", checkScroll);
         };
-    });
+    }, []);
 
     useEffect(() => {
-        if (router.pathname !== "/") {
+        if (pathname !== "/") {
             rootStore.setHeaderColor("#fff");
             rootStore.setMainScrollStatus(true);
         } else {
             rootStore.setHeaderColor("transparent");
             rootStore.setMainScrollStatus(false);
         }
-    }, [router.pathname]);
+    }, [pathname]);
 
     return (
         <Box
@@ -123,9 +125,6 @@ const Header = observer(() => {
                         <TextButton text="Portfolio" />
                         <TextButton text="Contact" />
                     </Box>
-                    {/* <Box>
-                        <Switch onClick={toggleColorMode} />
-                    </Box> */}
                 </Box>
             </Drawer>
         </Box>

@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Footer from "../../composition/footer/footer";
 import CharacterInfo from "./character_info";

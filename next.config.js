@@ -4,9 +4,6 @@ const path = require("path");
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
-    experimental: {
-        modern: true,
-    },
     async headers() {
         return [
             {

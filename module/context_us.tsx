@@ -1,5 +1,5 @@
 import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 
 export default function ContextUs() {

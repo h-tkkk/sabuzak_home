@@ -1,7 +1,7 @@
 import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import KeywordBox from "./keyword_box";
 import ArrowIcon from "@assets/arrow.svg";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import AboutZ from "@assets/about_z.svg";
 import AboutB from "@assets/about_b.svg";
 import AboutS from "@assets/about_s.svg";
