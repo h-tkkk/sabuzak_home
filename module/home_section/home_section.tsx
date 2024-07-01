@@ -1,17 +1,18 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import NumberButtons from "./number_buttons";
 import { useRootStores } from "../../rootStore/rootStore";
-import { observer, useObserver } from "mobx-react";
+import { observer } from "mobx-react";
 import OneTitle from "./one_title";
 import TwoTitle from "./two_title";
+import MainVideo from "./main_video";
+import MainText from "./main_text";
 
 const HomeSection = observer(() => {
     const rootStore = useRootStores();
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-    const isTablet = useMediaQuery(theme.breakpoints.down("md"));
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -19,7 +20,7 @@ const HomeSection = observer(() => {
         });
 
         return () => clearTimeout(timeout);
-    }, [rootStore.homeMainNum]);
+    }, [rootStore, rootStore.homeMainNum]);
 
     return (
         <Box
@@ -30,40 +31,7 @@ const HomeSection = observer(() => {
             id="home"
             sx={{ backgroundColor: rootStore.homeMainNum == 1 ? "rgba(0, 0, 0, 0.25)" : "#133F7F" }}
         >
-            {rootStore.homeMainNum == 1 ? (
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="none"
-                    style={{
-                        position: "absolute",
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        zIndex: -1,
-                        outline: "none",
-                        border: "none",
-                    }}
-                >
-                    <source src="/video/sabuzak_main.mp4" type="video/mp4" />
-                </video>
-            ) : (
-                <Box
-                    sx={{
-                        backgroundImage: isTablet ? "url(/img/main_section/tab_img.png)" : "url(/img/main_section/full_img.png)",
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: isTablet ? "right" : "center",
-                        backgroundPositionY: isTablet ? 100 : 0,
-                    }}
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                    }}
-                ></Box>
-            )}
+            {rootStore.homeMainNum == 1 ? <MainVideo /> : <MainText />}
             <Box
                 display={"flex"}
                 flexDirection={"column"}
