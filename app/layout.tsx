@@ -24,7 +24,7 @@ export function generateMetadata(): Metadata {
         verification: {
             google: "MF1bKjXjgvrg6RgHOipe-DdlbnnTYZqVUKmDBZdVKeA",
             other: {
-                "naver-site-verification": "e28872b5016b420276e8606e6b59d8d4eb700b32",
+                "naver-site-verification": "de441535caea6fd29adfc7ab71ae99401e9b2e73",
             },
         },
         robots: {
