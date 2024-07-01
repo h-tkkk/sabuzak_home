@@ -27,7 +27,7 @@ export async function generateMetadata() {
 
 export default function SleathygrovesPage() {
     return (
-        <Box height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"} sx={{ overflowX: "hidden" }}>
+        <Box height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"}>
             <Header />
             <MainLayout />
         </Box>
